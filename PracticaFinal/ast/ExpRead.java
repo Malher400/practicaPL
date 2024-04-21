@@ -13,4 +13,8 @@ public class ExpRead extends Exp {
     public String toString() {
         return "red" + tipoLect.toString();
     }
+
+    public boolean bind(Pila pila){
+        return tipoLect.bind(pila);
+    }
 }

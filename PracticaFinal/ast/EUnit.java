@@ -15,4 +15,8 @@ public abstract class EUnit extends Exp {
 	public String toString() {
 		return tipoExp.toString() + '(' + opnd.toString() + ')';
 	}
+
+	public boolean bind(Pila pila){
+		return opnd.bind(pila);
+	}
 }

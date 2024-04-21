@@ -11,4 +11,8 @@ public class TypePointer extends Type {
 	public String toString() {
 		return "pointer " + tipo.toString();
 	}
+
+	public boolean bind(Pila pila){
+		return tipo.bind(pila);
+	}
 }

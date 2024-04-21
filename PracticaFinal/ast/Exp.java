@@ -16,5 +16,7 @@ public abstract class Exp implements ASTNode {
     public int getColumna() { return columna;}
 
     public String toString() {return "";}
+
+    public boolean bind(Pila pila){return true;}
 }
 

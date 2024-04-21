@@ -25,4 +25,14 @@ public class TypeStruct extends Type {
         str.append('\n');
         return str.toString();
     }
+
+    public boolean bind(Pila pila){
+        pila.abreBloque();
+        boolean b = true;
+        for (Dec d : listaDs){
+            b = d.bind(pila) && b;
+        }
+        pila.cierraBloque();
+        return b;
+    }
 }

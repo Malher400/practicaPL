@@ -27,4 +27,12 @@ public class ExpFun extends Exp {
 
         return str.toString();
     }
+
+    public boolean bind(Pila pila){
+        boolean b = id.bind(pila);
+        for (Exp p : params){
+            b = p.bind(pila) && b;
+        }
+        return b;
+    }
 }

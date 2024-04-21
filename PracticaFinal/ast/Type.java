@@ -25,4 +25,6 @@ public class Type implements ASTNode {
         return tipoType.toString();
     }
 
+    public boolean bind(Pila pila){return true;} 
+
 }

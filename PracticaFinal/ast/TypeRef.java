@@ -11,4 +11,8 @@ public class TypeRef extends Type {
     public String toString() {
         return tipo.toString();
     }
+
+    public boolean bind(Pila pila){
+        return tipo.bind(pila);
+    }
 }

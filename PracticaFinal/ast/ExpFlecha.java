@@ -15,4 +15,8 @@ public class ExpFlecha extends Exp {
 	public String toString() {
 		return id.toString() + "->" + campo;
 	}
+
+	public boolean bind(Pila pila){
+		return id.bind(pila);
+	}
 }

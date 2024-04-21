@@ -17,5 +17,9 @@ public abstract class EBin extends Exp {
 		  return tipoExp.toString() + '(' + opnd1.toString() + ',' + opnd2.toString() + ')';
 	 }
 
+    public boolean bind(Pila pila){
+      return opnd1.bind(pila) && opnd2.bind(pila);
+    }
+
 }
 

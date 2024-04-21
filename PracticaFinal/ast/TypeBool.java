@@ -6,4 +6,5 @@ public class TypeBool extends Type {
 	}
 	
 	public String toString() {return "boolShevik";}
+	public boolean bind(Pila pila){return true;}
 }

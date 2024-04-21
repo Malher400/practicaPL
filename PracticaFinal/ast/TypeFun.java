@@ -29,4 +29,15 @@ public class TypeFun extends Type {
         str.append('\n');
         return str.toString();
     }
+
+    public boolean bind(Pila pila){
+        boolean b = tipo.bind(pila);
+        pila.abreBloque();
+        for (Dec d : listaArgs){
+            b = d.bind(pila) && b;
+        }
+        pila.cierraBloque();
+
+        return b;
+    }
 }

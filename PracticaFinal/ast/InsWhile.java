@@ -21,4 +21,8 @@ public class InsWhile extends Ins {
 		str.append("\n}");
 		return str.toString();
 	}
+
+	public boolean bind(){
+		return true;
+	}
 }

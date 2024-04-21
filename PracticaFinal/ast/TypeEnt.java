@@ -6,4 +6,6 @@ public class TypeEnt extends Type {
 	}
 	
 	public String toString() {return "lenInt";}
+
+	public boolean bind(Pila pila){return true;}
 }

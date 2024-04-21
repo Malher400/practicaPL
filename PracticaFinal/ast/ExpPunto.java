@@ -17,4 +17,8 @@ public class ExpPunto extends Exp {
 		return id.toString() + '.' + campo;
 	}
 
+	public boolean bind(Pila pila){
+		return id.bind(pila);
+	}
+
 }
