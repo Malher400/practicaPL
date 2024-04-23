@@ -29,4 +29,11 @@ public class InsFor extends Ins {
 		str.append("\n}");
 		return str.toString();
 	}
+
+	public boolean bind(Pila pila) {
+		pila.abreBloque();
+		boolean b = dec.bind(pila) && e.bind(pila) && asig.bind(pila) && bloque.bind(pila);
+		pila.cierraBloque();
+		return b;
+	}
 }

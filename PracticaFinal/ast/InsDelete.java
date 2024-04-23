@@ -13,4 +13,8 @@ public class InsDelete extends Ins {
 	public String toString() {
 		return " delete " + e.toString() + ";";
 	}
+
+	public boolean bind(Pila pila) {
+		return e.bind(pila);
+	}
 }

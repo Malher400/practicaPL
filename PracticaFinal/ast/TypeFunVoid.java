@@ -27,13 +27,12 @@ public class TypeFunVoid extends Type {
         return str.toString();
     }
 
-    public boolean bind(Pila pila){
-        boolean b = tipo.bind(pila);
+    public boolean bind(Pila pila) {
+        boolean b = true;
         pila.abreBloque();
-        for (Dec d : listaArgs){
+        for (Dec d : listaArgs) {
             b = d.bind(pila) && b;
         }
         pila.cierraBloque();
     }
-}
 }

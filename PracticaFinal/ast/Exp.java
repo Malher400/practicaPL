@@ -4,19 +4,29 @@ public abstract class Exp implements ASTNode {
     protected Type tipo;
     protected KindExp tipoExp;
     protected int fila;
-	protected int columna;
+    protected int columna;
 
-    public NodeKind nodeKind() {return NodeKind.EXPRESSION;}
-    
-    public Type getTipo() {
-    	return tipo;
+    public NodeKind nodeKind() {
+        return NodeKind.EXPRESSION;
     }
 
-    public int getFila(){ return fila; }
-    public int getColumna() { return columna;}
+    public Type getTipo() {
+        return tipo;
+    }
 
-    public String toString() {return "";}
+    public int getFila() {
+        return fila;
+    }
 
-    public boolean bind(Pila pila){return true;}
+    public int getColumna() {
+        return columna;
+    }
+
+    public String toString() {
+        return "";
+    }
+
+    public boolean bind(Pila pila) {
+        return true;
+    }
 }
-

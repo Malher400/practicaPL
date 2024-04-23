@@ -4,7 +4,8 @@ public class TypeBool extends Type {
 	public TypeBool() {
 		this.tipoType = KindType.BOOL;
 	}
-	
-	public String toString() {return "boolShevik";}
-	public boolean bind(Pila pila){return true;}
+
+	public String toString() {
+		return "boolShevik";
+	}
 }

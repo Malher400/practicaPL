@@ -27,4 +27,18 @@ public class InsIf_Else extends Ins {
 		str.append("\n}");
 		return str.toString();
 	}
+
+	public boolean bind(Pila pila) {
+		boolean b = e.bind(pila);
+
+		pila.abreBloque();
+		b = b && bloqueIf.bind(pila);
+		pila.cierraBloque();
+
+		pila.abreBloque();
+		b = b && bloqueElse.bind(pila);
+		pila.cierraBloque();
+
+		return b;
+	}
 }

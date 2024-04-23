@@ -22,7 +22,11 @@ public class InsWhile extends Ins {
 		return str.toString();
 	}
 
-	public boolean bind(){
-		return true;
+	public boolean bind(Pila pila) {
+		pila.abreBloque();
+		boolean b = e.bind(pila) && bloque.bind(pila);
+		pila.cierraBloque();
+
+		return b;
 	}
 }

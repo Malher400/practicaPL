@@ -13,7 +13,8 @@ public class TypeArray extends Type {
 	public String toString() {
 		return "guevArray " + tipo.toString() + " [" + tam.toString() + ']';
 	}
-	public boolean bind(Pila pila){
-		return tipo.bind(pila);
+
+	public boolean bind(Pila pila) {
+		return tipo.bind(pila) && exp.bind(pila);
 	}
 }

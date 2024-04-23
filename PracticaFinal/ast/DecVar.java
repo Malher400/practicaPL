@@ -9,4 +9,9 @@ public class DecVar extends Dec {
 	public String toString() {
 		return "var " + tipo.toString() + " " + id.toString() + ";";
 	}
+
+	public boolean bind(Pila pila) {
+		pila.insertaId(id, this);
+		return tipo.bind(pila);
+	}
 }

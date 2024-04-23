@@ -13,4 +13,8 @@ public class InsCall extends Ins {
 	public String toString() {
 		return "call " + fun.toString() + ';';
 	}
+
+	public boolean bind(Pila pila) {
+		return fun.bind(pila);
+	}
 }

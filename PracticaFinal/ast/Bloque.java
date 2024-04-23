@@ -26,4 +26,15 @@ public class Bloque extends Ins {
 		}
 		return str.toString();
 	}
+
+	public boolean bind(Pila pila) {
+		boolean b = true;
+		for (Dec d : decs) {
+			b = b && d.bind(pila);
+		}
+		for (Ins i : ins) {
+			b = b && i.bind(pila);
+		}
+		return b;
+	}
 }

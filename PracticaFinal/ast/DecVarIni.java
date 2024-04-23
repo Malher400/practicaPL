@@ -11,4 +11,9 @@ public class DecVarIni extends DecVar {
 	public String toString() { // var lenInt x := 3
 		return "var " + tipo.toString() + " " + asig.toString();
 	}
+
+	public boolean bind(Pila pila) {
+		pila.insertaId(id, this);
+		return tipo.bind(pila) && asig.bind(pila);
+	}
 }

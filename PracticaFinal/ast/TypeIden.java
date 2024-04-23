@@ -14,5 +14,10 @@ public class TypeIden extends Type {
 		return id;
 	}
 
-	// sin bind?
+	public boolean bind(PilaSimbolos pila) {
+		if (pila.buscaId(id) != null)
+			return false;
+		else
+			return true;
+	}
 }

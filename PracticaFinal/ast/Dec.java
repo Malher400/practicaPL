@@ -41,4 +41,8 @@ public abstract class Dec implements ASTNode {
     public String toString() {
         return tipo.toString() + " " + id;
     }
+
+    public boolean bind(Pila pila) {
+        return true;
+    }
 }

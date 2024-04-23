@@ -20,4 +20,8 @@ public abstract class Ins implements ASTNode {
 	public int getColumna() {
 		return columna;
 	}
+
+	public boolean bind(Pila pila) {
+		return true;
+	}
 }
