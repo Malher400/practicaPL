@@ -24,4 +24,17 @@ public class DecStruct extends Dec {
         str.append('\n');
         return str.toString();
     }
+
+    public boolean bind(Pila pila) {
+        pila.insertaId(id, this);
+        pila.abreBloque();
+        boolean b = true;
+        for (Dec d : listaDs) {
+            pila.insertaId(d.getId(), d);
+            b = b && d.bind(pila);
+        }
+        pila.cierraBloque();
+
+        return b;
+    }
 }

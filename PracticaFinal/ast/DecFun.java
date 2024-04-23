@@ -38,4 +38,17 @@ public class DecFun extends Dec {
 		str.append("\n}");
 		return str.toString();
 	}
+
+	public boolean bind(Pila pila) {
+		pila.insertaId(id, this);
+		boolean b = returnType.bind(pila);
+		pila.abreBloque();
+		for (Dec a : args) {
+			b = b && a.bind(pila);
+		}
+		b = b && bloque.bind(pila) && e.bind(pila);
+		pila.cierraBloque();
+
+		return b;
+	}
 }

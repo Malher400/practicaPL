@@ -9,4 +9,11 @@ public class DecType extends Dec {
 	public String toString() {
 		return "type " + id + " := " + tipo.toString() + ';';
 	}
+
+	public boolean bind(Pila pila) {
+		boolean b = tipo.bind(pila);
+		if (b)
+			pila.insert(id.name(), this);
+		return b;
+	}
 }

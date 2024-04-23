@@ -28,4 +28,17 @@ public class DecFunVoid extends Dec {
         str.append("\n}");
         return str.toString();
     }
+
+    public boolean bind(Pila pila) {
+        pila.insertaId(id, this);
+        boolean b = true;
+        pila.abreBloque();
+        for (Dec a : args) {
+            b = b && a.bind(pila);
+        }
+        b = b && bloque.bind(pila);
+        pila.cierraBloque();
+
+        return b;
+    }
 }
