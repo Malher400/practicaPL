@@ -37,15 +37,15 @@ public class Program implements ASTNode {
         return str.toString();
     }
 
-    public boolean bind(Pila pila){
-        pila = new Pila();
+    public boolean bind(Pila pila) {
         boolean b = true;
-        // pila.add(); ???
-        for (Dec d : decs){
+        pila.abreBloque();
+        for (Dec d : decs) {
             b = d.bind(pila) && b;
         }
         b = main.bind(pila) && b;
-        // pila.remove(); ???
+        pila.cierraBloque();
+
         return b;
     }
 
