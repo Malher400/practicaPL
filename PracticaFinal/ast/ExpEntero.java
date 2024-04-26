@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpEntero extends Exp {
 
    String id;
@@ -13,6 +15,12 @@ public class ExpEntero extends Exp {
 
    public String toString() {
       return id;
+   }
+
+   public void type() throws TypeException {
+      tipo = new TypeEnt();
+      designador = false;
+      tipo.type();
    }
 
 }

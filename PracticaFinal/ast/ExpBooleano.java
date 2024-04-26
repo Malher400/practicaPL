@@ -16,15 +16,9 @@ public class ExpBooleano extends Exp {
    }
 
    public void type() {
-      opnd1.type();
-      opnd2.type();
-      if (opnd1.getTipo().kindType() == KindType.BOOLEANO && opnd2.getTipo() == KindType.BOOLEANO) {
-         tipo = new TipoBooleano();
-         tipo.type();
-      } else // excepción;
-      {
-      }
-
+      tipo = new TypeBool();
+      designador = false;
+      tipo.type();
    }
 
 }

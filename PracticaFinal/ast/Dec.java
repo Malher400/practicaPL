@@ -17,18 +17,23 @@ public abstract class Dec implements ASTNode {
     public Type getTipo() {
         return tipo;
     }
+
     public KindDec getKindDec() {
         return tipoDec;
     }
+
     public String getId() {
         return id;
     }
+
     public int getFila() {
         return fila;
     }
+
     public int getColumna() {
         return columna;
     }
+
     public NodeKind nodeKind() {
         return NodeKind.DECLARATION;
     }
@@ -39,5 +44,9 @@ public abstract class Dec implements ASTNode {
 
     public boolean bind(Pila pila) {
         return true;
+    }
+
+    public void type() {
+        tipo.type();
     }
 }

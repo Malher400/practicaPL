@@ -16,7 +16,12 @@ public class ExpFlecha extends Exp {
 		return id.toString() + "->" + campo;
 	}
 
-	public boolean bind(Pila pila){
+	public boolean bind(Pila pila) {
 		return id.bind(pila);
+	}
+
+	public void type() throws TypeException {
+
+		id.type();
 	}
 }

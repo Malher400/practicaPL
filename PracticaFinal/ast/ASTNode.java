@@ -1,7 +1,8 @@
 package ast;
 
 public interface ASTNode {
-    // public void type(); // for the future
+    public void type();
+
     // public ?? generateCode() // for the future
     public boolean bind(Pila pila);
 

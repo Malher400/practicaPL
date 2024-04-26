@@ -17,6 +17,10 @@ public class Type implements ASTNode {
         return fila;
     }
 
+    public Type getTipo() {
+        return null;
+    }
+
     public int getColumna() {
         return columna;
     }
@@ -29,6 +33,8 @@ public class Type implements ASTNode {
         return true;
     }
 
-    // TYPE?
+    public void type() {
+
+    }
 
 }

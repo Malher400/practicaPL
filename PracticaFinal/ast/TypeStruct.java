@@ -26,19 +26,19 @@ public class TypeStruct extends Type {
         return str.toString();
     }
 
-    public boolean bind(Pila pila){
+    public boolean bind(Pila pila) {
         pila.abreBloque();
         boolean b = true;
-        for (Dec d : listaDs){
+        for (Dec d : listaDs) {
             b = d.bind(pila) && b;
         }
         pila.cierraBloque();
         return b;
     }
 
-    public void type(){
+    public void type() {
         for (Dec d : listaDs) {
-            dec.type();
+            d.type();
         }
     }
 }
