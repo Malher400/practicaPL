@@ -16,4 +16,9 @@ public class DecMain extends DecFunVoid {
         str.append("\n}");
         return str.toString();
     }
+
+    public void type(){
+        tipo.type();
+        bloque.type();
+    }
 }

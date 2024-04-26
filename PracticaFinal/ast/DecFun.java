@@ -7,6 +7,7 @@ public class DecFun extends Dec {
 	private ArrayList<Dec> args;
 	private Ins bloque;
 	private Exp e;
+	private ArrayList<Tipo> tiposArgs;
 
 	public DecFun(int fila, int columna, String id, Type tipo, Type returnType, ArrayList<Dec> args, Ins bloque,
 			Exp e) {
@@ -16,6 +17,7 @@ public class DecFun extends Dec {
 		this.args = args;
 		this.bloque = bloque;
 		this.e = e;
+		tiposArgs = new ArrayList<Tipo> ();
 	}
 
 	public String toString() {
@@ -49,6 +51,17 @@ public class DecFun extends Dec {
 		b = b && bloque.bind(pila) && e.bind(pila);
 		pila.cierraBloque();
 
+		return b;
+	}
+
+	public boolean type(){
+		boolean b = true;
+
+		for (Dec d : args){
+			b = b && args.type();
+			tiposArgs.add(d.getTipo());
+		}
+		b &= bloque.type();
 		return b;
 	}
 }

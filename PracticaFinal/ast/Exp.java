@@ -11,21 +11,18 @@ public abstract class Exp implements ASTNode {
     }
 
     public Type getTipo() {
+        if (tipo.getKindType() == KindType.REF) return tipo.getTipo();
         return tipo;
     }
-
     public int getFila() {
         return fila;
     }
-
     public int getColumna() {
         return columna;
     }
-
     public String toString() {
         return "";
     }
-
     public boolean bind(Pila pila) {
         return true;
     }

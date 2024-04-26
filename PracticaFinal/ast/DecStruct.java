@@ -37,4 +37,12 @@ public class DecStruct extends Dec {
 
         return b;
     }
+
+    public boolean type(){
+        boolean b = true;
+        for (Dec d : listaDs){
+            b &= d.type();
+        }
+        return b;
+    }
 }

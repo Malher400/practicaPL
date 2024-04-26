@@ -49,4 +49,11 @@ public class Program implements ASTNode {
         return b;
     }
 
+    public void type(){
+        for (Dec d : decs){
+            d.type();
+        }
+        main.type();
+    }
+
 }

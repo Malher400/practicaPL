@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class DecFunVoid extends Dec {
     protected ArrayList<Dec> args;
     protected Ins bloque;
+    protected ArrayList<Tipo> tiposArgs;
 
     public DecFunVoid(int fila, int columna, String id, Type tipo, ArrayList<Dec> args, Ins bloque) {
         super(fila, columna, tipo, id);
@@ -41,4 +42,15 @@ public class DecFunVoid extends Dec {
 
         return b;
     }
+
+    public boolean type(){
+		boolean b = true;
+
+		for (Dec d : args){
+			b = b && args.type();
+			tiposArgs.add(d.getTipo());
+		}
+		b &= bloque.type();
+		return b;
+	}
 }

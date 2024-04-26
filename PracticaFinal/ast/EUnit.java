@@ -19,4 +19,8 @@ public abstract class EUnit extends Exp {
 	public boolean bind(Pila pila){
 		return opnd.bind(pila);
 	}
+
+	public boolean type(){
+		return opnd.type();
+	}
 }

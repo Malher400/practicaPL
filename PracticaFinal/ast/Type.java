@@ -29,4 +29,6 @@ public class Type implements ASTNode {
         return true;
     }
 
+    // TYPE?
+
 }

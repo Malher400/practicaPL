@@ -16,10 +16,14 @@ public class Main {
 
 		if (!programa.bind(new Pila()))
 			System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables");
-		try {
-			System.out.println(constructorast.parse().value);
-		} catch (Exception e) {
-			System.out.println("Something went wrong with the parsing...");
-		}
+		else{
+			//if (!programa.type()) System.out.println("Error, el tipado falla.");
+			//else{
+				try {
+					System.out.println(constructorast.parse().value);
+				} catch (Exception e) {
+					System.out.println("Something went wrong with the parsing...");
+				}
+			//}
 	}
 }
