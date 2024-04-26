@@ -13,7 +13,7 @@ public class DecType extends Dec {
 	public boolean bind(Pila pila) {
 		boolean b = tipo.bind(pila);
 		if (b)
-			pila.insert(id.name(), this);
+			pila.insertaId(id, this);
 		return b;
 	}
 }

@@ -1,18 +1,3 @@
-var const lenInt c := 3;
-type booleano := boolShevik;
-fun lenInt suma(lenInt x, lenInt # y) {
-	var lenInt z := x + y;
-	return z;
-}
-stalinTruct tReserva {
-	var lenInt dia;
-	var lenInt mes;
-	var guevArray lenInt[3*c + 1] actividad;
-	var guevArray guevArray lenInt[2][2] cositas;
-}
-fun void escribe(lenInt x)  {
-	write (x + 3);
-}
 main {
 	var lenInt x := 1;
 	var lenInt y;

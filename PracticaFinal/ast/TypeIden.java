@@ -14,7 +14,7 @@ public class TypeIden extends Type {
 		return id;
 	}
 
-	public boolean bind(PilaSimbolos pila) {
+	public boolean bind(Pila pila) {
 		if (pila.buscaId(id) != null)
 			return false;
 		else
