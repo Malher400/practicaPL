@@ -43,14 +43,11 @@ public class DecFunVoid extends Dec {
         return b;
     }
 
-    public boolean type(){
-		boolean b = true;
-
-		for (Dec d : args){
-			b = b && args.type();
-			tiposArgs.add(d.getTipo());
-		}
-		b &= bloque.type();
-		return b;
-	}
+    public void type() {
+        for (Dec d : args) {
+            args.type();
+            tiposArgs.add(d.getTipo());
+        }
+        bloque.type();
+    }
 }
