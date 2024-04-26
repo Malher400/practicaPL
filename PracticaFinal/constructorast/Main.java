@@ -25,5 +25,6 @@ public class Main {
 					System.out.println("Something went wrong with the parsing...");
 				}
 			//}
+		}
 	}
 }

@@ -23,7 +23,8 @@ public class ExpPunto extends Exp {
 
 	public boolean type(){
 		boolean b = id.type();
-		if (id.getTipo() == KindType.IDEN)
+		//if (id.getTipo() == KindType.IDEN)
+		return b;
 	}
 
 }

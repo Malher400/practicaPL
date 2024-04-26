@@ -1,11 +1,14 @@
 Construir el analizador lexico (siempre que se cambie algo del .l):
-Ejecutar desde la carpeta alex: java -cp jflex.jar jflex.Main ALexico.l
+Ejecutar desde la carpeta alex: 
+java -cp jflex.jar jflex.Main ALexico.l
 
 Construir el analizador sintactico (siempre que se cambie algo del .cup): 
-Ejecutar desde la carpeta constructorast: java -cp cup.jar java_cup.Main -parser ConstructorASTExp -symbols ClaseLexica -nopositions ConstructorAST.cup
+Ejecutar desde la carpeta constructorast: 
+java -cp cup.jar java_cup.Main -parser ConstructorASTExp -symbols ClaseLexica -nopositions ConstructorAST.cup
 
 Compilar el analizador sintactico:
-Ejecutar desde PracticaFinal: javac -cp "cup.jar" */*.java
+Ejecutar desde PracticaFinal: 
+javac -cp "cup.jar" */*.java
 
 Probar el codigo sobre el fichero input.txt:
 java -cp ".:cup.jar" constructorast.Main input.txt
