@@ -17,14 +17,13 @@ public class ExpPunto extends Exp {
 		return id.toString() + '.' + campo;
 	}
 
-	public boolean bind(Pila pila){
+	public boolean bind(Pila pila) {
 		return id.bind(pila);
 	}
 
-	public boolean type(){
-		boolean b = id.type();
-		//if (id.getTipo() == KindType.IDEN)
-		return b;
+	public void type() {
+		id.type();
+		// if (id.getTipo() == KindType.IDEN)
 	}
 
 }

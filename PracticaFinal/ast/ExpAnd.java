@@ -9,13 +9,12 @@ public class ExpAnd extends EBin {
       return '(' + opnd1.toString() + " && " + opnd2.toString() + ')';
    }
 
-   public boolean type() {
-		boolean b = opnd1.type() && opnd2.type();
+   public void type() {
+		opnd1.type() && opnd2.type();
 		if (opnd1.getTipo().kindType() == KindType.ENT && opnd2.getTipo() == KindType.ENT) { 
 				tipo = new TipoBooleano();
 				tipo.type();
-		} else return false;
-      return b;
+		} else {}
 	}
 
 }

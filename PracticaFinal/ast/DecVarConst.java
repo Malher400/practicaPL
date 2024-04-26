@@ -18,8 +18,8 @@ public class DecVarConst extends DecVar {
 		return tipo.bind(pila) && asig.bind(pila);
 	}
 
-	public boolean type(){
-		boolean b = true;
-		b = b && tipo.type() && asig.type();
+	public void type() {
+		tipo.type();
+		asig.type();
 	}
 }

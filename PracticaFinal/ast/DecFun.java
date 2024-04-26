@@ -17,7 +17,7 @@ public class DecFun extends Dec {
 		this.args = args;
 		this.bloque = bloque;
 		this.e = e;
-		tiposArgs = new ArrayList<Tipo> ();
+		tiposArgs = new ArrayList<Tipo>();
 	}
 
 	public String toString() {
@@ -54,14 +54,11 @@ public class DecFun extends Dec {
 		return b;
 	}
 
-	public boolean type(){
-		boolean b = true;
-
-		for (Dec d : args){
-			b = b && args.type();
+	public void type() {
+		for (Dec d : args) {
+			args.type();
 			tiposArgs.add(d.getTipo());
 		}
-		b &= bloque.type();
-		return b;
+		bloque.type();
 	}
 }
