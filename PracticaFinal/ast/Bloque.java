@@ -37,4 +37,15 @@ public class Bloque extends Ins {
 		}
 		return b;
 	}
+
+	public boolean type(){
+		boolean b = true;
+		for (Dec d : decs){
+			b &= d.type();
+		}
+		for (Ins i : ins){
+			b &= i.type();
+		}
+		return b;
+	}
 }

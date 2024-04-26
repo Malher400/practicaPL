@@ -16,4 +16,9 @@ public class DecVarIni extends DecVar {
 		pila.insertaId(id, this);
 		return tipo.bind(pila) && asig.bind(pila);
 	}
+
+	public boolean type(){
+		boolean b = true;
+		b = b && tipo.type() && asig.type();
+	}
 }

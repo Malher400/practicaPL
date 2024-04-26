@@ -21,4 +21,9 @@ public class ExpPunto extends Exp {
 		return id.bind(pila);
 	}
 
+	public boolean type(){
+		boolean b = id.type();
+		if (id.getTipo() == KindType.IDEN)
+	}
+
 }

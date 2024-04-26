@@ -35,4 +35,10 @@ public class TypeStruct extends Type {
         pila.cierraBloque();
         return b;
     }
+
+    public void type(){
+        for (Dec d : listaDs) {
+            dec.type();
+        }
+    }
 }

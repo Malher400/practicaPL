@@ -15,4 +15,13 @@ public class ExpBooleano extends Exp {
       return id;
    }
 
+   public boolean type() {
+		boolean b = opnd1.type() && opnd2.type();
+		if (opnd1.getTipo().kindType() == KindType.BOOLEANO && opnd2.getTipo() == KindType.BOOLEANO) { 
+				tipo = new TipoBooleano();
+				tipo.type();
+		} else return false;
+      return b;
+	}
+
 }
