@@ -23,7 +23,7 @@ public class Pila {
     }
 
     public void insertaId(String id, Dec dec) {
-        pila.get(size - 1).put(iden, dec);
+        pila.get(size - 1).put(id, dec);
     }
 
     public Dec buscaId(String id) {

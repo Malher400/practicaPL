@@ -16,6 +16,6 @@ public class InsAsig extends Ins {
 	}
 
 	public boolean bind(Pila pila) {
-		return e1.bind() && e2.bind();
+		return e1.bind(pila) && e2.bind(pila);
 	}
 }

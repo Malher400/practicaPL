@@ -15,6 +15,6 @@ public class TypeArray extends Type {
 	}
 
 	public boolean bind(Pila pila) {
-		return tipo.bind(pila) && exp.bind(pila);
+		return tipo.bind(pila) && tam.bind(pila);
 	}
 }

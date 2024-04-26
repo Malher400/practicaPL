@@ -34,5 +34,7 @@ public class TypeFunVoid extends Type {
             b = d.bind(pila) && b;
         }
         pila.cierraBloque();
+
+        return b;
     }
 }
