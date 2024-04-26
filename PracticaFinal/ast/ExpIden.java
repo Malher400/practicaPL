@@ -2,7 +2,8 @@ package ast;
 
 public class ExpIden extends Exp {
 
-   String id;
+   private String id;
+   private Dec dec;
 
    public ExpIden(int fila, int columna, String iden) {
       this.fila = fila;
@@ -15,6 +16,12 @@ public class ExpIden extends Exp {
       return id;
    }
 
-   // bind?
+   public boolean bind(Pila pila) {
+      dec = pila.buscaId(id);
+      if (dec.equals(null))
+         return false;
+      else
+         return true;
+   }
 
 }

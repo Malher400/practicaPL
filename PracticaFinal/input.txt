@@ -4,7 +4,7 @@ main {
 	var booleano b := true;
 	y := 1;
 	forLetariat (var lenInt i := 0; i < 5; i := i + 1;) {
-		call escribe(suma(x * y, tReserva.actividad[3 + c]));
+		x := x + 3;
 	}
 	trotskIf (x > 6) {}
 	fidElseCastro {}
