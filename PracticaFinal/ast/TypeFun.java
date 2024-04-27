@@ -30,10 +30,16 @@ public class TypeFun extends Type {
         return str.toString();
     }
 
-    public boolean bind(Pila pila){
+    public Tipo getTipo() {
+        if (tipo.kindType() == KindType.REF)
+            return tipo.getTipo();
+        return tipo;
+    }
+
+    public boolean bind(Pila pila) {
         boolean b = tipo.bind(pila);
         pila.abreBloque();
-        for (Dec d : listaArgs){
+        for (Dec d : listaArgs) {
             b = d.bind(pila) && b;
         }
         pila.cierraBloque();

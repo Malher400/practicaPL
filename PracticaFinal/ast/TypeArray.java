@@ -14,6 +14,12 @@ public class TypeArray extends Type {
 		return "guevArray " + tipo.toString() + " [" + tam.toString() + ']';
 	}
 
+	public Tipo getTipo() {
+		if (tipo.kindType() == KindType.REF)
+			return tipo.getTipo();
+		return tipo;
+	}
+
 	public boolean bind(Pila pila) {
 		return tipo.bind(pila) && tam.bind(pila);
 	}

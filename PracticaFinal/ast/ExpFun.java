@@ -28,11 +28,35 @@ public class ExpFun extends Exp {
         return str.toString();
     }
 
-    public boolean bind(Pila pila){
+    public boolean bind(Pila pila) {
         boolean b = id.bind(pila);
-        for (Exp p : params){
+        for (Exp p : params) {
             b = p.bind(pila) && b;
         }
         return b;
+    }
+
+    public void type() throws TypeException {
+        id.type();
+        if (id.getTipo().kindType() != KindType.FUN)
+            throw new TypeException(fila, columna, "La expresion " + id.toString() + " no tiene tipo función");
+        for (int i = 0; i < params.size(); ++i) {
+            params.get(i).type();
+            if (id.getTipo().getDec(i).getTipo().kindType() == KindType.REF) {
+                if (!params.get(i).getDesignador())
+                    throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
+                            "El parametro " + params.get(i).toString() + " no es un designador.");
+                if (!params.get(i).getTipo().equals(id.getTipo().getDec(i).getTipo().getTipo()))
+                    throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
+                            "El parametro " + params.get(i).toString() + " no tiene el mismo tipo que el declarado.");
+            } else {
+                if (!params.get(i).getTipo().equals(id.getTipo().getDec(i).getTipo()))
+                    throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
+                            "El parametro " + params.get(i).toString() + " no tiene el mismo tipo que el declarado.");
+            }
+
+        }
+        tipo = id.getTipo().getTipo();
+        designador = false;
     }
 }
