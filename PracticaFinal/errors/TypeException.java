@@ -1,3 +1,7 @@
+package errors;
+
+import java.util.ArrayList;
+
 public class TypeException extends Exception {
     private ArrayList<TypeException> errors;
     private int fila;

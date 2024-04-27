@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public abstract class EBin extends Exp {
    protected Exp opnd1;
    protected Exp opnd2;
