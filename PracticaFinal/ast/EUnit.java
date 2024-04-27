@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public abstract class EUnit extends Exp {
 	protected Exp opnd;
 
@@ -22,7 +24,8 @@ public abstract class EUnit extends Exp {
 		return opnd.bind(pila);
 	}
 
-	public void type() {
+	public void type() throws TypeException {
 		opnd.type();
+		designador = false;
 	}
 }
