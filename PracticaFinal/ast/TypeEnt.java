@@ -8,4 +8,12 @@ public class TypeEnt extends Type {
 	public String toString() {
 		return "lenInt";
 	}
+
+	public boolean isAssignable() {
+		return true;
+	}
+
+	public boolean isWritable() {
+		return true;
+	}
 }

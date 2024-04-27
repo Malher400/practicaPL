@@ -12,7 +12,15 @@ public class TypeRef extends Type {
         return tipo.toString();
     }
 
-    public boolean bind(Pila pila){
+    public boolean bind(Pila pila) {
         return tipo.bind(pila);
+    }
+
+    public boolean isAssignable() {
+        return tipo.isAssignable();
+    }
+
+    public boolean isWritable() {
+        return tipo.isWritable();
     }
 }

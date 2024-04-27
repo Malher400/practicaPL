@@ -12,7 +12,11 @@ public class TypePointer extends Type {
 		return "pointer " + tipo.toString();
 	}
 
-	public boolean bind(Pila pila){
+	public boolean bind(Pila pila) {
 		return tipo.bind(pila);
+	}
+
+	public boolean isAssignable() {
+		return true;
 	}
 }

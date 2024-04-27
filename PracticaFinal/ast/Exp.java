@@ -31,6 +31,10 @@ public abstract class Exp implements ASTNode {
         return designador;
     }
 
+    public Dec getDec(String id) throws TypeException {
+        return tipo.getDec(id);
+    }
+
     public String toString() {
         return "";
     }

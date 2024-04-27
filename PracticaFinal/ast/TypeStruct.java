@@ -36,6 +36,10 @@ public class TypeStruct extends Type {
         return b;
     }
 
+    public Dec getDec(String iden) throws TypeException {
+        return dicDs.get(iden);
+    }
+
     public void type() {
         for (Dec d : listaDs) {
             d.type();

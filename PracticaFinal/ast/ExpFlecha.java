@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpFlecha extends Exp {
 	private Exp id;
 	private String campo;
@@ -21,7 +23,17 @@ public class ExpFlecha extends Exp {
 	}
 
 	public void type() throws TypeException {
-
 		id.type();
+		if (id.getTipo().kindType() == KindType.PUNTERO) {
+			if (id.getTipo().getTipo().kindType() == KindType.IDEN) {
+				if (id.getTipo().getTipo().getTipo().kindType() == KindType.STRUCT) {
+					tipo = id.getDec(campo).getTipo();
+					designador = id.getDesignador();
+				} else
+					throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo puntero");
+			} else
+				throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo iden");
+		} else
+			throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo struct");
 	}
 }

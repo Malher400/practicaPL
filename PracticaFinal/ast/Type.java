@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class Type implements ASTNode {
     protected KindType tipoType;
     protected int fila;
@@ -25,6 +27,18 @@ public class Type implements ASTNode {
         return columna;
     }
 
+    public Dec getDec(String id) throws TypeException {
+        throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion");
+    }
+
+    public boolean isAssignable() {
+        return false;
+    }
+
+    public boolean isWritable() {
+        return false;
+    }
+
     public String getId() {
         return tipoType.toString();
     }
@@ -33,7 +47,7 @@ public class Type implements ASTNode {
         return true;
     }
 
-    public void type() {
+    public void type() throws TypeException {
 
     }
 

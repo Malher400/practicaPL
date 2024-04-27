@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpAnd extends EBin {
    public ExpAnd(int fila, int columna, Exp op1, Exp op2) {
       super(fila, columna, KindExp.AND, op1, op2);
@@ -9,12 +11,15 @@ public class ExpAnd extends EBin {
       return '(' + opnd1.toString() + " && " + opnd2.toString() + ')';
    }
 
-   public void type() {
-		opnd1.type() && opnd2.type();
-		if (opnd1.getTipo().kindType() == KindType.ENT && opnd2.getTipo() == KindType.ENT) { 
-				tipo = new TipoBooleano();
-				tipo.type();
-		} else {}
-	}
-
+   public void type() throws TypeException {
+      super.type();
+      if (opnd1.getTipo().kindType() == KindType.BOOL) {
+         if (opnd2.getTipo().kindType() == KindType.BOOL) {
+            tipo = new TypeBool();
+            tipo.type();
+         } else
+            throw new TypeException(opnd2.getFila(), opnd2.getColumna(), opnd2.toString() + "no es de tipo booleano");
+      } else
+         throw new TypeException(opnd1.getFila(), opnd1.getColumna(), opnd1.toString() + "no es de tipo booleano");
+   }
 }
