@@ -14,7 +14,7 @@ public class ExpNeg extends EUnit {
 
    public void type() throws TypeException {
       super.type();
-      if (opnd.getTipo().kindType() == KindType.ENT) {
+      if (opnd.getTipo().getKindType() == KindType.ENT) {
          tipo = new TypeEnt();
          tipo.type();
       } else

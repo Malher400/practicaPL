@@ -14,7 +14,7 @@ public class ExpNot extends EUnit {
 
     public void type() throws TypeException {
         super.type();
-        if (opnd.getTipo().kindType() == KindType.BOOL) {
+        if (opnd.getTipo().getKindType() == KindType.BOOL) {
             tipo = new TypeBool();
             tipo.type();
         } else

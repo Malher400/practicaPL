@@ -22,7 +22,7 @@ public class InsDelete extends Ins {
 
 	public void type() throws TypeException {
 		e.type();
-		if (e.getTipo().kindType() != KindType.PUNTERO)
+		if (e.getTipo().getKindType() != KindType.POINTER)
 			throw new TypeException(fila, columna, "la expresion " + e.toString() + " no es de tipo puntero");
 	}
 }

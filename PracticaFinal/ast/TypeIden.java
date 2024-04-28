@@ -19,7 +19,7 @@ public class TypeIden extends Type {
 	}
 
 	public Type getTipo() {
-		if (tipo.kindType() == KindType.REF)
+		if (tipo.getKindType() == KindType.REF)
 			return tipo.getTipo();
 		return tipo;
 	}

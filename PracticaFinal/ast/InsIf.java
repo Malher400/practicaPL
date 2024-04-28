@@ -34,7 +34,7 @@ public class InsIf extends Ins {
 
 	public void type() throws TypeException {
 		e.type();
-		if (e.getTipo().kindType() == KindType.BOOL) {
+		if (e.getTipo().getKindType() == KindType.BOOL) {
 			bloque.type();
 		} else
 			throw new TypeException(e.getFila(), e.getColumna(),

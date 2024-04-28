@@ -21,6 +21,6 @@ public class DecVarIni extends DecVar {
 
 	public void type() throws TypeException {
 		tipo.type();
-		asign.type();
+		asig.type();
 	}
 }

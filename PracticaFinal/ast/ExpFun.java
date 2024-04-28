@@ -39,11 +39,11 @@ public class ExpFun extends Exp {
 
     public void type() throws TypeException {
         id.type();
-        if (id.getTipo().kindType() != KindType.FUN)
+        if (id.getTipo().getKindType() != KindType.FUN)
             throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo función");
         for (int i = 0; i < params.size(); ++i) {
             params.get(i).type();
-            if (id.getTipo().getDec(i).getTipo().kindType() == KindType.REF) {
+            if (id.getTipo().getDec(i).getTipo().getKindType() == KindType.REF) {
                 if (!params.get(i).getDesignador())
                     throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
                             "El parametro " + params.get(i).toString() + " no es un designador.");

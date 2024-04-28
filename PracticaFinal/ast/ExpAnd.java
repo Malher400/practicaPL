@@ -13,8 +13,8 @@ public class ExpAnd extends EBin {
 
    public void type() throws TypeException {
       super.type();
-      if (opnd1.getTipo().kindType() == KindType.BOOL) {
-         if (opnd2.getTipo().kindType() == KindType.BOOL) {
+      if (opnd1.getTipo().getKindType() == KindType.BOOL) {
+         if (opnd2.getTipo().getKindType() == KindType.BOOL) {
             tipo = new TypeBool();
             tipo.type();
          } else

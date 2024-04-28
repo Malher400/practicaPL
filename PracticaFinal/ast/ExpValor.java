@@ -19,7 +19,7 @@ public class ExpValor extends EUnit {
 
    public void type() throws TypeException {
       super.type();
-      if (opnd.getTipo().kindType() != KindType.PUNTERO)
+      if (opnd.getTipo().getKindType() != KindType.POINTER)
          throw new TypeException(opnd.getFila(), opnd.getColumna(),
                "El operando " + opnd.toString() + " no es de tipo puntero");
       tipo = opnd.getTipo().getTipo();

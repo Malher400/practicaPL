@@ -16,7 +16,7 @@ public class ExpRef extends EUnit {
         super.type();
         if (!opnd.getDesignador())
             throw new TypeException(opnd.getFila(), opnd.getColumna(), "El operando no es designable");
-        tipo = new TipoPuntero(opnd.getTipo());
+        tipo = new TypePointer(opnd.getTipo());
         tipo.type();
     }
 

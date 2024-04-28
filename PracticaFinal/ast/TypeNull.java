@@ -1,8 +1,8 @@
 package ast;
 
-public class TypeNull extends Tipo {
+public class TypeNull extends Type {
     public TypeNull() {
-        this.consTipo = KindType.NULL;
+        this.tipoType = KindType.NULL;
     }
 
     public String toString() {

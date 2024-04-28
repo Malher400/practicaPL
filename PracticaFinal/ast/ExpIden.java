@@ -28,7 +28,7 @@ public class ExpIden extends Exp {
 
    public void type() throws TypeException {
       tipo = dec.getTipo();
-      if (dec.kindDec() == KindDec.VARIABLE)
+      if (dec.getKindDec() == KindDec.VARIABLE)
          designador = true;
       else
          designador = false;

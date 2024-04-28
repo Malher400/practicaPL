@@ -14,8 +14,8 @@ public class ExpCorchete extends EBin {
 
     public void type() throws TypeException {
         super.type();
-        if (opnd1.getTipo().kindType() == KindType.ARRAY) {
-            if (opnd2.getTipo().kindType() == KindType.ENT) {
+        if (opnd1.getTipo().getKindType() == KindType.ARRAY) {
+            if (opnd2.getTipo().getKindType() == KindType.ENT) {
                 tipo = opnd1.getTipo().getTipo();
                 designador = opnd1.getDesignador();
             } else

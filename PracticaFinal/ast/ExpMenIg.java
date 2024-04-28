@@ -14,8 +14,8 @@ public class ExpMenIg extends EBin {
 
    public void type() throws TypeException {
       super.type();
-      if (opnd1.getTipo().kindType() == KindType.ENT) {
-         if (opnd2.getTipo().kindType() == KindType.ENT) {
+      if (opnd1.getTipo().getKindType() == KindType.ENT) {
+         if (opnd2.getTipo().getKindType() == KindType.ENT) {
             tipo = new TypeBool();
             tipo.type();
          } else

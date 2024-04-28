@@ -24,9 +24,9 @@ public class ExpFlecha extends Exp {
 
 	public void type() throws TypeException {
 		id.type();
-		if (id.getTipo().kindType() == KindType.POINTER) {
-			if (id.getTipo().getTipo().kindType() == KindType.IDEN) {
-				if (id.getTipo().getTipo().getTipo().kindType() == KindType.STRUCT) {
+		if (id.getTipo().getKindType() == KindType.POINTER) {
+			if (id.getTipo().getTipo().getKindType() == KindType.IDEN) {
+				if (id.getTipo().getTipo().getTipo().getKindType() == KindType.STRUCT) {
 					if (id.getDec(campo) != null) {
 						tipo = id.getDec(campo).getTipo();
 						designador = id.getDesignador();

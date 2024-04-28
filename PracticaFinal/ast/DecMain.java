@@ -2,6 +2,8 @@ package ast;
 
 import java.util.ArrayList;
 
+import errors.TypeException;
+
 public class DecMain extends DecFunVoid {
 
     public DecMain(int fila, int columna, String id, Type tipo, ArrayList<Dec> args, Ins bloque) {
@@ -17,7 +19,7 @@ public class DecMain extends DecFunVoid {
         return str.toString();
     }
 
-    public void type(){
+    public void type() throws TypeException{
         tipo.type();
         bloque.type();
     }

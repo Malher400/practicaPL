@@ -18,7 +18,7 @@ public class ExpNew extends Exp {
 
 	public void type() throws TypeException {
 		tipoRes.type();
-		tipo = new TipoPuntero(tipoRes);
+		tipo = new TypePointer(tipoRes);
 		tipo.type();
 		designador = false;
 	}

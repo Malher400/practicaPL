@@ -48,7 +48,7 @@ public class Bloque extends Ins {
 				for (TypeException tEx : te.getErrors()) {
 					errores.add(tEx);
 				}
-				if (te.getExceptions().size() == 0)
+				if (te.getErrors().size() == 0)
 					errores.add(te);
 			}
 		}

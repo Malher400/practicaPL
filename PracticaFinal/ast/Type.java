@@ -29,13 +29,16 @@ public class Type implements ASTNode {
     }
 
     public Dec getDec(String id) throws TypeException {
-        throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion");
+        throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion.");
+    }
+    public Dec getDec(int id) throws TypeException{
+        throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion.");
     }
 
     public boolean equals(Type otro) throws TypeException {
         if (otro == null)
             return false;
-        return tipoType == otro.kindType();
+        return tipoType == otro.getKindType();
     }
 
     public boolean isAssignable() {

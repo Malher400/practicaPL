@@ -17,13 +17,13 @@ public class TypeArray extends Type {
 	}
 
 	public Type getTipo() {
-		if (tipo.kindType() == KindType.REF)
+		if (tipo.getKindType() == KindType.REF)
 			return tipo.getTipo();
 		return tipo;
 	}
 
 	public void setSize() {
-		size = Integer.parseInt(num) * tipo.getSize();
+		size = Integer.parseInt(tam.toString()) * tipo.getSize();
 	}
 
 	public boolean bind(Pila pila) {

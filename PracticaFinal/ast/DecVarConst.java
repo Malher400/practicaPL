@@ -20,7 +20,7 @@ public class DecVarConst extends DecVar {
 		return tipo.bind(pila) && asig.bind(pila);
 	}
 
-	public void type() {
+	public void type() throws TypeException {
 		tipo.type();
 		asig.type();
 	}

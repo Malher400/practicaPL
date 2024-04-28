@@ -6,12 +6,16 @@ import errors.TypeException;
 
 public class TypeFun extends Type {
     private ArrayList<Dec> listaArgs;
+    private HashMap<String, Dec> mapArgs;
+
     private Type tipo;
 
     public TypeFun(Type tipo, ArrayList<Dec> listaArgs) {
         this.tipoType = KindType.FUN;
         this.tipo = tipo;
         this.listaArgs = listaArgs;
+        this.mapArgs = new HashMap<String, Dec>();
+        for (Dec d : listaArgs) mapArgs.put(d.getId(), d);
     }
 
     public String toString() {
@@ -28,7 +32,7 @@ public class TypeFun extends Type {
     }
 
     public Type getTipo() {
-        if (tipo.kindType() == KindType.REF)
+        if (tipo.getKindType() == KindType.REF)
             return tipo.getTipo();
         return tipo;
     }
@@ -36,6 +40,10 @@ public class TypeFun extends Type {
     public Dec getDec(int i) throws TypeException {
         return listaArgs.get(i);
     }
+
+    public Dec getDec(String iden) throws TypeException {
+		return mapArgs.get(iden);
+	}
 
     public void setSize() {
         size = 0;

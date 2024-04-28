@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpBooleano extends Exp {
 
    String id;
@@ -15,7 +17,7 @@ public class ExpBooleano extends Exp {
       return id;
    }
 
-   public void type() {
+   public void type() throws TypeException {
       tipo = new TypeBool();
       tipo.type();
       designador = false;

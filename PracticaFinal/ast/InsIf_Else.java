@@ -46,11 +46,11 @@ public class InsIf_Else extends Ins {
 
 	public void type() throws TypeException {
 		e.type();
-		if (e.getTipo().kindType() == KindType.BOOL) {
+		if (e.getTipo().getKindType() == KindType.BOOL) {
 			bloqueIf.type();
 			bloqueElse.type();
-			if (bloqueElse.kindIns() != KindIns.ELSE)
-				throw new TypeException(i1.getFila(), i1.getColumna(),
+			if (bloqueElse.kindIns() != KindIns.IF_ELSE)
+				throw new TypeException(bloqueIf.getFila(), bloqueIf.getColumna(),
 						"El tipo de instruccion no corresponde con un bloque If_Else");
 		} else
 			throw new TypeException(e.getFila(), e.getColumna(),

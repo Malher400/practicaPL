@@ -14,7 +14,7 @@ public class ExpIgual extends EBin {
 
    public void type() throws TypeException {
       super.type();
-      if (opnd1.getTipo().kindType() == opnd2.getTipo().kindType() && opnd1.getTipo().isAssignable()
+      if (opnd1.getTipo().getKindType() == opnd2.getTipo().getKindType() && opnd1.getTipo().isAssignable()
             && opnd2.getTipo().isAssignable()) {
          tipo = new TypeBool();
          tipo.type();

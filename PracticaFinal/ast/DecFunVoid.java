@@ -6,7 +6,7 @@ import errors.TypeException;
 public class DecFunVoid extends Dec {
     protected ArrayList<Dec> args;
     protected Ins bloque;
-    protected ArrayList<Tipo> tiposArgs;
+    protected ArrayList<Type> tiposArgs;
 
     public DecFunVoid(int fila, int columna, String id, Type tipo, ArrayList<Dec> args, Ins bloque) {
         super(fila, columna, tipo, id);
@@ -44,7 +44,7 @@ public class DecFunVoid extends Dec {
         return b;
     }
 
-    public void type() {
+    public void type() throws TypeException {
         for (Dec a : args)
             a.type();
         bloque.type();
