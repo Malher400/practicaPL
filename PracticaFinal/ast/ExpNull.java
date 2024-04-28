@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpNull extends Exp {
 
    public ExpNull() {
@@ -7,7 +9,13 @@ public class ExpNull extends Exp {
    }
 
    public String toString() {
-      return "Null";
+      return "null";
+   }
+
+   public void type() throws TypeException {
+      tipo = new TypePointer(new TypeNull());
+      tipo.type();
+      designador = false;
    }
 
 }

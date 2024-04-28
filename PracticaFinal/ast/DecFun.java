@@ -7,7 +7,6 @@ public class DecFun extends Dec {
 	private ArrayList<Dec> args;
 	private Ins bloque;
 	private Exp e;
-	private ArrayList<Tipo> tiposArgs;
 
 	public DecFun(int fila, int columna, String id, Type tipo, Type returnType, ArrayList<Dec> args, Ins bloque,
 			Exp e) {
@@ -17,7 +16,6 @@ public class DecFun extends Dec {
 		this.args = args;
 		this.bloque = bloque;
 		this.e = e;
-		tiposArgs = new ArrayList<Tipo>();
 	}
 
 	public String toString() {

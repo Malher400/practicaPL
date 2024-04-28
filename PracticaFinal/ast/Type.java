@@ -6,6 +6,7 @@ public class Type implements ASTNode {
     protected KindType tipoType;
     protected int fila;
     protected int columna;
+    protected int size;
 
     public NodeKind nodeKind() {
         return NodeKind.TYPE;
@@ -31,6 +32,12 @@ public class Type implements ASTNode {
         throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion");
     }
 
+    public boolean equals(Type otro) throws TypeException {
+        if (otro == null)
+            return false;
+        return tipoType == otro.kindType();
+    }
+
     public boolean isAssignable() {
         return false;
     }
@@ -43,12 +50,20 @@ public class Type implements ASTNode {
         return tipoType.toString();
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize() {
+        size = 4;
+    }
+
     public boolean bind(Pila pila) {
         return true;
     }
 
-    public void type() throws TypeException {
-
+    public void type() throws TypeException { // Esto luego servira para ir reservando el espacio que ocupa cada cosa
+        setSize();
     }
 
 }

@@ -1,14 +1,16 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpIden extends Exp {
 
    private String id;
    private Dec dec;
 
-   public ExpIden(int fila, int columna, String iden) {
+   public ExpIden(int fila, int columna, String id) {
       this.fila = fila;
       this.columna = columna;
-      this.id = iden;
+      this.id = id;
       this.tipoExp = KindExp.IDEN;
    }
 
@@ -22,6 +24,14 @@ public class ExpIden extends Exp {
          return false;
       else
          return true;
+   }
+
+   public void type() throws TypeException {
+      tipo = dec.getTipo();
+      if (dec.kindDec() == KindDec.VARIABLE)
+         designador = true;
+      else
+         designador = false;
    }
 
 }

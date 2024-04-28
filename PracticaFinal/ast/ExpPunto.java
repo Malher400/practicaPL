@@ -1,5 +1,6 @@
-
 package ast;
+
+import errors.TypeException;
 
 public class ExpPunto extends Exp {
 	private Exp id;
@@ -21,9 +22,20 @@ public class ExpPunto extends Exp {
 		return id.bind(pila);
 	}
 
-	public void type() {
+	public void type() throws TypeException {
 		id.type();
-		// if (id.getTipo() == KindType.IDEN)
+		if (id.getTipo().kindType() == KindType.IDEN) {
+			if (id.getTipo().getTipo().kindType() == KindType.STRUCT) {
+				if (id.getDec(campo) != null) {
+					tipo = id.getDec(campo).getTipo();
+					designador = id.getDesignador();
+				} else
+					throw new TypeException(fila, columna, "No existe un campo " + campo + " dentro de este struct");
+			} else
+				throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo struct");
+		} else
+			throw new TypeException(fila, columna,
+					"La expresion " + id.toString() + " no es de tipo iden");
 	}
 
 }

@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class TypePointer extends Type {
 	private Type tipo;
 
@@ -12,7 +14,7 @@ public class TypePointer extends Type {
 		return "pointer " + tipo.toString();
 	}
 
-	public Tipo getTipo() {
+	public Type getTipo() {
 		if (tipo.kindType() == KindType.REF)
 			return tipo.getTipo();
 		return tipo;
@@ -20,6 +22,11 @@ public class TypePointer extends Type {
 
 	public boolean bind(Pila pila) {
 		return tipo.bind(pila);
+	}
+
+	public void type() throws TypeException {
+		tipo.type();
+		setSize();
 	}
 
 	public boolean isAssignable() {

@@ -26,4 +26,8 @@ public class TypeException extends Exception {
     public int getColumna() {
         return columna;
     }
+
+    public ArrayList<TypeException> getErrors() {
+        return errors;
+    }
 }

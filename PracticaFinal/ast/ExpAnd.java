@@ -3,8 +3,8 @@ package ast;
 import errors.TypeException;
 
 public class ExpAnd extends EBin {
-   public ExpAnd(int fila, int columna, Exp op1, Exp op2) {
-      super(fila, columna, KindExp.AND, op1, op2);
+   public ExpAnd(int fila, int columna, Exp opnd1, Exp opnd2) {
+      super(fila, columna, KindExp.AND, opnd1, opnd2);
    }
 
    public String toString() {

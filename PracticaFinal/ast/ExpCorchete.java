@@ -4,8 +4,8 @@ import errors.TypeException;
 
 public class ExpCorchete extends EBin {
 
-    public ExpCorchete(int fila, int columna, Exp op1, Exp op2) {
-        super(fila, columna, KindExp.CORCHETE, op1, op2);
+    public ExpCorchete(int fila, int columna, Exp opnd1, Exp opnd2) {
+        super(fila, columna, KindExp.CORCHETE, opnd1, opnd2);
     }
 
     public String toString() {

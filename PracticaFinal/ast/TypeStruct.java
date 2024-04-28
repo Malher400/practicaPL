@@ -2,6 +2,7 @@ package ast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import errors.TypeException;
 
 public class TypeStruct extends Type {
     private ArrayList<Dec> listaDs;
@@ -26,6 +27,13 @@ public class TypeStruct extends Type {
         return str.toString();
     }
 
+    public void setSize() {
+        size = 0;
+        for (Dec dec : listaDs) {
+            size += dec.getTipo().getSize();
+        }
+    }
+
     public boolean bind(Pila pila) {
         pila.abreBloque();
         boolean b = true;
@@ -40,9 +48,21 @@ public class TypeStruct extends Type {
         return dicDs.get(iden);
     }
 
-    public void type() {
-        for (Dec d : listaDs) {
-            d.type();
+    public void type() throws TypeException {
+        ArrayList<TypeException> errores = new ArrayList<TypeException>();
+        for (Dec dec : listaDs) {
+            try {
+                dec.type();
+            } catch (TypeException te) {
+                for (TypeException tEx : te.getErrors()) {
+                    errores.add(tEx);
+                }
+                if (te.getExceptions().size() == 0)
+                    errores.add(te);
+            }
         }
+        if (errores.size() != 0)
+            throw new TypeException(errores);
+        setSize();
     }
 }

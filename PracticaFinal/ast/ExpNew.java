@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class ExpNew extends Exp {
 	private Type tipoRes;
 
@@ -12,5 +14,12 @@ public class ExpNew extends Exp {
 
 	public String toString() {
 		return "new" + tipoRes.toString();
+	}
+
+	public void type() throws TypeException {
+		tipoRes.type();
+		tipo = new TipoPuntero(tipoRes);
+		tipo.type();
+		designador = false;
 	}
 }

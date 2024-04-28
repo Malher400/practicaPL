@@ -27,13 +27,18 @@ public class ExpFlecha extends Exp {
 		if (id.getTipo().kindType() == KindType.POINTER) {
 			if (id.getTipo().getTipo().kindType() == KindType.IDEN) {
 				if (id.getTipo().getTipo().getTipo().kindType() == KindType.STRUCT) {
-					tipo = id.getDec(campo).getTipo();
-					designador = id.getDesignador();
+					if (id.getDec(campo) != null) {
+						tipo = id.getDec(campo).getTipo();
+						designador = id.getDesignador();
+					} else
+						throw new TypeException(fila, columna,
+								"No existe un campo " + campo + " dentro de este struct");
+
 				} else
-					throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo puntero");
+					throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo struct");
 			} else
 				throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo iden");
 		} else
-			throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo struct");
+			throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo puntero");
 	}
 }

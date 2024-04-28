@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class ExpFun extends Exp {
     Exp id;
@@ -39,7 +40,7 @@ public class ExpFun extends Exp {
     public void type() throws TypeException {
         id.type();
         if (id.getTipo().kindType() != KindType.FUN)
-            throw new TypeException(fila, columna, "La expresion " + id.toString() + " no tiene tipo función");
+            throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo función");
         for (int i = 0; i < params.size(); ++i) {
             params.get(i).type();
             if (id.getTipo().getDec(i).getTipo().kindType() == KindType.REF) {
@@ -48,13 +49,12 @@ public class ExpFun extends Exp {
                             "El parametro " + params.get(i).toString() + " no es un designador.");
                 if (!params.get(i).getTipo().equals(id.getTipo().getDec(i).getTipo().getTipo()))
                     throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
-                            "El parametro " + params.get(i).toString() + " no tiene el mismo tipo que el declarado.");
+                            "El parametro " + params.get(i).toString() + " no coincide con el tipo declarado.");
             } else {
                 if (!params.get(i).getTipo().equals(id.getTipo().getDec(i).getTipo()))
                     throw new TypeException(params.get(i).getFila(), params.get(i).getColumna(),
-                            "El parametro " + params.get(i).toString() + " no tiene el mismo tipo que el declarado.");
+                            "El parametro " + params.get(i).toString() + " no coincide con el tipo declarado.");
             }
-
         }
         tipo = id.getTipo().getTipo();
         designador = false;

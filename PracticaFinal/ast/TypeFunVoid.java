@@ -2,6 +2,7 @@ package ast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import errors.TypeException;
 
 public class TypeFunVoid extends Type {
     private ArrayList<Dec> listaArgs;
@@ -27,6 +28,10 @@ public class TypeFunVoid extends Type {
         return str.toString();
     }
 
+    public void setSize() {
+        size = 0;
+    }
+
     public boolean bind(Pila pila) {
         boolean b = true;
         pila.abreBloque();
@@ -34,7 +39,12 @@ public class TypeFunVoid extends Type {
             b = d.bind(pila) && b;
         }
         pila.cierraBloque();
-
         return b;
+    }
+
+    public void type() throws TypeException {
+        for (Dec dec : listaArgs)
+            dec.type();
+        setSize();
     }
 }
