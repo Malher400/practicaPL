@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class Program implements ASTNode {
     private ArrayList<Dec> decs;
@@ -49,10 +50,9 @@ public class Program implements ASTNode {
         return b;
     }
 
-    public void type(){
-        for (Dec d : decs){
+    public void type() throws TypeException {
+        for (Dec d : decs)
             d.type();
-        }
         main.type();
     }
 

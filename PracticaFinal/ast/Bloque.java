@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class Bloque extends Ins {
 	private ArrayList<Dec> decs;
@@ -38,12 +39,31 @@ public class Bloque extends Ins {
 		return b;
 	}
 
-	public void type() {
+	public void type() throws TypeException {
+		ArrayList<TypeException> errores = new ArrayList<TypeException>();
 		for (Dec d : decs) {
-			d.type();
+			try {
+				d.type();
+			} catch (TypeException te) {
+				for (TypeException tEx : te.getErrors()) {
+					errores.add(tEx);
+				}
+				if (te.getExceptions().size() == 0)
+					errores.add(te);
+			}
 		}
 		for (Ins i : ins) {
-			i.type();
+			try {
+				i.type();
+			} catch (TypeException te) {
+				for (TypeException tEx : te.getErrors()) {
+					errores.add(tEx);
+				}
+				if (te.getErrors().size() == 0)
+					errores.add(te);
+			}
 		}
+		if (errores.size() != 0)
+			throw new TypeException(errores);
 	}
 }

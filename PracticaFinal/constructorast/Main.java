@@ -6,6 +6,7 @@ import java.io.Reader;
 import alex.AnalizadorLexicoTiny;
 import ast.Pila;
 import ast.Program;
+import errors.*;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
@@ -14,17 +15,20 @@ public class Main {
 		ConstructorASTExp constructorast = new ConstructorASTExp(alex);
 		Program programa = (Program) constructorast.parse().value;
 
-		if (!programa.bind(new Pila()))
-			System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables");
-		else{
-			//if (!programa.type()) System.out.println("Error, el tipado falla.");
-			//else{
+		if (programa != null) {
+			if (!programa.bind(new Pila()))
+				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
+			else {
 				try {
-					System.out.println(constructorast.parse().value);
+					programa.type();
 				} catch (Exception e) {
-					System.out.println("Something went wrong with the parsing...");
+					System.out.println("Error, el tipado falla.");
 				}
-			//}
+			}
+		} else {
+			System.err.println("No se ha podido completar el analisis lexico-sintactico.");
+			throw new Exception("Ejecucion abortada");
 		}
+
 	}
 }
