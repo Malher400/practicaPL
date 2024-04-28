@@ -20,6 +20,7 @@ public class Main {
 				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
 			else {
 				try {
+					System.out.println(constructorast.parse().value);
 					programa.type();
 				} catch (Exception e) {
 					System.out.println("Error, el tipado falla.");
