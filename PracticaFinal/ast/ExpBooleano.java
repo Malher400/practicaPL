@@ -17,8 +17,8 @@ public class ExpBooleano extends Exp {
 
    public void type() {
       tipo = new TypeBool();
-      designador = false;
       tipo.type();
+      designador = false;
    }
 
 }

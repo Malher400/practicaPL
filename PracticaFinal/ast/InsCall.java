@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class InsCall extends Ins {
 	private Exp fun;
 
@@ -16,5 +18,9 @@ public class InsCall extends Ins {
 
 	public boolean bind(Pila pila) {
 		return fun.bind(pila);
+	}
+
+	public void type() throws TypeException {
+		fun.type();
 	}
 }

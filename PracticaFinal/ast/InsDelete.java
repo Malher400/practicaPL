@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class InsDelete extends Ins {
 	private Exp e;
 
@@ -16,5 +18,11 @@ public class InsDelete extends Ins {
 
 	public boolean bind(Pila pila) {
 		return e.bind(pila);
+	}
+
+	public void type() throws TypeException {
+		e.type();
+		if (e.getTipo().kindType() != KindType.PUNTERO)
+			throw new TypeException(fila, columna, "la expresion " + e.toString() + " no es de tipo puntero");
 	}
 }

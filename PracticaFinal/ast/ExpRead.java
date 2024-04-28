@@ -20,9 +20,9 @@ public class ExpRead extends Exp {
     }
 
     public void type() throws TypeException {
-        if (!tipo.isWritable())
-            throw new TypeException(fila, columna, "El tipo que se esta intentando leer no es legible");
         tipo.type();
+        if (!tipo.isWritable())
+            throw new TypeException(fila, columna, "El tipo " + tipo.toString() + " no es legible");
         designador = false;
     }
 }

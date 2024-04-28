@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class InsIf_Else extends Ins {
 	private Exp e;
 	private Ins bloqueIf;
@@ -40,5 +42,18 @@ public class InsIf_Else extends Ins {
 		pila.cierraBloque();
 
 		return b;
+	}
+
+	public void type() throws TypeException {
+		e.type();
+		if (e.getTipo().kindType() == KindType.BOOL) {
+			bloqueIf.type();
+			bloqueElse.type();
+			if (bloqueElse.kindIns() != KindIns.ELSE)
+				throw new TypeException(i1.getFila(), i1.getColumna(),
+						"El tipo de instruccion no corresponde con un bloque If_Else");
+		} else
+			throw new TypeException(e.getFila(), e.getColumna(),
+					"La expresion " + e.toString() + " no es de tipo booleano");
 	}
 }

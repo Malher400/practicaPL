@@ -19,8 +19,8 @@ public class ExpEntero extends Exp {
 
    public void type() throws TypeException {
       tipo = new TypeEnt();
-      designador = false;
       tipo.type();
+      designador = false;
    }
 
 }

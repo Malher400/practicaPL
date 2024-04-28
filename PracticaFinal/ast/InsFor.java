@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class InsFor extends Ins {
 	private Exp e;
 	private Ins asig;
@@ -35,5 +37,16 @@ public class InsFor extends Ins {
 		boolean b = dec.bind(pila) && e.bind(pila) && asig.bind(pila) && bloque.bind(pila);
 		pila.cierraBloque();
 		return b;
+	}
+
+	public void type() throws TypeException {
+		e.type();
+		asig.type();
+		dec.type();
+		if (dec.kindDec() == KindDec.VARIABLE && dec.getTipo().kindType() == KindType.ENT
+				&& asig.kindIns() == KindIns.ASIGN && e.getTipo().kindType() == KindType.BOOL) {
+			bloque.type();
+		} else
+			throw new TypeException(fila, columna, "La declaracion del for no es correcta");
 	}
 }

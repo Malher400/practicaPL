@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public abstract class Dec implements ASTNode {
     protected Type tipo;
     protected String id;
@@ -46,7 +48,7 @@ public abstract class Dec implements ASTNode {
         return true;
     }
 
-    public void type() {
+    public void type() throws TypeException {
         tipo.type();
     }
 }

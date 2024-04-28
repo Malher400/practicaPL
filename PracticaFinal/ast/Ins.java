@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public abstract class Ins implements ASTNode {
 	protected KindIns tipoIns;
 	protected int fila;
@@ -23,5 +25,8 @@ public abstract class Ins implements ASTNode {
 
 	public boolean bind(Pila pila) {
 		return true;
+	}
+
+	public void type() throws TypeException {
 	}
 }

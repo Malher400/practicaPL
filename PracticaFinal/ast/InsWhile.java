@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class InsWhile extends Ins {
 	private Exp e;
 	private Ins bloque;
@@ -28,5 +30,14 @@ public class InsWhile extends Ins {
 		pila.cierraBloque();
 
 		return b;
+	}
+
+	public void type() throws TypeException {
+		e.type();
+		if (e.getTipo().kindType() == KindType.BOOL) {
+			bloque.type();
+		} else
+			throw new TypeException(e.getFila(), e.getColumna(),
+					"La expresion " + e.toString() + " no es de tipo booleano");
 	}
 }
