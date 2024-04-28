@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class DecFunVoid extends Dec {
     protected ArrayList<Dec> args;
@@ -44,10 +45,9 @@ public class DecFunVoid extends Dec {
     }
 
     public void type() {
-        for (Dec d : args) {
-            args.type();
-            tiposArgs.add(d.getTipo());
-        }
+        for (Dec a : args)
+            a.type();
         bloque.type();
     }
+
 }

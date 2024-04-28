@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class DecFun extends Dec {
 	private Type returnType;
@@ -52,11 +53,17 @@ public class DecFun extends Dec {
 		return b;
 	}
 
-	public void type() {
-		for (Dec d : args) {
-			args.type();
-			tiposArgs.add(d.getTipo());
-		}
+	public void type() throws TypeException {
+		returnType.type();
+		if (!returnType.isAssignable())
+			throw new TypeException(returnType.getFila(), returnType.getColumna(),
+					"EL tipo que se devuelve no es asignable");
+		for (Dec a : args)
+			a.type();
 		bloque.type();
+		e.type();
+		if (!e.getTipo().equals(returnType))
+			throw new TypeException(e.getFila(), e.getColumna(),
+					"La expresion " + e.toString() + " no coincide con el tipo que se tiene que devolver");
 	}
 }

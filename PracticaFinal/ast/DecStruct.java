@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.ArrayList;
+import errors.TypeException;
 
 public class DecStruct extends Dec {
     private ArrayList<Dec> listaDs;
@@ -38,9 +39,7 @@ public class DecStruct extends Dec {
         return b;
     }
 
-    public void type() {
-        for (Dec d : listaDs) {
-            d.type();
-        }
+    public void type() throws TypeException {
+        tipo.type();
     }
 }

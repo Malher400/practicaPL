@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class DecType extends Dec {
 	public DecType(int fila, int columna, String id, Type tipo) {
 		super(fila, columna, tipo, id);
@@ -15,5 +17,9 @@ public class DecType extends Dec {
 		if (b)
 			pila.insertaId(id, this);
 		return b;
+	}
+
+	public void type() throws TypeException {
+		tipo.type();
 	}
 }

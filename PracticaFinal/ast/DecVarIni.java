@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class DecVarIni extends DecVar {
 	private Ins asig;
 
@@ -17,8 +19,8 @@ public class DecVarIni extends DecVar {
 		return tipo.bind(pila) && asig.bind(pila);
 	}
 
-	public void type() {
+	public void type() throws TypeException {
 		tipo.type();
-		asig.type();
+		asign.type();
 	}
 }

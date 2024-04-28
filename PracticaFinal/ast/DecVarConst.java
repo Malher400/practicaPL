@@ -1,5 +1,7 @@
 package ast;
 
+import errors.TypeException;
+
 public class DecVarConst extends DecVar {
 	private Ins asig;
 
