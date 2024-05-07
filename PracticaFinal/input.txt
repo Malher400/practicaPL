@@ -1,15 +1,29 @@
 var const lenInt c := 3;
+var guevArray lenInt[3] v;
+type booleano := boolShevik;
 
+fun lenInt suma(lenInt x, lenInt # y) {
+	var lenInt z := x + y;
+	var boolShevik p := false; 
+	return z;
+}
+
+fun void escribe(lenInt x)  {
+	write (x + 3);
+}
 
 main {
 	var lenInt x := 1;
 	var lenInt y;
-	var boolShevik b := true;
+	var booleano b := true;
 	y := 1;
+
 	forLetariat (var lenInt i := 0; i < 3; i := i + 1;) {
-		x := i + y;
+		v[i] := i;
+		call escribe(suma(x,y) + v[i]);
 	}
 	trotskIf (x > 6) {}
 	fidElseCastro {}
+	USSWhile (y < 3) {y:= y + 1;}
 
 }

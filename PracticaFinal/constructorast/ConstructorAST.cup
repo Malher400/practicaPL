@@ -115,8 +115,8 @@ T0 ::= POINTER T0:t0
    {: RESULT = new TypePointer(t0); :};
 T0 ::= T1:t1
     {: RESULT = t1; :};
-T1 ::= GUEVARRAY T1:t1 CABRE Expr:e CCIERRA
-   {: RESULT = new TypeArray(t1, e); :};
+T1 ::= GUEVARRAY T1:t1 CABRE ENTPOS:tam CCIERRA
+   {: RESULT = new TypeArray(t1, tam.lexema); :};
 T1 ::= PABRE T0:t0 PCIERRA
     {: RESULT = t0; :};
 T1 ::= IDEN:iden
@@ -139,7 +139,7 @@ Dec_Var_Vacia ::= VAR T0:t0 IDEN:iden PUNTOYCOMA
    {: RESULT = new DecVar(t0.getFila(), t0.getColumna(), iden.lexema, t0); :};
 Dec_Var_Ini ::= VAR T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
    {: RESULT = new DecVarIni(t0.getFila(), t0.getColumna(), iden.lexema, t0, 
-   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e, true)); :};
+   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e,true)); :};
 Dec_Var_Ini ::= VAR CONST T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
    {: RESULT = new DecVarConst(t0.getFila(), t0.getColumna(), iden.lexema, t0, 
    new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e, true)); :};

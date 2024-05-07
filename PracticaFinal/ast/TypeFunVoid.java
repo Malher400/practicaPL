@@ -4,16 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import errors.TypeException;
 
-public class TypeFunVoid extends Type {
-    private ArrayList<Dec> listaArgs;
-    private HashMap<String, Dec> dicArgs;
+public class TypeFunVoid extends TypeFun {
 
-    public TypeFunVoid(ArrayList<Dec> listaArgs) {
-        this.tipoType = KindType.FUNVOID;
-        this.listaArgs = listaArgs;
-        this.dicArgs = new HashMap<String, Dec>();
-        for (Dec dec : listaArgs)
-            dicArgs.put(dec.getId(), dec);
+    public TypeFunVoid(ArrayList<Dec> listaArgs) { // Mejor considerar las void directamente tipo FUN
+        super(new TypeNull(), listaArgs);
     }
 
     public String toString() {

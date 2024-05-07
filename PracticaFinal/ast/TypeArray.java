@@ -3,17 +3,17 @@ package ast;
 import errors.TypeException;
 
 public class TypeArray extends Type {
-	private Exp tam;
+	private String tam;
 	private Type tipo;
 
-	public TypeArray(Type tipo, Exp tam) {
+	public TypeArray(Type tipo, String tam) {
 		this.tipoType = KindType.ARRAY;
 		this.tipo = tipo;
 		this.tam = tam;
 	}
 
 	public String toString() {
-		return "guevArray " + tipo.toString() + " [" + tam.toString() + ']';
+		return "guevArray " + tipo.toString() + " [" + tam + ']';
 	}
 
 	public Type getTipo() {
@@ -23,11 +23,11 @@ public class TypeArray extends Type {
 	}
 
 	public void setSize() {
-		size = Integer.parseInt(tam.toString()) * tipo.getSize();
+		size = Integer.parseInt(tam) * tipo.getSize();
 	}
 
 	public boolean bind(Pila pila) {
-		return tipo.bind(pila) && tam.bind(pila);
+		return tipo.bind(pila);
 	}
 
 	public void type() throws TypeException {

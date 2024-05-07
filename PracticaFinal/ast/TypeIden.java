@@ -28,6 +28,14 @@ public class TypeIden extends Type {
 		size = tipo.getSize();
 	}
 
+	public boolean isAssignable() {
+		return tipo.isAssignable();
+	}
+
+	public boolean isWritable() {
+		return tipo.isWritable();
+	}
+
 	public boolean bind(Pila pila) {
 		dec = pila.buscaId(id);
 		if (dec != null)

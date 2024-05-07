@@ -13,9 +13,9 @@ public class DecType extends Dec {
 	}
 
 	public boolean bind(Pila pila) {
+		pila.insertaId(id, this);
 		boolean b = tipo.bind(pila);
-		if (b)
-			pila.insertaId(id, this);
+
 		return b;
 	}
 

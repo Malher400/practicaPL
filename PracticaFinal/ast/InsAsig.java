@@ -32,7 +32,12 @@ public class InsAsig extends Ins {
 			throw new TypeException(e1.getFila(), e1.getColumna(),
 					"El operando " + e1.toString() + " no es un tipo asignable");
 		e2.type();
-		if (!e1.getTipo().equals(e2.getTipo()))
-			throw new TypeException(fila, columna, "Los operandos no tienen el mismo tipo");
+		if (e1.getTipo().getKindType() == KindType.IDEN) {
+			if (!e1.getTipo().getTipo().equals(e2.getTipo()))
+				throw new TypeException(fila, columna, "Los operandos no tienen el mismo tipo");
+		} else {
+			if (!e1.getTipo().equals(e2.getTipo()))
+				throw new TypeException(fila, columna, "Los operandos no tienen el mismo tipo");
+		}
 	}
 }
