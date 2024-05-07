@@ -1,11 +1,3 @@
 main {
-	var lenInt x := 1;
-	var lenInt y;
-	var boolShebik b := true;
-	y := 1;
-	trotskIf (x > 6) {}
-	fidElseCastro {}
-	forLetariat (var lenInt i := 0; i < 5; i := i + 1;) {
-		x := x + 3;
-	}
+
 }
