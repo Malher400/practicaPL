@@ -30,4 +30,17 @@ public class TypeException extends Exception {
     public ArrayList<TypeException> getErrors() {
         return errors;
     }
+
+    public void printErrors() {
+        for (int i = 0; i < errors.size(); i++) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("FILA ");
+            sb.append(errors.get(i).getFila());
+            sb.append(", COLUMNA ");
+            sb.append(errors.get(i).getColumna());
+            sb.append(": ");
+            sb.append(errors.get(i).getMessage());
+            System.err.println(sb.toString());
+        }
+    }
 }

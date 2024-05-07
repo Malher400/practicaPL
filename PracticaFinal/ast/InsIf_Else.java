@@ -49,9 +49,6 @@ public class InsIf_Else extends Ins {
 		if (e.getTipo().getKindType() == KindType.BOOL) {
 			bloqueIf.type();
 			bloqueElse.type();
-			if (bloqueElse.kindIns() != KindIns.IF_ELSE)
-				throw new TypeException(bloqueIf.getFila(), bloqueIf.getColumna(),
-						"El tipo de instruccion no corresponde con un bloque If_Else");
 		} else
 			throw new TypeException(e.getFila(), e.getColumna(),
 					"La expresion " + e.toString() + " no es de tipo booleano");

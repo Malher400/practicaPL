@@ -20,7 +20,7 @@ public class ExpIden extends Exp {
 
    public boolean bind(Pila pila) {
       dec = pila.buscaId(id);
-      if (dec.equals(null))
+      if (dec == null)
          return false;
       else
          return true;

@@ -139,10 +139,10 @@ Dec_Var_Vacia ::= VAR T0:t0 IDEN:iden PUNTOYCOMA
    {: RESULT = new DecVar(t0.getFila(), t0.getColumna(), iden.lexema, t0); :};
 Dec_Var_Ini ::= VAR T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
    {: RESULT = new DecVarIni(t0.getFila(), t0.getColumna(), iden.lexema, t0, 
-   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e)); :};
+   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e, true)); :};
 Dec_Var_Ini ::= VAR CONST T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
    {: RESULT = new DecVarConst(t0.getFila(), t0.getColumna(), iden.lexema, t0, 
-   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e)); :};
+   new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e, true)); :};
 
 // Declaracion de funciones tipo void
 Dec_Void ::= FUN VOID IDEN:iden PABRE Lista_Argumentos_Vac:list_args PCIERRA LLABRE Bloque:b LLCIERRA
@@ -189,7 +189,7 @@ Instruccion ::= InsCall:i
    {: RESULT = i; :}; 
 
 InsAsig ::= Expr:e1 ASIGNACION Expr:e2 PUNTOYCOMA
-   {: RESULT = new InsAsig(e1.getFila(),e1.getColumna(),e1,e2); :};
+   {: RESULT = new InsAsig(e1.getFila(),e1.getColumna(),e1,e2,false); :};
 InsIf ::= TROTSKIF PABRE Expr:e PCIERRA LLABRE Bloque:b LLCIERRA
    {: RESULT = new InsIf(e.getFila(),e.getColumna(),e,b); :};
 InsIfElse ::= TROTSKIF PABRE Expr:e PCIERRA LLABRE Bloque:b1 LLCIERRA FIDELSECASTRO LLABRE Bloque:b2 LLCIERRA

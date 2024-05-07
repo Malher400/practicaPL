@@ -1,3 +1,15 @@
+var const lenInt c := 3;
+
+
 main {
+	var lenInt x := 1;
+	var lenInt y;
+	var boolShevik b := true;
+	y := 1;
+	forLetariat (var lenInt i := 0; i < 3; i := i + 1;) {
+		x := i + y;
+	}
+	trotskIf (x > 6) {}
+	fidElseCastro {}
 
 }
