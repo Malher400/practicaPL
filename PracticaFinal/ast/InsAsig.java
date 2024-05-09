@@ -40,4 +40,12 @@ public class InsAsig extends Ins {
 				throw new TypeException(fila, columna, "Los operandos no tienen el mismo tipo");
 		}
 	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(e1.generateCodeD(depth));
+		sb.append(e2.generateCode(depth));
+		sb.append("i32.store\n");
+		return sb.toString();
+	}
 }

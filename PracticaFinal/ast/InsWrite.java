@@ -26,4 +26,11 @@ public class InsWrite extends Ins {
 			throw new TypeException(fila, columna, "El tipo " + e.getTipo().toString() + " no se puede escribir");
 	}
 
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder("");
+		sb.append(e.generateCode(depth));
+		sb.append("call $print\n");
+		return sb.toString();
+	}
+
 }

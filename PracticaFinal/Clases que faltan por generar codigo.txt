@@ -4,6 +4,13 @@ Expresiones:
 - Fun
 - Iden
 - Punto
+- Ref
 - Valor
 
 Instrucciones:
+-For
+-If_Else
+-While
+-Bloque
+
+Declaraciones + Programa

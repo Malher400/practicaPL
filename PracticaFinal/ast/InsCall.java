@@ -23,4 +23,13 @@ public class InsCall extends Ins {
 	public void type() throws TypeException {
 		fun.type();
 	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder("");
+		sb.append(fun.generateCode(depth));
+		if (fun.getTipo().kindType() != KindType.NULL) {
+			sb.append("drop\n"); // Eliminar valor de la pila
+		}
+		return sb.toString();
+	}
 }
