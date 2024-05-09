@@ -31,7 +31,8 @@ public class Type implements ASTNode {
     public Dec getDec(String id) throws TypeException {
         throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion.");
     }
-    public Dec getDec(int id) throws TypeException{
+
+    public Dec getDec(int id) throws TypeException {
         throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion.");
     }
 
@@ -67,6 +68,14 @@ public class Type implements ASTNode {
 
     public void type() throws TypeException { // Esto luego servira para ir reservando el espacio que ocupa cada cosa
         setSize();
+    }
+
+    public String generateCode(int depth) {
+        return "";
+    }
+
+    public int getDelta(int d) {
+        return d;
     }
 
 }

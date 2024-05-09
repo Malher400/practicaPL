@@ -22,4 +22,13 @@ public class ExpNew extends Exp {
 		tipo.type();
 		designador = false;
 	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("i32.const ");
+		sb.append(tipoRes.getSize());
+		sb.append("\n");
+		sb.append("call $reserveHeap\n");
+		return sb.toString();
+	}
 }

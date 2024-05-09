@@ -51,4 +51,12 @@ public abstract class Dec implements ASTNode {
     public void type() throws TypeException {
         tipo.type();
     }
+
+    public String generateCode(int depth) {
+        return "";
+    }
+
+    public int getDelta(int d) {
+        return d;
+    }
 }

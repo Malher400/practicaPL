@@ -21,4 +21,12 @@ public class ExpNeg extends EUnit {
          throw new TypeException(opnd.getFila(), opnd.getColumna(),
                "El operando " + opnd.toString() + " no es de tipo entero");
    }
+
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append("i32.const 0\n"); // Hacemos la resta 0 - n, que ees -n
+      ss.append(super.generateCode(depth));
+      ss.append("i32.sub\n");
+      return ss.toString();
+   }
 }

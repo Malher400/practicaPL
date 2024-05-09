@@ -47,4 +47,12 @@ public abstract class Exp implements ASTNode {
 
     }
 
+    public String generateCode(int depth) {
+        return "";
+    }
+
+    public int getDelta(int d) {
+        return d;
+    }
+
 }

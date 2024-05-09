@@ -23,4 +23,11 @@ public class ExpBooleano extends Exp {
       designador = false;
    }
 
+   public String generateCode(int depth) {
+      if (b.equals("true"))
+         return "i32.const 1\n";
+      else
+         return "i32.const 0\n";
+   }
+
 }

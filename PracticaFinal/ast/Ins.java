@@ -29,4 +29,12 @@ public abstract class Ins implements ASTNode {
 
 	public void type() throws TypeException {
 	}
+
+	public String generateCode(int depth) {
+		return "";
+	}
+
+	public int getDelta(int d) {
+		return d;
+	}
 }

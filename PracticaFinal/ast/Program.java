@@ -56,4 +56,12 @@ public class Program implements ASTNode {
         main.type();
     }
 
+    public String generateCode(int depth) {
+        return "";
+    }
+
+    public int getDelta(int d) {
+        return d;
+    }
+
 }

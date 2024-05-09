@@ -22,4 +22,11 @@ public class ExpNot extends EUnit {
                     "El operando " + opnd.toString() + " no es de tipo booleano");
     }
 
+    public String generateCode(int depth) {
+        StringBuilder ss = new StringBuilder();
+        ss.append(super.generateCode(depth));
+        ss.append("i32.eqz\n"); // Comparamos el valor con 0, que es lo mismo que hacer not
+        return ss.toString();
+    }
+
 }

@@ -26,4 +26,11 @@ public class ExpMult extends EBin {
                "El operando " + opnd1.toString() + " no es de tipo entero");
    }
 
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(super.generateCode(depth));
+      ss.append("i32.mul\n");
+      return ss.toString();
+   }
+
 }

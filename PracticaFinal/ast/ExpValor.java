@@ -25,4 +25,18 @@ public class ExpValor extends EUnit {
       tipo = opnd.getTipo().getTipo();
    }
 
+   public String generateCodeD(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(opnd.generateCodeD(depth));
+      ss.append("i32.load\n");
+      return ss.toString();
+   }
+
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(super.generateCode(depth));
+      ss.append("i32.load\n");
+      return ss.toString();
+   }
+
 }

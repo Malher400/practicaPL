@@ -36,4 +36,11 @@ public abstract class EBin extends Exp {
       designador = false;
    }
 
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(opnd1.generateCode(depth));
+      ss.append(opnd2.generateCode(depth));
+      return ss.toString();
+   }
+
 }

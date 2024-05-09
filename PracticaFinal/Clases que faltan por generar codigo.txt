@@ -1,0 +1,9 @@
+Expresiones:
+- Corchete
+- Flecha
+- Fun
+- Iden
+- Punto
+- Valor
+
+Instrucciones:

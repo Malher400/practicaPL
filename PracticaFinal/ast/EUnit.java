@@ -28,4 +28,10 @@ public abstract class EUnit extends Exp {
 		opnd.type();
 		designador = false;
 	}
+
+	public String generateCode(int depth) {
+		StringBuilder ss = new StringBuilder();
+		ss.append(opnd.generateCode(depth));
+		return ss.toString();
+	}
 }

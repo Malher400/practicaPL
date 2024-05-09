@@ -18,4 +18,8 @@ public class ExpNull extends Exp {
       designador = false;
    }
 
+   public String generateCode(int depth) {
+      return "i32.const 0\n";
+   }
+
 }

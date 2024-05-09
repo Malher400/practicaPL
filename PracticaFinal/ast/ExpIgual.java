@@ -22,4 +22,11 @@ public class ExpIgual extends EBin {
          throw new TypeException(opnd1.getFila(), opnd1.getColumna(), "Los operandos tienen diferente tipo");
    }
 
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(super.generateCode(depth));
+      ss.append("i32.eq\n");
+      return ss.toString();
+   }
+
 }

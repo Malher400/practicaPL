@@ -25,4 +25,8 @@ public class ExpRead extends Exp {
             throw new TypeException(fila, columna, "El tipo " + tipo.toString() + " no es legible");
         designador = false;
     }
+
+    public String generateCode(int depth) {
+        return "call $read\n";
+    }
 }
