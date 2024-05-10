@@ -41,4 +41,22 @@ public class ExpFlecha extends Exp {
 		} else
 			throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo puntero");
 	}
+
+	public String codeD(int depth) { // Esto no funciona muy bien
+		StringBuilder ss = new StringBuilder();
+		ss.append(id.codeD(depth));
+		ss.append("i32.load\n");
+		ss.append("i32.const ");
+		ss.append(id.getDec(campo).getDelta());
+		ss.append("\n");
+		ss.append("i32.add\n");
+		return ss.toString();
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder ss = new StringBuilder();
+		ss.append(codeD(depth));
+		ss.append("i32.load\n");
+		return ss.toString();
+	}
 }

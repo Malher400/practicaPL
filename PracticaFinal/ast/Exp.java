@@ -51,7 +51,7 @@ public abstract class Exp implements ASTNode {
         return "";
     }
 
-    public int getDelta(int d) {
+    public int setDelta(int d) {
         return d;
     }
 

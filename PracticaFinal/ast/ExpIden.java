@@ -34,4 +34,29 @@ public class ExpIden extends Exp {
          designador = false;
    }
 
+   public String codeD(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append("i32.const " + dec.getDelta() + "\n");
+      if (dec.getDepth() != 0 && dec.getDepth() >= depth) {
+         ss.append("get_local $localStart\n");
+         ss.append("i32.add\n");
+      } else if (dec.getDepth() == 1 && depth == 2) {
+         ss.append("get_global $CP\n");
+         ss.append("i32.add\n");
+      }
+      // En el else la variable es global asi que no hay que sumarle nada al delta
+
+      if (dec.getTipo().kindType() == KindType.REF) {
+         ss.append("i32.load\n");
+      }
+      return ss.toString();
+   }
+
+   public String generateCode(int depth) {
+      StringBuilder ss = new StringBuilder();
+      ss.append(codeD(depth));
+      ss.append("i32.load \n");
+      return ss.toString();
+   }
+
 }

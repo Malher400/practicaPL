@@ -20,4 +20,8 @@ public class ExpRef extends EUnit {
         tipo.type();
     }
 
+    public String generateCode(int depth) {
+        return opnd.codeD(depth); // opnd tiene que ser designador
+    }
+
 }

@@ -49,4 +49,27 @@ public class InsFor extends Ins {
 		} else
 			throw new TypeException(fila, columna, "La declaracion del for no es correcta");
 	}
+
+	public int setDelta(int d) {
+		int i = d;
+		i = dec.setDelta(i);
+		i = bloque.setDelta(i);
+		return d;
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder ss = new StringBuilder();
+		ss.append("block\n");
+		ss.append(dec.generateCode(depth));
+		ss.append("loop\n");
+		ss.append(e.generateCode(depth));
+		ss.append("i32.eqz\n");
+		ss.append("br_if 1\n");
+		sb.append(bloque.generateCode(depth));
+		ss.append(asig.generateCode(depth));
+		ss.append("br 0\n");
+		ss.append("end\n");
+		ss.append("end\n");
+		return ss.toString();
+	}
 }

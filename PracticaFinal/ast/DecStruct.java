@@ -26,7 +26,7 @@ public class DecStruct extends Dec {
         return str.toString();
     }
 
-    public boolean bind(Pila pila) {
+    public boolean bind(Pila pila) { // Provisional
         pila.insertaId(id, this);
         pila.abreBloque();
         boolean b = true;

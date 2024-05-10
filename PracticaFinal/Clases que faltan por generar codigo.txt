@@ -1,14 +1,11 @@
 Expresiones:
-- Corchete
-- Flecha
-- Fun
-- Iden
-- Punto
-- Ref
-- Valor
+- Fun 
+- Corchete (revisar)
+- Flecha (struct, probablemente no vaya)
+- Punto (struct, probablemente no vaya)
+
 
 Instrucciones:
--For
 -If_Else
 -While
 -Bloque

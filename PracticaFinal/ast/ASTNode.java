@@ -7,7 +7,7 @@ public interface ASTNode {
 
     public String generateCode(int depth);
 
-    public int getDelta(int d);
+    public int setDelta(int d);
 
     public boolean bind(Pila pila);
 
