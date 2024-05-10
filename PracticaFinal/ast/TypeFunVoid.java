@@ -1,7 +1,6 @@
 package ast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import errors.TypeException;
 
 public class TypeFunVoid extends TypeFun {

@@ -55,4 +55,8 @@ public abstract class Exp implements ASTNode {
         return d;
     }
 
+    public String codeD(int depth) {
+        return "";
+    }
+
 }

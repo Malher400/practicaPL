@@ -54,7 +54,7 @@ public class InsFor extends Ins {
 		int i = d;
 		i = dec.setDelta(i);
 		i = bloque.setDelta(i);
-		return d;
+		return i;
 	}
 
 	public String generateCode(int depth) {
@@ -65,7 +65,7 @@ public class InsFor extends Ins {
 		ss.append(e.generateCode(depth));
 		ss.append("i32.eqz\n");
 		ss.append("br_if 1\n");
-		sb.append(bloque.generateCode(depth));
+		ss.append(bloque.generateCode(depth));
 		ss.append(asig.generateCode(depth));
 		ss.append("br 0\n");
 		ss.append("end\n");
