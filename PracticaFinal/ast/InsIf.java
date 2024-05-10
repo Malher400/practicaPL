@@ -40,4 +40,17 @@ public class InsIf extends Ins {
 			throw new TypeException(e.getFila(), e.getColumna(),
 					"La expresion " + e.toString() + " no es de tipo booleano");
 	}
+
+	public int setDelta(int d) {
+		return bloque.setDelta(d);
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(e.generateCode(depth));
+		sb.append("if\n");
+		sb.append(bloque.generateCode(depth));
+		sb.append("end\n");
+		return sb.toString();
+	}
 }

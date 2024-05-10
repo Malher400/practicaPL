@@ -5,9 +5,10 @@ Expresiones:
 - Punto (struct, probablemente no vaya)
 
 
-Instrucciones:
--If_Else
--While
--Bloque
+Instrucciones finalizadas
 
-Declaraciones + Programa
+
+Declaraciones
+-Todas
+
+Programa

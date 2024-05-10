@@ -40,4 +40,23 @@ public class InsWhile extends Ins {
 			throw new TypeException(e.getFila(), e.getColumna(),
 					"La expresion " + e.toString() + " no es de tipo booleano");
 	}
+
+	public int setDelta(int d) {
+		return bloque.setDelta(d);
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder ss = new StringBuilder();
+		ss.append("block\n");
+		ss.append("loop\n");
+		ss.append(e.generateCode(depth));
+		ss.append("i32.eqz\n");
+		ss.append("br_if 1\n");
+		sb.append(bloque.generateCode(depth));
+		ss.append("br 0\n");
+		ss.append("end\n");
+		ss.append("end\n");
+		return ss.toString();
+	}
+
 }

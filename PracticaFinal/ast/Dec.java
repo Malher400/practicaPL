@@ -8,6 +8,7 @@ public abstract class Dec implements ASTNode {
     protected int fila;
     protected int columna;
     protected KindDec tipoDec;
+    protected int depth;
 
     public Dec(int fila, int columna, Type tipo, String id) {
         this.fila = fila;
@@ -58,5 +59,13 @@ public abstract class Dec implements ASTNode {
 
     public int setDelta(int d) {
         return d;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public void setDepth(int d) {
+        depth = d;
     }
 }

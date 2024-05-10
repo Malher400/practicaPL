@@ -53,4 +53,22 @@ public class InsIf_Else extends Ins {
 			throw new TypeException(e.getFila(), e.getColumna(),
 					"La expresion " + e.toString() + " no es de tipo booleano");
 	}
+
+	public int setDelta(int d) {
+		int i = d;
+		i = bloqueIf.setDelta(i);
+		i = bloqueElse.setDelta(i);
+		return d;
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(e.generateCode(depth));
+		sb.append("if\n");
+		sb.append(bloqueIf.generateCode(depth));
+		sb.append("else\n");
+		sb.append(bloqueElse.generateCode(depth));
+		sb.append("end\n");
+		return sb.toString();
+	}
 }

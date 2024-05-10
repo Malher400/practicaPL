@@ -66,4 +66,22 @@ public class Bloque extends Ins {
 		if (errores.size() != 0)
 			throw new TypeException(errores);
 	}
+
+	public int setDelta(int d) {
+		int i = d;
+		for (Dec dec : decs)
+			i = dec.setDelta(i);
+		for (Ins in : ins)
+			i = in.setDelta(i);
+		return d;
+	}
+
+	public String generateCode(int depth) {
+		StringBuilder sb = new StringBuilder();
+		for (Dec dec : decs)
+			sb.append(dec.generateCode(depth));
+		for (Ins in : ins)
+			sb.append(in.generateCode(depth));
+		return sb.toString();
+	}
 }

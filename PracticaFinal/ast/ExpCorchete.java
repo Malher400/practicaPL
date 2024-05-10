@@ -40,12 +40,8 @@ public class ExpCorchete extends EBin {
         return ss.toString();
     }
 
-    public String generateCodeAsig(int depth) {
-        return "";
-    }
-
     public String generateCode(int depth) {
-        StringBuilder ss = new StringBuilder(generateCodeAsig(depth));
+        StringBuilder ss = new StringBuilder(codeD(depth));
         ss.append("i32.load\n");
         return ss.toString();
     }
