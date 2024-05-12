@@ -46,7 +46,7 @@ public class ExpIden extends Exp {
       }
       // En el else la variable es global asi que no hay que sumarle nada al delta
 
-      if (dec.getTipo().kindType() == KindType.REF) {
+      if (dec.getTipo().getKindType() == KindType.REF) {
          ss.append("i32.load\n");
       }
       return ss.toString();

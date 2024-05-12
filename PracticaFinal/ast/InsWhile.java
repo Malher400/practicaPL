@@ -52,7 +52,7 @@ public class InsWhile extends Ins {
 		ss.append(e.generateCode(depth));
 		ss.append("i32.eqz\n");
 		ss.append("br_if 1\n");
-		sb.append(bloque.generateCode(depth));
+		ss.append(bloque.generateCode(depth));
 		ss.append("br 0\n");
 		ss.append("end\n");
 		ss.append("end\n");

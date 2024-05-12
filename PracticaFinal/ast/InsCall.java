@@ -27,7 +27,7 @@ public class InsCall extends Ins {
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder("");
 		sb.append(fun.generateCode(depth));
-		if (fun.getTipo().kindType() != KindType.NULL) {
+		if (fun.getTipo().getKindType() != KindType.NULL) {
 			sb.append("drop\n"); // Eliminar valor de la pila
 		}
 		return sb.toString();
