@@ -42,4 +42,19 @@ public class DecStruct extends Dec {
     public void type() throws TypeException {
         tipo.type();
     }
+
+    public int setDelta(int d){
+        delta = d;
+        int aux = 0;
+        for (Dec dec : listaDs){
+            aux = dec.setDelta(aux);
+        }
+        return delta;
+    }
+    
+    public void setDepth(int d){
+        for (Dec dec : listaDs){
+            dec.setDepth(d);
+        }
+    }
 }

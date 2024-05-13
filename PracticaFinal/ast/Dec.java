@@ -9,6 +9,7 @@ public abstract class Dec implements ASTNode {
     protected int columna;
     protected KindDec tipoDec;
     protected int depth;
+    protected int delta;
 
     public Dec(int fila, int columna, Type tipo, String id) {
         this.fila = fila;
@@ -58,7 +59,8 @@ public abstract class Dec implements ASTNode {
     }
 
     public int setDelta(int d) {
-        return d;
+        delta = d;
+        return d + tipo.getSize();
     }
 
     public int getDepth() {
@@ -68,4 +70,9 @@ public abstract class Dec implements ASTNode {
     public void setDepth(int d) {
         depth = d;
     }
+
+    public int getDelta(){
+        return delta;
+    }
+
 }

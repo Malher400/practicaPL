@@ -44,12 +44,19 @@ public class ExpFlecha extends Exp {
 
 	public String codeD(int depth) { // Esto no funciona muy bien
 		StringBuilder ss = new StringBuilder();
-		ss.append(id.codeD(depth));
-		ss.append("i32.load\n");
-		ss.append("i32.const ");
-		ss.append(id.getDec(campo).getDelta());
-		ss.append("\n");
-		ss.append("i32.add\n");
+
+		try {
+			ss.append(id.codeD(depth));
+			ss.append("i32.load\n");
+			ss.append("i32.const ");
+			
+			ss.append(id.getDec(campo).getDelta());
+
+			ss.append("\n");
+			ss.append("i32.add\n");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ss.toString();
 	}
 

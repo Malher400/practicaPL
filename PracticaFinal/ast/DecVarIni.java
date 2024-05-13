@@ -23,4 +23,8 @@ public class DecVarIni extends DecVar {
 		tipo.type();
 		asig.type();
 	}
+
+	public String generateCode(int d){
+		return asig.generateCode(d);
+	}
 }

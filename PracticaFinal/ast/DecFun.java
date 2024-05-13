@@ -66,4 +66,6 @@ public class DecFun extends Dec {
 			throw new TypeException(e.getFila(), e.getColumna(),
 					"La expresion " + e.toString() + " no coincide con el tipo que se tiene que devolver");
 	}
+
+	
 }

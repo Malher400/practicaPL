@@ -36,7 +36,7 @@ public class ExpIden extends Exp {
 
    public String codeD(int depth) {
       StringBuilder ss = new StringBuilder();
-      ss.append("i32.const " + dec.setDelta() + "\n");
+      ss.append("i32.const " + dec.getDelta() + "\n");
       if (dec.getDepth() != 0 && dec.getDepth() >= depth) {
          ss.append("get_local $localStart\n");
          ss.append("i32.add\n");
