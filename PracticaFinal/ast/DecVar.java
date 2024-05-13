@@ -14,4 +14,5 @@ public class DecVar extends Dec {
 		pila.insertaId(id, this);
 		return tipo.bind(pila);
 	}
+
 }

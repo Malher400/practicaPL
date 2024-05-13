@@ -8,6 +8,7 @@ public class DecFun extends Dec {
 	private ArrayList<Dec> args;
 	private Ins bloque;
 	private Exp e;
+	private int MaxSize;
 
 	public DecFun(int fila, int columna, String id, Type tipo, Type returnType, ArrayList<Dec> args, Ins bloque,
 			Exp e) {
@@ -67,5 +68,29 @@ public class DecFun extends Dec {
 					"La expresion " + e.toString() + " no coincide con el tipo que se tiene que devolver");
 	}
 
-	
+	public int setDelta(int d){
+		int n = 0;
+		for (Dec dec: args) {
+			n = dec.setDelta(d);
+			d = n;
+		}
+		n = bloque.setDelta(d);
+		d = n;
+		MaxSize = n;
+		return d;
+	}
+
+	public String generateCode(int depth){
+		StringBuilder ss = new StringBuilder("(func $");
+		ss.append(id);
+		ss.append(" (result i32)\n");
+		ss.append(bloque.generateCode(depth+1));
+		ss.append(e.generateCode(depth+1));
+		ss.append(")\n");
+    	ss.append(bloque.generateCode(depth+1));
+    	return ss.toString();
+	}
+
+	public int getSize() {return MaxSize;}  
+
 }

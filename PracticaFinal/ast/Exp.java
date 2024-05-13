@@ -34,6 +34,9 @@ public abstract class Exp implements ASTNode {
     public Dec getDec(String id) throws TypeException {
         return tipo.getDec(id);
     }
+    public Dec getDec(int id) throws TypeException{
+        return tipo.getDec(id);
+    }
 
     public String toString() {
         return "";

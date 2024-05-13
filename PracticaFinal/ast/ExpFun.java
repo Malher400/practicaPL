@@ -59,4 +59,30 @@ public class ExpFun extends Exp {
         tipo = id.getTipo().getTipo();
         designador = false;
     }
+
+    public String generateCode(int depth){
+        StringBuilder ss = new StringBuilder("\n");
+
+        try{
+            for (int i = 0; i < params.size(); ++i){
+                for(int j = 0; i < params.get(i).getTipo().getSize(); j += 4) {
+                    ss.append("get_global $SP\n");
+                    ss.append("i32.const " + params.get(i).getDec(i).getDelta() + "\n");
+                    ss.append("i32.add\n");
+
+                    //if (id.getDec(i).getTipo().getKindType() == KindType.REF){
+                        
+                    //}else{
+
+                    //}
+                    
+                }
+            }
+        }catch(TypeException e){
+            System.out.println("error generateCode funcion: " + e.getStackTrace());
+        }
+
+
+        return ss.toString();
+    }
 }
