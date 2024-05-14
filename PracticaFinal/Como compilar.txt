@@ -12,3 +12,9 @@ javac -cp "cup.jar" */*.java
 
 Probar el codigo sobre el fichero input.txt:
 java -cp ".:cup.jar" constructorast.Main input.txt
+
+Transformar wat a wasm:
+wat2wasm main.wat
+
+Ejecutar el código JavaScript:
+node main.js

@@ -23,6 +23,7 @@ public class Main {
 				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
 			else {
 				try {
+					System.out.println("\n\nTipado\n\n");
 					System.out.println(programa);
 					programa.type();
 					System.out.println("\n\nGeneracion de codigo\n\n");

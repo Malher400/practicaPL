@@ -48,6 +48,7 @@ public class Program implements ASTNode {
         b = main.bind(pila) && b;
         pila.cierraBloque();
 
+
         return b;
     }
 
