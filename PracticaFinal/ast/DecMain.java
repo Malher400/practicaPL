@@ -23,4 +23,6 @@ public class DecMain extends DecFunVoid {
         tipo.type();
         bloque.type();
     }
+
+    // fungeneratecode heredado de DecFunVoid
 }

@@ -6,7 +6,7 @@ public class DecVar extends Dec {
 		this.tipoDec = KindDec.VARIABLE;
 	}
 
-	public String toString() {
+	public String toString() { // var lenInt;
 		return "var " + tipo.toString() + " " + id.toString() + ";";
 	}
 
@@ -14,5 +14,7 @@ public class DecVar extends Dec {
 		pila.insertaId(id, this);
 		return tipo.bind(pila);
 	}
+
+	public int getSize(){ return tipo.getSize();}
 
 }

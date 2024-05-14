@@ -12,4 +12,5 @@ public class DecArg extends DecVar {
 		else
 			return tipo.toString() + ' ' + id.toString();
 	}
+
 }

@@ -57,4 +57,10 @@ public class DecStruct extends Dec {
             dec.setDepth(d);
         }
     }
+
+    public String generateCode(int depth){
+        StringBuilder ss = new StringBuilder();
+        for (Dec dec : listaDs) ss.append(dec.generateCode(depth));
+        return ss.toString();
+    }
 }

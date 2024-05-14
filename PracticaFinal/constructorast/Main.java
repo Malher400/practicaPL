@@ -3,6 +3,9 @@ package constructorast;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import alex.AnalizadorLexicoTiny;
 import ast.Pila;
 import ast.Program;
@@ -20,10 +23,11 @@ public class Main {
 				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
 			else {
 				try {
-					System.out.println("prueba");
 					System.out.println(programa);
-
 					programa.type();
+					System.out.println("\n\nGeneracion de codigo\n\n");
+					programa.setDelta(0);
+					Files.write(Paths.get("main.wat"), (programa.generateCode(0)).getBytes());
 				} catch (TypeException e) {
 					e.printErrors();
 					System.out.println("Error, el tipado falla.");
@@ -36,26 +40,3 @@ public class Main {
 
 	}
 }
-
-/*
- * package constructorast;
- * 
- * import java.io.FileInputStream;
- * import java.io.InputStreamReader;
- * import java.io.Reader;
- * import alex.AnalizadorLexicoTiny;
- * 
- * public class Main {
- * public static void main(String[] args) throws Exception {
- * Reader input = new InputStreamReader(new FileInputStream(args[0]));
- * AnalizadorLexicoTiny alex = new AnalizadorLexicoTiny(input);
- * ConstructorASTExp constructorast = new ConstructorASTExp(alex);
- * try {
- * System.out.println(constructorast.parse().value);
- * } catch (Exception e) {
- * System.out.println("Something went wrong with the parsing...");
- * }
- * }
- * }
- * 
- */
