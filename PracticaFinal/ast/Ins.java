@@ -31,7 +31,6 @@ public abstract class Ins implements ASTNode {
 	}
 
 	public String generateCode(int depth) {return "";}
-	public String funGenerateCode(int depth) {return "";}
 
 	public int setDelta(int d) {
 		return d;

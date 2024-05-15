@@ -1,5 +1,5 @@
 Expresiones:
-- Fun 
+- Fun (gordo)
 - Corchete (revisar)
 - Flecha (struct, probablemente no vaya)
 - Punto (struct, probablemente no vaya)

@@ -50,19 +50,13 @@ public class DecFunVoid extends Dec {
         bloque.type();
     }
 
-    public String funGenerateCode(int depth) {
-    	StringBuilder ss = new StringBuilder("");
-    	ss.append("(func $");
+    public String generateCode(int depth) {
+    	StringBuilder ss = new StringBuilder("(func $");
     	ss.append(id);
     	ss.append("\n");
     	ss.append(bloque.generateCode(depth+1));
     	ss.append(")\n");
-    	ss.append(bloque.funGenerateCode(depth+1));
     	return ss.toString();
-    }
-
-    public String generateCode(int depth){
-        return "";
     }
 
 }

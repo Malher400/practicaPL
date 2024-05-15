@@ -22,4 +22,9 @@ public class DecType extends Dec {
 	public void type() throws TypeException {
 		tipo.type();
 	}
+
+	public int setDelta(int pos) {
+    	delta = pos;
+    	return pos;
+    }
 }

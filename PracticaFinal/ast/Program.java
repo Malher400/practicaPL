@@ -62,10 +62,10 @@ public class Program implements ASTNode {
         return d;
     }
 
-    public String funGenerateCode(int depth) {
+    public String codeFun(int depth) {
     	StringBuilder ss = new StringBuilder();
-    	for (Dec dec : decs) ss.append(dec.funGenerateCode(depth));
-    	ss.append(main.funGenerateCode(depth));
+    	for (Dec dec : decs) ss.append(dec.generateCode(depth));
+    	ss.append(main.generateCode(depth));
     	return ss.toString();
     }
 
@@ -142,44 +142,44 @@ public class Program implements ASTNode {
     	ss.append("\tlocal.set $i\n"); // Guardamos en $i el numero de saltos
     	ss.append("\tblock\n");
     	ss.append("\tloop\n");
-    	ss.append("local.get $i\n");
-    	ss.append("i32.eqz\n");
-    	ss.append("br_if 1\n"); // Salimos del bucle si $i == 0
-    	ss.append("local.get $marco\n");
-    	ss.append("i32.const 4\n");
-    	ss.append("i32.add\n");
-    	ss.append("i32.load\n");
-    	ss.append("local.set $marco\n"); // Guardamos en $marco el enlace estatico del $marco actual (que esta en MP + 4)
-    	ss.append("local.get $i\n");
-    	ss.append("i32.const 1\n");
-    	ss.append("i32.sub\n");
-    	ss.append("local.set $i\n"); // Hacemos i--
-    	ss.append("br 0\n"); // Volvemos al bucle
-    	ss.append("end\n");
-    	ss.append("end\n");
+    	ss.append("\tlocal.get $i\n");
+    	ss.append("\ti32.eqz\n");
+    	ss.append("\tbr_if 1\n"); // Salimos del bucle si $i == 0
+    	ss.append("\tlocal.get $marco\n");
+    	ss.append("\ti32.const 4\n");
+    	ss.append("\ti32.add\n");
+    	ss.append("\ti32.load\n");
+    	ss.append("\tlocal.set $marco\n"); // Guardamos en $marco el enlace estatico del $marco actual (que esta en MP + 4)
+    	ss.append("\tlocal.get $i\n");
+    	ss.append("\ti32.const 1\n");
+    	ss.append("\ti32.sub\n");
+    	ss.append("\tlocal.set $i\n"); // Hacemos i--
+    	ss.append("\tbr 0\n"); // Volvemos al bucle
+    	ss.append("\tend\n");
+    	ss.append("\tend\n");
     	ss.append("local.get $marco\n");// Apilamos el resultado
     	ss.append(")\n");
     
     	
-    	ss.append(funGenerateCode(depth+1));
+    	ss.append(codeFun(depth+1));
     	
         
         ss.append("(func $_main_\n");
-    	// Creación de marco de $_main
-    	ss.append("global.get $SP\n");
-    	ss.append("i32.const ");
+    	// Creación de marco de $_main_
+    	ss.append("\tglobal.get $SP\n");
+    	ss.append("\ti32.const ");
     	ss.append(maxSize);
     	ss.append("\n");
-    	ss.append("i32.const 12\n");
-		ss.append("i32.add\n");
-		ss.append("call $reserveStack\n");
-		ss.append("i32.store\n");
-		ss.append("global.get $MP\n");
-		ss.append("global.get $MP\n");
-		ss.append("i32.store offset=4\n");
-		ss.append("global.get $MP\n");
-		ss.append("global.get $SP\n");
-		ss.append("i32.store offset=8\n");
+    	ss.append("\ti32.const 12\n");
+		ss.append("\ti32.add\n");
+		ss.append("\tcall $reserveStack\n");
+		ss.append("\ti32.store\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\ti32.store offset=4\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\tglobal.get $SP\n");
+		ss.append("\ti32.store offset=8\n");
 		
     	for (Dec dec : decs) ss.append(dec.generateCode(depth+1));
 

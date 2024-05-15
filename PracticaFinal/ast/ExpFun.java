@@ -67,7 +67,7 @@ public class ExpFun extends Exp {
         try{
             for (int i = 0; i < params.size(); ++i){
                 for(int j = 0; i < params.get(i).getTipo().getSize(); j += 4) {
-                    ss.append("get_global $SP\n");
+                    ss.append("global.get $SP\n");
                     ss.append("i32.const " + params.get(i).getDec(i).getDelta() + "\n");
                     ss.append("i32.add\n");
 

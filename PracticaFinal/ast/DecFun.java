@@ -87,7 +87,6 @@ public class DecFun extends Dec {
 		ss.append(bloque.generateCode(depth+1));
 		ss.append(e.generateCode(depth+1));
 		ss.append(")\n");
-    	ss.append(bloque.generateCode(depth+1));
     	return ss.toString();
 	}
 

@@ -38,8 +38,6 @@ public abstract class Dec implements ASTNode {
 
     public String generateCode(int depth) { return ""; }
 
-    public String funGenerateCode(int depth) { return ""; }
-
     public int getDepth() { return depth; }
 
     public void setDepth(int d) { depth = d; }

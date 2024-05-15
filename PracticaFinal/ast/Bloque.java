@@ -84,13 +84,5 @@ public class Bloque extends Ins {
 			ss.append(i.generateCode(depth));
 		return ss.toString();
 	}
-	
-	public String funGenerateCode(int depth){
-		StringBuilder ss = new StringBuilder();
-		for (Dec dec : decs)
-			ss.append(dec.funGenerateCode(depth));
-		for (Ins i : ins)
-			ss.append(i.funGenerateCode(depth));
-		return ss.toString();
-	}
+
 }
