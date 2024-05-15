@@ -33,6 +33,7 @@ public class DecFunVoid extends Dec {
     }
 
     public boolean bind(Pila pila) {
+        System.out.println("debug DecFunVoid " + id);
         pila.insertaId(id, this);
         boolean b = true;
         pila.abreBloque();

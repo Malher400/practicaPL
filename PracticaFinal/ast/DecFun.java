@@ -42,6 +42,7 @@ public class DecFun extends Dec {
 	}
 
 	public boolean bind(Pila pila) {
+		System.out.println("DecFun " + id);
 		pila.insertaId(id, this);
 		boolean b = returnType.bind(pila);
 		pila.abreBloque();

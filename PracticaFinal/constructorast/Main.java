@@ -19,7 +19,9 @@ public class Main {
 		Program programa = (Program) constructorast.parse().value;
 
 		if (programa != null) {
-			if (!programa.bind(new Pila()))
+			boolean b = programa.bind(new Pila());
+			System.out.println(b);
+			if (!b)
 				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
 			else {
 				try {

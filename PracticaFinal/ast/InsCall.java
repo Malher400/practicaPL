@@ -17,7 +17,8 @@ public class InsCall extends Ins {
 	}
 
 	public boolean bind(Pila pila) {
-		return fun.bind(pila);
+		boolean b = fun.bind(pila);
+		return b;
 	}
 
 	public void type() throws TypeException {

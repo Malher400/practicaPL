@@ -31,6 +31,7 @@ public class ExpFun extends Exp {
 
     public boolean bind(Pila pila) {
         boolean b = id.bind(pila);
+        System.out.println("ExpFun " + id + ' ' + b);
         for (Exp p : params) {
             b = p.bind(pila) && b;
         }
