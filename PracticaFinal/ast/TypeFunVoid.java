@@ -11,11 +11,12 @@ public class TypeFunVoid extends TypeFun {
 
     public String toString() {
         StringBuilder str = new StringBuilder("");
+        if (listaArgs.size() == 0) str.append("emptySet");
         for (Dec dec : listaArgs) {
             str.append(dec.getTipo().toString());
             str.append(" x ");
         }
-        str.delete(str.length() - 3, str.length());
+        // str.delete(str.length() - 3, str.length());
         str.append(" -> emptySet");
         str.append('\n');
         return str.toString();

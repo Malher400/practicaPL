@@ -27,64 +27,64 @@
 )
 (func $freeStack
 (type $_sig_void)
-global.get $MP
-i32.load
-i32.load offset=8
-global.set $SP
-global.get $MP
-i32.load
-global.set $MP
+	global.get $MP
+	i32.load
+	i32.load offset=8
+	global.set $SP
+	global.get $MP
+	i32.load
+	global.set $MP
 )
 (func $reserveHeap (param $size i32) (result i32)
-get_global $NP
-get_local $size
-i32.sub
-set_global $NP
-get_global $NP
-i32.const 4
-i32.add
-get_global $SP
-get_global $NP
-i32.gt_u
-if
-i32.const 3
-call $exception
-end
+	global.get $NP
+	local.get $size
+	i32.sub
+	global.set $NP
+	global.get $NP
+	i32.const 4
+	i32.add
+	global.get $SP
+	global.get $NP
+	i32.gt_u
+	if
+	i32.const 3
+	call $exception
+	end
 )
 (func $jumpStatic (param $depth i32) (result i32)
 (local $i i32)
 (local $marco i32)
-get_global $MP
-set_local $marco
-get_local $depth
-set_local $i
-block
-loop
-get_local $i
+	global.get $MP
+	local.set $marco
+	local.get $depth
+	local.set $i
+	block
+	loop
+local.get $i
 i32.eqz
 br_if 1
-get_local $marco
+local.get $marco
 i32.const 4
 i32.add
 i32.load
-set_local $marco
-get_local $i
+local.set $marco
+local.get $i
 i32.const 1
 i32.sub
-set_local $i
+local.set $i
 br 0
 end
 end
-get_local $marco
+local.get $marco
 )
-(func $null
+(func $escribe
 i32.const 0
 i32.load 
 i32.const 3
 i32.add
 call $print
 )
-(func $null
+(func $main
 i32.const 0
 i32.const 1
 i32.store
@@ -114,6 +114,8 @@ i32.add
 i32.const 0
 i32.load 
 i32.store
+
+get_global $SP
 i32.const 0
 i32.const 0
 i32.load 
@@ -149,17 +151,17 @@ end
 end
 )
 (func $_main_
-get_global $SP
+global.get $SP
 i32.const 0
 i32.const 12
 i32.add
 call $reserveStack
 i32.store
-get_global $MP
-get_global $MP
+global.get $MP
+global.get $MP
 i32.store offset=4
-get_global $MP
-get_global $SP
+global.get $MP
+global.get $SP
 i32.store offset=8
 (func $suma (result i32)
 i32.const 0
@@ -187,18 +189,18 @@ i32.store
 i32.const 0
 i32.const 0
 i32.store
-get_global $SP
+global.get $SP
 i32.const 0
 i32.const 12
 i32.add
 call $reserveStack
 i32.store
-get_global $MP
-get_global $MP
+global.get $MP
+global.get $MP
 i32.load
 i32.store offset=4
-get_global $MP
-get_global $SP
+global.get $MP
+global.get $SP
 i32.store offset=8
 call $main
 if

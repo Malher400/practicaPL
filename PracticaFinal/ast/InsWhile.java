@@ -20,7 +20,7 @@ public class InsWhile extends Ins {
 		str.append(") ");
 		str.append("{\n");
 		str.append(bloque.toString());
-		str.append("\n}");
+		str.append("\n  }");
 		return str.toString();
 	}
 

@@ -145,9 +145,9 @@ Dec_Var_Ini ::= VAR CONST T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
    new InsAsig(iden.fila, iden.columna, new ExpIden(iden.fila, iden.columna, iden.lexema), e, true)); :};
 
 // Declaracion de funciones tipo void
-Dec_Void ::= FUN VOID IDEN:iden PABRE Lista_Argumentos_Vac:list_args PCIERRA LLABRE Bloque:b LLCIERRA
+Dec_Void ::= VOID IDEN:iden PABRE Lista_Argumentos_Vac:list_args PCIERRA LLABRE Bloque:b LLCIERRA
    {: RESULT = new DecFunVoid(iden.fila, iden.columna, iden.lexema, new TypeFunVoid(list_args), list_args, b); :};
-Dec_Void ::= FUN VOID error LLCIERRA:l
+Dec_Void ::= VOID error LLCIERRA:l
    {: System.out.println("FILA " + l.fila + ", COLUMNA " + l.columna + ": Declaracion de funcion incorrecta."); :};
 
 // Declaracion de funciones 

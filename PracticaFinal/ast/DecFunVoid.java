@@ -6,7 +6,6 @@ import errors.TypeException;
 public class DecFunVoid extends Dec {
     protected ArrayList<Dec> args;
     protected Ins bloque;
-    protected String id;
     protected ArrayList<Type> tiposArgs;
 
     public DecFunVoid(int fila, int columna, String id, Type tipo, ArrayList<Dec> args, Ins bloque) {
@@ -33,7 +32,6 @@ public class DecFunVoid extends Dec {
     }
 
     public boolean bind(Pila pila) {
-        System.out.println("debug DecFunVoid " + id);
         pila.insertaId(id, this);
         boolean b = true;
         pila.abreBloque();

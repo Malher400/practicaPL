@@ -28,7 +28,7 @@ public class InsFor extends Ins {
 		str.append(" ) ");
 		str.append("{\n");
 		str.append(bloque.toString());
-		str.append("\n}");
+		str.append("  }");
 		return str.toString();
 	}
 
