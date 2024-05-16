@@ -24,4 +24,8 @@ public class DecVarConst extends DecVar {
 		tipo.type();
 		asig.type();
 	}
+
+	public String generateCode(int depth) {
+		return asig.generateCode(depth);
+	}
 }
