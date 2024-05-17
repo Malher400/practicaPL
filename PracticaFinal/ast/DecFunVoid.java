@@ -50,7 +50,7 @@ public class DecFunVoid extends Dec {
         bloque.type();
     }
 
-    public String generateCode(int depth) {
+    public String codeFun(int depth) {
     	StringBuilder ss = new StringBuilder("(func $");
     	ss.append(id);
     	ss.append("\n");

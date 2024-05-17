@@ -80,15 +80,17 @@ public class DecFun extends Dec {
 		return d;
 	}
 
-	public String generateCode(int depth){
-		StringBuilder ss = new StringBuilder("(func $");
-		ss.append(id);
-		ss.append(" (result i32)\n");
-		ss.append(bloque.generateCode(depth+1));
-		ss.append(e.generateCode(depth+1));
-		ss.append(")\n");
+	public String codeFun(int depth) {
+    	StringBuilder ss = new StringBuilder("(func $");
+    	ss.append(id);
+    	ss.append(" (result i32)\n");
+    	ss.append(bloque.generateCode(depth+1));
+    	ss.append(e.generateCode(depth+1));
+    	ss.append(")\n");
     	return ss.toString();
-	}
+    }
+
+	public String generateCode(int depth){ return ""; }
 
 	public int getSize() {return MaxSize;}  
 
