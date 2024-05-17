@@ -63,9 +63,9 @@ public class Program implements ASTNode {
     }
 
     public String codeFun(int depth) {
-    	StringBuilder ss = new StringBuilder();
-    	for (Dec dec : decs) ss.append(dec.generateCode(depth));
-    	ss.append(main.generateCode(depth));
+    	StringBuilder ss = new StringBuilder("");
+    	for (Dec dec : decs) ss.append(dec.codeFun(depth));
+    	ss.append(main.codeFun(depth));
     	return ss.toString();
     }
 
@@ -157,7 +157,7 @@ public class Program implements ASTNode {
     	ss.append("\tbr 0\n"); // Volvemos al bucle
     	ss.append("\tend\n");
     	ss.append("\tend\n");
-    	ss.append("local.get $marco\n");// Apilamos el resultado
+    	ss.append("\tlocal.get $marco\n");// Apilamos el resultado
     	ss.append(")\n");
     
     	
@@ -183,27 +183,27 @@ public class Program implements ASTNode {
 		
     	for (Dec dec : decs) ss.append(dec.generateCode(depth+1));
 
-		ss.append("global.get $SP\n");
-		ss.append("i32.const ");
+		ss.append("\tglobal.get $SP\n");
+		ss.append("\ti32.const ");
 		ss.append(0); // maxSize de main
 		ss.append("\n");
-		ss.append("i32.const 12\n");
-		ss.append("i32.add\n");
-		ss.append("call $reserveStack\n");
-		ss.append("i32.store\n");
-		ss.append("global.get $MP\n");
-		ss.append("global.get $MP\n");
-		ss.append("i32.load\n");
-		ss.append("i32.store offset=4\n");
-		ss.append("global.get $MP\n");
-		ss.append("global.get $SP\n");
-		ss.append("i32.store offset=8\n");
-    	ss.append("call $");
+		ss.append("\ti32.const 12\n");
+		ss.append("\ti32.add\n");
+		ss.append("\tcall $reserveStack\n");
+		ss.append("\ti32.store\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\ti32.load\n");
+		ss.append("\ti32.store offset=4\n");
+		ss.append("\tglobal.get $MP\n");
+		ss.append("\tglobal.get $SP\n");
+		ss.append("\ti32.store offset=8\n");
+    	ss.append("\tcall $");
     	ss.append(main.getId());
     	ss.append("\n");
     	ss.append("if\n"); // Si $SP > $NP salta una excepcion
-    	ss.append("i32.const 3\n");
-    	ss.append("call $exception\n");
+    	ss.append("\ti32.const 3\n");
+    	ss.append("\tcall $exception\n");
     	ss.append("end\n");
 		ss.append("call $freeStack\n");
     	ss.append(")\n");

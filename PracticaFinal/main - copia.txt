@@ -75,8 +75,11 @@
 	br 0
 	end
 	end
-	local.get $marco
+local.get $marco
 )
+i32.const 0
+i32.const 3
+i32.store
 (func $main
 i32.const 0
 i32.const 1
@@ -157,20 +160,20 @@ end
 i32.const 0
 i32.const 3
 i32.store
-	global.get $SP
-	i32.const 0
-	i32.const 12
-	i32.add
-	call $reserveStack
-	i32.store
-	global.get $MP
-	global.get $MP
-	i32.load
-	i32.store offset=4
-	global.get $MP
-	global.get $SP
-	i32.store offset=8
-	call $main
+global.get $SP
+i32.const 0
+i32.const 12
+i32.add
+call $reserveStack
+i32.store
+global.get $MP
+global.get $MP
+i32.load
+i32.store offset=4
+global.get $MP
+global.get $SP
+i32.store offset=8
+call $main
 if
 	i32.const 3
 	call $exception
