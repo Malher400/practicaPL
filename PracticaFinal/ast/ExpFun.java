@@ -63,41 +63,32 @@ public class ExpFun extends Exp {
 
     public String generateCode(int depth) {
         StringBuilder ss = new StringBuilder("\n");
-        int depthCalled = desig.getTipo().getDec().getDepth();
-
-        for (int i = parametros.size() - 1; i >= 0; i--) {
-            for (int j = 0; j < parametros.get(i).getTipo().getSize(); j = j + 4) {
+        for (int i = params.size() - 1; i >= 0; i--) {
+            for (int j = 0; j < params.get(i).getTipo().getSize(); j = j + 4) {
                 ss.append("i32.const ");
                 ss.append(desig.getTipo().getDec(i).getDelta());
                 ss.append("\n");
                 ss.append("get_global $SP\n");
                 ss.append("i32.add\n");
-                if (desig.getTipo().getDec(i).getTipo().kindType() != KindType.REF) {
-                    if (parametros.get(i).isDesig()) {
-                        ss.append(parametros.get(i).generateCodeD(depth));
+                if (desig.getTipo().getDec(i).getTipo().getKindType() != KindType.REF) {
+                    if (params.get(i).getDesignador()) {
+                        ss.append(params.get(i).codeD(depth));
                         ss.append("i32.load offset=");
                         ss.append(j);
                         ss.append("\n");
                     } else {
-                        ss.append(parametros.get(i).generateCode(depth));
+                        ss.append(params.get(i).generateCode(depth));
                     }
                     ss.append("i32.store offset=");
                     ss.append(j);
                     ss.append("\n");
                 } else {
-                    ss.append(parametros.get(i).generateCodeD(depth));
+                    ss.append(params.get(i).codeD(depth));
                     ss.append("i32.store\n");
                 }
             }
         }
-        if (depth - 1 > depthCalled && depthCalled != 0) {
-            ss.append("get_global $SP\n");
-            ss.append("i32.const ");
-            ss.append(depth - depthCalled);
-            ss.append("\n");
-            ss.append("call $jumpStatic\n");
-        }
-        ss.append("get_global $SP\n");
+        ss.append("get_global $SP\n"); // Reserva de espacio en la pila para la llamada
         ss.append("i32.const ");
         ss.append(desig.getTipo().getDec().getMaxSize());
         ss.append("\n");
@@ -105,22 +96,16 @@ public class ExpFun extends Exp {
         ss.append("i32.add\n");
         ss.append("call $reserveStack\n");
         ss.append("i32.store\n");
-        if (depth - 1 < depthCalled) {
-            ss.append("get_global $MP\n");
-            ss.append("get_global $MP\n");
-            ss.append("i32.load\n");
-        } else if (depth - 1 == depthCalled) {
-            ss.append("get_global $MP\n");
-            ss.append("get_global $MP\n");
-            ss.append("i32.load\n");
-            ss.append("i32.load offset=4\n");
-        }
+
+        ss.append("get_global $MP\n"); // Guardamos el SP
+        ss.append("get_global $MP\n");
+        ss.append("i32.load\n");
         ss.append("i32.store offset=4\n");
         ss.append("get_global $MP\n");
         ss.append("get_global $SP\n");
         ss.append("i32.store offset=8\n");
 
-        ss.append("call $");
+        ss.append("call $"); // Llamada a la funcion
         ss.append(desig.getTipo().getDec().getName());
         ss.append("\n");
         ss.append("call $freeStack\n");
