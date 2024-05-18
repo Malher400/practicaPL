@@ -24,6 +24,10 @@ public class TypeIden extends Type {
 		return tipo;
 	}
 
+	public Dec getDec() {
+		return dec;
+	}
+
 	public void setSize() {
 		size = tipo.getSize();
 	}

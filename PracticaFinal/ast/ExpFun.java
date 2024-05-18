@@ -63,34 +63,39 @@ public class ExpFun extends Exp {
 
     public String generateCode(int depth) {
         StringBuilder ss = new StringBuilder("\n");
-        for (int i = params.size() - 1; i >= 0; i--) {
-            for (int j = 0; j < params.get(i).getTipo().getSize(); j = j + 4) {
-                ss.append("i32.const ");
-                ss.append(desig.getTipo().getDec(i).getDelta());
-                ss.append("\n");
-                ss.append("get_global $SP\n");
-                ss.append("i32.add\n");
-                if (desig.getTipo().getDec(i).getTipo().getKindType() != KindType.REF) {
-                    if (params.get(i).getDesignador()) {
-                        ss.append(params.get(i).codeD(depth));
-                        ss.append("i32.load offset=");
+        try{
+            for (int i = params.size() - 1; i >= 0; i--) {
+                for (int j = 0; j < params.get(i).getTipo().getSize(); j = j + 4) {
+                    ss.append("i32.const ");
+                    ss.append(id.getTipo().getDec(i).getDelta());
+                    ss.append("\n");
+                    ss.append("get_global $SP\n");
+                    ss.append("i32.add\n");
+                    if (id.getTipo().getDec(i).getTipo().getKindType() != KindType.REF) {
+                        if (params.get(i).getDesignador()) {
+                            ss.append(params.get(i).codeD(depth));
+                            ss.append("i32.load offset=");
+                            ss.append(j);
+                            ss.append("\n");
+                        } else {
+                            ss.append(params.get(i).generateCode(depth));
+                        }
+                        ss.append("i32.store offset=");
                         ss.append(j);
                         ss.append("\n");
                     } else {
-                        ss.append(params.get(i).generateCode(depth));
+                        ss.append(params.get(i).codeD(depth));
+                        ss.append("i32.store\n");
                     }
-                    ss.append("i32.store offset=");
-                    ss.append(j);
-                    ss.append("\n");
-                } else {
-                    ss.append(params.get(i).codeD(depth));
-                    ss.append("i32.store\n");
                 }
             }
+        }catch(Exception e){
+            System.out.println("Error en ExpFun: " + e);
         }
+
         ss.append("get_global $SP\n"); // Reserva de espacio en la pila para la llamada
         ss.append("i32.const ");
-        ss.append(desig.getTipo().getDec().getMaxSize());
+        ss.append(id.getTipo().getSize());
         ss.append("\n");
         ss.append("i32.const 12\n");
         ss.append("i32.add\n");
@@ -106,7 +111,7 @@ public class ExpFun extends Exp {
         ss.append("i32.store offset=8\n");
 
         ss.append("call $"); // Llamada a la funcion
-        ss.append(desig.getTipo().getDec().getName());
+        ss.append(id.getTipo().getDec().getId());
         ss.append("\n");
         ss.append("call $freeStack\n");
         return ss.toString();

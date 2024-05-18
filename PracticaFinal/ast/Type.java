@@ -36,6 +36,10 @@ public class Type implements ASTNode {
         throw new TypeException(fila, columna, "El tipo " + this.toString() + " no tiene declaracion.");
     }
 
+    public Dec getDec() {
+        return null;
+    }
+
     public boolean equals(Type otro) throws TypeException {
         if (otro == null)
             return false;
