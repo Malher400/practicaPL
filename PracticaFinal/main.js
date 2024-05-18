@@ -54,8 +54,9 @@ async function start() {
 }
 
 async function run() {
-    await readInput(2);
+    //await readInput(2);
     start();
+    process.exit(0);
 }
 
 run();
