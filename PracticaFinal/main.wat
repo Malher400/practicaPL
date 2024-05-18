@@ -51,32 +51,6 @@
 	call $exception
 	end
 )
-(func $jumpStatic (param $depth i32) (result i32)
-(local $i i32)
-(local $marco i32)
-	global.get $MP
-	local.set $marco
-	local.get $depth
-	local.set $i
-	block
-	loop
-	local.get $i
-	i32.eqz
-	br_if 1
-	local.get $marco
-	i32.const 4
-	i32.add
-	i32.load
-	local.set $marco
-	local.get $i
-	i32.const 1
-	i32.sub
-	local.set $i
-	br 0
-	end
-	end
-	local.get $marco
-)
 (func $suma (result i32)
 	i32.const 0
 	i32.const 0
