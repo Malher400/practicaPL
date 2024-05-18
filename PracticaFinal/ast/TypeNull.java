@@ -6,7 +6,7 @@ public class TypeNull extends Type {
     }
 
     public String toString() {
-        return "null";
+        return "|TypeNull| null";
     }
 
     public void setSize() {

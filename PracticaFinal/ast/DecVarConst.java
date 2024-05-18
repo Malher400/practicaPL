@@ -12,7 +12,7 @@ public class DecVarConst extends DecVar {
 	}
 
 	public String toString() { // var const lenInt N := 20
-		return "var const " + tipo.toString() + " " + asig.toString();
+		return "    |DecVarConst| var const " + tipo.toString() + " " + asig.toString();
 	}
 
 	public boolean bind(Pila pila) {

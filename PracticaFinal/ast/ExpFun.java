@@ -16,7 +16,7 @@ public class ExpFun extends Exp {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder("|ExpFun|");
         str.append(id.toString());
         str.append('(');
         for (Exp e : params) {

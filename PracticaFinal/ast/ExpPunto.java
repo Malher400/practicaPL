@@ -15,7 +15,7 @@ public class ExpPunto extends Exp {
 	}
 
 	public String toString() {
-		return id.toString() + '.' + campo;
+		return "  |ExpPunto| " + id.toString() + '.' + campo;
 	}
 
 	public boolean bind(Pila pila) {

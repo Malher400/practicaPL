@@ -9,7 +9,7 @@ public class DecType extends Dec {
 	}
 
 	public String toString() {
-		return "type " + id + " := " + tipo.toString() + ';';
+		return "    |DecType| type " + id + " := " + tipo.toString() + ';';
 	}
 
 	public boolean bind(Pila pila) {

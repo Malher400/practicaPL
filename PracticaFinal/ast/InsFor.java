@@ -19,7 +19,7 @@ public class InsFor extends Ins {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("forLetariat ( ");
+		StringBuilder str = new StringBuilder("    |InsFor| forLetariat ( ");
 		str.append(dec.toString());
 		str.append(" ");
 		str.append(e.toString());

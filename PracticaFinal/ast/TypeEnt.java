@@ -6,7 +6,7 @@ public class TypeEnt extends Type {
 	}
 
 	public String toString() {
-		return "lenInt";
+		return "|TypeEnt| lenInt";
 	}
 
 	public boolean isAssignable() {

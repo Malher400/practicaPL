@@ -9,7 +9,7 @@ public class ExpNot extends EUnit {
     }
 
     public String toString() {
-        return "(!" + opnd.toString() + ')';
+        return "  |ExpNot| (!" + opnd.toString() + ')';
     }
 
     public void type() throws TypeException {

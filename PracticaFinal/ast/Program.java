@@ -30,10 +30,10 @@ public class Program implements ASTNode {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder();
+		StringBuilder str = new StringBuilder("|Program| \n");
 		for (Dec dec : decs) {
 			str.append(dec.toString());
-			str.append('\n');
+			str.append("\n\n");
 		}
 		str.append(main.toString());
 		return str.toString();

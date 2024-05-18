@@ -13,7 +13,7 @@ public class InsCall extends Ins {
 	}
 
 	public String toString() {
-		return "call " + fun.toString() + ';';
+		return "    |InsCall| call " + fun.toString() + ';';
 	}
 
 	public boolean bind(Pila pila) {

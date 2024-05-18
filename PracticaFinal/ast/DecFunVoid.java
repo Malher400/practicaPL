@@ -16,7 +16,7 @@ public class DecFunVoid extends Dec {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder("fun void ");
+        StringBuilder str = new StringBuilder("    |DecFunVoid| fun void ");
         str.append(id);
         str.append('(');
         for (Dec dec : args) {
@@ -25,9 +25,9 @@ public class DecFunVoid extends Dec {
         }
         str.delete(str.length() - 2, str.length());
         str.append(") ");
-        str.append("{\n");
-        str.append(bloque.toString());
-        str.append("\n}");
+        //str.append("{\n");
+        //str.append(bloque.toString());
+        //str.append("\n}");
         return str.toString();
     }
 

@@ -14,7 +14,7 @@ public class ExpBooleano extends Exp {
    }
 
    public String toString() {
-      return id;
+      return "  |ExpBooleano| " + id;
    }
 
    public void type() throws TypeException {

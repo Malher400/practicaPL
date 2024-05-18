@@ -17,7 +17,7 @@ public class TypeStruct extends Type {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder("stalinTruct {\n");
+        StringBuilder str = new StringBuilder("|TypeStruct| stalinTruct {\n");
         for (Dec dec : listaDs) {
             str.append(dec.toString());
             str.append('\n');

@@ -13,7 +13,7 @@ public class InsDelete extends Ins {
 	}
 
 	public String toString() {
-		return " delete " + e.toString() + ";";
+		return "    |InsDelete| delete " + e.toString() + ";";
 	}
 
 	public boolean bind(Pila pila) {

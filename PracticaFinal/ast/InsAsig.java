@@ -16,7 +16,7 @@ public class InsAsig extends Ins {
 	}
 
 	public String toString() {
-		return e1.toString() + " := " + e2.toString() + ";";
+		return "    |InsAsig| " + e1.toString() + " := " + e2.toString() + ";";
 	}
 
 	public boolean bind(Pila pila) {

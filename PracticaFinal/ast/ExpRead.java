@@ -12,7 +12,7 @@ public class ExpRead extends Exp {
     }
 
     public String toString() {
-        return "red" + tipo.toString();
+        return "  |ExpRead| red" + tipo.toString();
     }
 
     public boolean bind(Pila pila) {

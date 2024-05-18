@@ -23,7 +23,7 @@ public abstract class EBin extends Exp {
    }
 
    public String toString() {
-      return tipoExp.toString() + '(' + opnd1.toString() + ',' + opnd2.toString() + ')';
+      return "    |EBin| " + tipoExp.toString() + '(' + opnd1.toString() + ',' + opnd2.toString() + ')';
    }
 
    public boolean bind(Pila pila) {

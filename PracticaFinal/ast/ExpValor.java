@@ -10,7 +10,7 @@ public class ExpValor extends EUnit {
    }
 
    public String toString() {
-      return "(*" + opnd.toString() + ')';
+      return "  |ExpValor| (*" + opnd.toString() + ')';
    }
 
    public boolean getDesignador() {

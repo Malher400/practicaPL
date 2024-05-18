@@ -15,7 +15,7 @@ public class ExpIden extends Exp {
    }
 
    public String toString() {
-      return id;
+      return "|ExpIden| " + id;
    }
 
    public boolean bind(Pila pila) {

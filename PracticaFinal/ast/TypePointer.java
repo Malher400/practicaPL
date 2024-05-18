@@ -11,7 +11,7 @@ public class TypePointer extends Type {
 	}
 
 	public String toString() {
-		return "pointer " + tipo.toString();
+		return "|TypePointer| pointer " + tipo.toString();
 	}
 
 	public Type getTipo() {

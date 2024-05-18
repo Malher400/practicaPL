@@ -9,7 +9,7 @@ public class ExpNull extends Exp {
    }
 
    public String toString() {
-      return "null";
+      return "|ExpNull| null";
    }
 
    public void type() throws TypeException {

@@ -13,12 +13,17 @@ main {
 	var booleano b := true;
 	y := 1;
 
+	write(x);
+
 	forLetariat (var lenInt i := 0; i < 3; i := i + 1;) {
 		v[i] := i;
 	}
 
 	trotskIf (x > 6) {}
 	fidElseCastro {}
-	USSWhile (y < 3) {y:= y + 1;}
+	USSWhile (y < 3) {
+		y:= y + 1;
+		write(y);
+	}
 
 }

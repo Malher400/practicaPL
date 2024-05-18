@@ -9,7 +9,7 @@ public class ExpMenIg extends EBin {
    }
 
    public String toString() {
-      return '(' + opnd1.toString() + " <= " + opnd2.toString() + ')';
+      return "  |ExpMenIg| " + opnd1.toString() + " <= " + opnd2.toString() + ')';
    }
 
    public void type() throws TypeException {

@@ -13,7 +13,7 @@ public class InsWrite extends Ins {
 	}
 
 	public String toString() {
-		return "write (" + e.toString() + ");\n";
+		return "    |InsWrite| write (" + e.toString() + ");\n";
 	}
 
 	public boolean bind(Pila pila) {

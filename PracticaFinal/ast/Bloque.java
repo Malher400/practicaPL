@@ -14,12 +14,13 @@ public class Bloque extends Ins {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("");
+		StringBuilder str = new StringBuilder("    |Bloque|");
 		for (Dec d : decs) {
 			str.append("  ");
 			str.append(d.toString());
 			str.append('\n');
 		}
+		str.append('\n');
 		for (Ins i : ins) {
 			str.append("  ");
 			str.append(i.toString());
@@ -77,7 +78,7 @@ public class Bloque extends Ins {
 	}
 
 	public String generateCode(int depth) {
-		StringBuilder ss = new StringBuilder();
+		StringBuilder ss = new StringBuilder("");
 		for (Dec dec : decs)
 			ss.append(dec.generateCode(depth));
 		for (Ins i : ins)

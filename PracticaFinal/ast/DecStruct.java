@@ -13,7 +13,7 @@ public class DecStruct extends Dec {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder("stalinTruct ");
+        StringBuilder str = new StringBuilder("    |DecStruct| stalinTruct ");
         str.append(id);
         str.append(" {\n");
         for (Dec dec : listaDs) {

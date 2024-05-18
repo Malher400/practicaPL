@@ -6,7 +6,7 @@ public class TypeBool extends Type {
 	}
 
 	public String toString() {
-		return "boolShevik";
+		return "|TypeBool| boolShevik";
 	}
 
 	public boolean isAssignable() {

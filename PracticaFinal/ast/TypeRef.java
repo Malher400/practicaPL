@@ -11,7 +11,7 @@ public class TypeRef extends Type {
     }
 
     public String toString() {
-        return tipo.toString();
+        return "|TypeRef| " + tipo.toString();
     }
 
     public Type getTipo() {

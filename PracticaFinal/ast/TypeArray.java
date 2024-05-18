@@ -13,7 +13,7 @@ public class TypeArray extends Type {
 	}
 
 	public String toString() {
-		return "guevArray " + tipo.toString() + " [" + tam + ']';
+		return "|TypeArray| guevArray " + tipo.toString() + " [" + tam + ']';
 	}
 
 	public Type getTipo() {

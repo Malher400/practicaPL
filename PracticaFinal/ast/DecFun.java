@@ -21,7 +21,7 @@ public class DecFun extends Dec {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("fun ");
+		StringBuilder str = new StringBuilder("    |DecFun| fun ");
 		str.append(returnType.toString());
 		str.append(' ');
 		str.append(id);
@@ -32,12 +32,12 @@ public class DecFun extends Dec {
 		}
 		str.delete(str.length() - 2, str.length());
 		str.append(") ");
-		str.append("{\n");
-		str.append(bloque.toString());
-		str.append("  return ");
-		str.append(e.toString());
-		str.append(";\n");
-		str.append("\n}");
+		//str.append("{\n");
+		//str.append(bloque.toString());
+		//str.append("  return ");
+		//str.append(e.toString());
+		//str.append(";\n");
+		//str.append("}");
 		return str.toString();
 	}
 

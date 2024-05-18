@@ -20,14 +20,16 @@ public class Main {
 
 		if (programa != null) {
 			boolean b = programa.bind(new Pila());
+			System.out.println("\nBinding");
 			System.out.println(b);
 			if (!b)
 				System.out.println("Error, la vinculacion falla. Revise las declaraciones de variables.");
 			else {
 				try {
-					System.out.println("\n\nTipado\n\n");
-					System.out.println(programa);
+					System.out.println("\nTipado\n");
 					programa.type();
+					System.out.println("bien tipado");
+					System.out.println(programa);
 					System.out.println("\n\nGeneracion de codigo\n\n");
 					programa.setDelta(0);
 					Files.write(Paths.get("main.wat"), (programa.generateCode(0)).getBytes());

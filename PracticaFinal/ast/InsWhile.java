@@ -15,7 +15,7 @@ public class InsWhile extends Ins {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("USSWhile (");
+		StringBuilder str = new StringBuilder("    |InsWhile| USSWhile (");
 		str.append(e.toString());
 		str.append(") ");
 		str.append("{\n");

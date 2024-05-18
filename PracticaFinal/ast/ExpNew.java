@@ -13,7 +13,7 @@ public class ExpNew extends Exp {
 	}
 
 	public String toString() {
-		return "new" + tipoRes.toString();
+		return "  |ExpNew| new" + tipoRes.toString();
 	}
 
 	public void type() throws TypeException {

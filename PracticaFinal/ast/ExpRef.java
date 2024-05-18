@@ -9,7 +9,7 @@ public class ExpRef extends EUnit {
     }
 
     public String toString() {
-        return "(#" + opnd.toString() + ')';
+        return "  |ExpRef| (#" + opnd.toString() + ')';
     }
 
     public void type() throws TypeException {

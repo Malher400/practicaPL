@@ -14,7 +14,7 @@ public class ExpEntero extends Exp {
    }
 
    public String toString() {
-      return id;
+      return "|ExpEntero| " + id;
    }
 
    public void type() throws TypeException {

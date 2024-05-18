@@ -7,7 +7,7 @@ public class DecVar extends Dec {
 	}
 
 	public String toString() { // var lenInt;
-		return "var " + tipo.toString() + " " + id.toString() + ";";
+		return "    |DecVar| var " + tipo.toString() + " " + id.toString() + ";";
 	}
 
 	public boolean bind(Pila pila) {

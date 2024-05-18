@@ -17,16 +17,16 @@ public class InsIf_Else extends Ins {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("trotskIf (");
+		StringBuilder str = new StringBuilder("    |InsIf_Else| trotskIf (");
 		str.append(e.toString());
 		str.append(") ");
 		str.append("{\n");
 		str.append(bloqueIf.toString());
-		str.append("\n  }");
+		str.append("  }");
 		str.append("\n  fidElseCastro ");
 		str.append("{\n");
 		str.append(bloqueElse.toString());
-		str.append("\n  }");
+		str.append("  }");
 		return str.toString();
 	}
 

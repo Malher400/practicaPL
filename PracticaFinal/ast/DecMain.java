@@ -12,7 +12,7 @@ public class DecMain extends DecFunVoid {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder("main ");
+        StringBuilder str = new StringBuilder("|DecMain| main ");
         str.append("{\n");
         str.append(bloque.toString());
         str.append("\n}");

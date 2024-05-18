@@ -73,6 +73,9 @@
 	i32.const 0
 	i32.const 1
 	i32.store
+	i32.const 0
+	i32.load 
+	call $print
 	block
 	i32.const 0
 	i32.const 0
@@ -123,6 +126,9 @@
 	i32.const 1
 	i32.add
 	i32.store
+	i32.const 0
+	i32.load 
+	call $print
 	br 0
 	end
 	end

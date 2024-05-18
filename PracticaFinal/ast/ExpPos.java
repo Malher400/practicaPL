@@ -9,7 +9,7 @@ public class ExpPos extends EUnit {
    }
 
    public String toString() {
-      return "(+" + opnd.toString() + ')';
+      return "  |ExpPos| (+" + opnd.toString() + ')';
    }
 
    public void type() throws TypeException {

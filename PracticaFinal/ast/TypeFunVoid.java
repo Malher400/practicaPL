@@ -10,7 +10,7 @@ public class TypeFunVoid extends TypeFun {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder("");
+        StringBuilder str = new StringBuilder("|TypeFunVoid|");
         if (listaArgs.size() == 0) str.append("emptySet");
         for (Dec dec : listaArgs) {
             str.append(dec.getTipo().toString());

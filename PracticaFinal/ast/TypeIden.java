@@ -15,7 +15,7 @@ public class TypeIden extends Type {
 	}
 
 	public String toString() {
-		return id;
+		return "|TypeIden| " + id;
 	}
 
 	public Type getTipo() {
