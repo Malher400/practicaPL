@@ -24,7 +24,7 @@ public class ExpEntero extends Exp {
    }
 
    public String generateCode(int depth) {
-      return "i32.const " + id + "\n";
+      return "\ti32.const " + id + "\n";
    }
 
 }

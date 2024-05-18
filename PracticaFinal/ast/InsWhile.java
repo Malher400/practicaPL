@@ -47,15 +47,15 @@ public class InsWhile extends Ins {
 
 	public String generateCode(int depth) {
 		StringBuilder ss = new StringBuilder();
-		ss.append("block\n");
-		ss.append("loop\n");
+		ss.append("\tblock\n");
+		ss.append("\tloop\n");
 		ss.append(e.generateCode(depth));
-		ss.append("i32.eqz\n");
-		ss.append("br_if 1\n");
+		ss.append("\ti32.eqz\n");
+		ss.append("\tbr_if 1\n");
 		ss.append(bloque.generateCode(depth));
-		ss.append("br 0\n");
-		ss.append("end\n");
-		ss.append("end\n");
+		ss.append("\tbr 0\n");
+		ss.append("\tend\n");
+		ss.append("\tend\n");
 		return ss.toString();
 	}
 

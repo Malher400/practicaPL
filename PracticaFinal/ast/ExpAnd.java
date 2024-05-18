@@ -26,7 +26,7 @@ public class ExpAnd extends EBin {
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(super.generateCode(depth));
-      ss.append("i32.and\n");
+      ss.append("\ti32.and\n");
       return ss.toString();
    }
 }

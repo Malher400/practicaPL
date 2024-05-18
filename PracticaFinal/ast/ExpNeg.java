@@ -24,9 +24,9 @@ public class ExpNeg extends EUnit {
 
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
-      ss.append("i32.const 0\n"); // Hacemos la resta 0 - n, que ees -n
+      ss.append("\ti32.const 0\n"); // Hacemos la resta 0 - n, que ees -n
       ss.append(super.generateCode(depth));
-      ss.append("i32.sub\n");
+      ss.append("\ti32.sub\n");
       return ss.toString();
    }
 }

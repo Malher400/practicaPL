@@ -27,6 +27,6 @@ public class ExpRead extends Exp {
     }
 
     public String generateCode(int depth) {
-        return "call $read\n";
+        return "\tcall $read\n";
     }
 }

@@ -48,9 +48,9 @@ public class InsIf extends Ins {
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(e.generateCode(depth));
-		sb.append("if\n");
+		sb.append("\tif\n");
 		sb.append(bloque.generateCode(depth));
-		sb.append("end\n");
+		sb.append("\tend\n");
 		return sb.toString();
 	}
 }

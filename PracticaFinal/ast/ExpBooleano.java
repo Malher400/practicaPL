@@ -25,9 +25,9 @@ public class ExpBooleano extends Exp {
 
    public String generateCode(int depth) {
       if (id.equals("true"))
-         return "i32.const 1\n";
+         return "\ti32.const 1\n";
       else
-         return "i32.const 0\n";
+         return "\ti32.const 0\n";
    }
 
 }

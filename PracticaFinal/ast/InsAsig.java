@@ -45,7 +45,7 @@ public class InsAsig extends Ins {
 		StringBuilder sb = new StringBuilder();
 		sb.append(e1.codeD(depth));
 		sb.append(e2.generateCode(depth));
-		sb.append("i32.store\n");
+		sb.append("\ti32.store\n");
 		return sb.toString();
 	}
 }

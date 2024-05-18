@@ -77,69 +77,81 @@
 	end
 	local.get $marco
 )
+(func $suma (result i32)
+	i32.const 0
+	i32.const 0
+	i32.load 
+	i32.const 0
+	i32.load
+	i32.load 
+	i32.add
+	i32.store
+	i32.const 0
+	i32.load 
+)
 (func $main
-i32.const 0
-i32.const 1
-i32.store
-i32.const 0
-i32.const 1
-i32.store
-i32.const 0
-i32.const 1
-i32.store
-block
-i32.const 0
-i32.const 0
-i32.store
-loop
-i32.const 0
-i32.load 
-i32.const 3
-i32.lt_s
-i32.eqz
-br_if 1
-i32.const 0
-i32.const 4
-i32.const 0
-i32.load 
-i32.mul
-i32.add
-i32.const 0
-i32.load 
-i32.store
-i32.const 0
-i32.const 0
-i32.load 
-i32.const 1
-i32.add
-i32.store
-br 0
-end
-end
-i32.const 0
-i32.load 
-i32.const 6
-i32.gt_s
-if
-else
-end
-block
-loop
-i32.const 0
-i32.load 
-i32.const 3
-i32.lt_s
-i32.eqz
-br_if 1
-i32.const 0
-i32.const 0
-i32.load 
-i32.const 1
-i32.add
-i32.store
-br 0
-end
-end
+	i32.const 0
+	i32.const 1
+	i32.store
+	i32.const 0
+	i32.const 1
+	i32.store
+	i32.const 0
+	i32.const 1
+	i32.store
+	block
+	i32.const 0
+	i32.const 0
+	i32.store
+	loop
+	i32.const 0
+	i32.load 
+	i32.const 3
+	i32.lt_s
+	i32.eqz
+	br_if 1
+	i32.const 0
+	i32.const 4
+	i32.const 0
+	i32.load 
+	i32.mul
+	i32.add
+	i32.const 0
+	i32.load 
+	i32.store
+	i32.const 0
+	i32.const 0
+	i32.load 
+	i32.const 1
+	i32.add
+	i32.store
+	br 0
+	end
+	end
+	i32.const 0
+	i32.load 
+	i32.const 6
+	i32.gt_s
+	if
+	else
+	end
+	block
+	loop
+	i32.const 0
+	i32.load 
+	i32.const 3
+	i32.lt_s
+	i32.eqz
+	br_if 1
+	i32.const 0
+	i32.const 0
+	i32.load 
+	i32.const 1
+	i32.add
+	i32.store
+	br 0
+	end
+	end
 )
 (func $_main_
 	global.get $SP
@@ -154,9 +166,9 @@ end
 	global.get $MP
 	global.get $SP
 	i32.store offset=8
-i32.const 0
-i32.const 3
-i32.store
+	i32.const 0
+	i32.const 3
+	i32.store
 	global.get $SP
 	i32.const 0
 	i32.const 12
@@ -171,10 +183,6 @@ i32.store
 	global.get $SP
 	i32.store offset=8
 	call $main
-if
-	i32.const 3
-	call $exception
-end
 call $freeStack
 )
 (start $_main_)

@@ -28,14 +28,14 @@ public class ExpValor extends EUnit {
    public String codeD(int depth) { // Por si se accede a la referencia de una variable
       StringBuilder ss = new StringBuilder();
       ss.append(opnd.codeD(depth));
-      ss.append("i32.load\n");
+      ss.append("\ti32.load\n");
       return ss.toString();
    }
 
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(super.generateCode(depth));
-      ss.append("i32.load\n"); // Carga valor al que apunta la direccion de variable
+      ss.append("\ti32.load\n"); // Carga valor al que apunta la direccion de variable
       return ss.toString();
    }
 

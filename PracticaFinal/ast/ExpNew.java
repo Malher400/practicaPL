@@ -25,10 +25,10 @@ public class ExpNew extends Exp {
 
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("i32.const ");
+		sb.append("\ti32.const ");
 		sb.append(tipoRes.getSize());
 		sb.append("\n");
-		sb.append("call $reserveHeap\n");
+		sb.append("\tcall $reserveHeap\n");
 		return sb.toString();
 	}
 }

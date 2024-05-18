@@ -29,7 +29,7 @@ public class InsCall extends Ins {
 		StringBuilder sb = new StringBuilder("");
 		sb.append(fun.generateCode(depth));
 		if (fun.getTipo().getKindType() != KindType.NULL) {
-			sb.append("drop\n"); // Eliminar valor de la pila
+			sb.append("\tdrop\n"); // Eliminar valor de la pila
 		}
 		return sb.toString();
 	}

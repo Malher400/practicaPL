@@ -29,7 +29,7 @@ public class ExpMenor extends EBin {
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(super.generateCode(depth));
-      ss.append("i32.lt_s\n");
+      ss.append("\ti32.lt_s\n");
       return ss.toString();
    }
 

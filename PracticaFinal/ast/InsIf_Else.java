@@ -64,11 +64,11 @@ public class InsIf_Else extends Ins {
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(e.generateCode(depth));
-		sb.append("if\n");
+		sb.append("\tif\n");
 		sb.append(bloqueIf.generateCode(depth));
-		sb.append("else\n");
+		sb.append("\telse\n");
 		sb.append(bloqueElse.generateCode(depth));
-		sb.append("end\n");
+		sb.append("\tend\n");
 		return sb.toString();
 	}
 }

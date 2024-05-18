@@ -201,10 +201,10 @@ public class Program implements ASTNode {
     	ss.append("\tcall $");
     	ss.append(main.getId());
     	ss.append("\n");
-    	ss.append("if\n"); // Si $SP > $NP salta una excepcion
-    	ss.append("\ti32.const 3\n");
-    	ss.append("\tcall $exception\n");
-    	ss.append("end\n");
+    	//ss.append("\tif "); // Si $SP > $NP salta una excepcion
+    	//ss.append("i32.const 3\n");
+    	//ss.append("\t\tcall $exception\n");
+    	//ss.append("\tend\n");
 		ss.append("call $freeStack\n");
     	ss.append(")\n");
     	ss.append("(start $_main_)\n)\n");

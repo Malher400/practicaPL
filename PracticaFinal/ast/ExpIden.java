@@ -37,18 +37,18 @@ public class ExpIden extends Exp {
 
    public String codeD(int depth) {
       StringBuilder ss = new StringBuilder();
-      ss.append("i32.const " + dec.getDelta() + "\n");
+      ss.append("\ti32.const " + dec.getDelta() + "\n");
       if (dec.getDepth() != 0 && dec.getDepth() >= depth) {
-         ss.append("local.get $localStart\n");
-         ss.append("i32.add\n");
+         ss.append("\tlocal.get $localStart\n");
+         ss.append("\ti32.add\n");
       } else if (dec.getDepth() == 1 && depth == 2) {
-         ss.append("global.get $CP\n");
-         ss.append("i32.add\n");
+         ss.append("\tglobal.get $CP\n");
+         ss.append("\ti32.add\n");
       }
       // En el else la variable es global asi que no hay que sumarle nada al delta
 
       if (dec.getTipo().getKindType() == KindType.REF) {
-         ss.append("i32.load\n");
+         ss.append("\ti32.load\n");
       }
       return ss.toString();
    }
@@ -56,7 +56,7 @@ public class ExpIden extends Exp {
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(codeD(depth));
-      ss.append("i32.load \n");
+      ss.append("\ti32.load \n");
       return ss.toString();
    }
 

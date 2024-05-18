@@ -2,6 +2,11 @@ var const lenInt c := 3;
 var guevArray lenInt[3] v;
 type booleano := boolShevik;
 
+fun lenInt suma(lenInt x, lenInt # y) {
+	var lenInt z := x + y;
+	return z;
+}
+
 main {
 	var lenInt x := 1;
 	var lenInt y;
@@ -10,8 +15,8 @@ main {
 
 	forLetariat (var lenInt i := 0; i < 3; i := i + 1;) {
 		v[i] := i;
-
 	}
+
 	trotskIf (x > 6) {}
 	fidElseCastro {}
 	USSWhile (y < 3) {y:= y + 1;}

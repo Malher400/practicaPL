@@ -29,7 +29,7 @@ public class ExpMult extends EBin {
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(super.generateCode(depth));
-      ss.append("i32.mul\n");
+      ss.append("\ti32.mul\n");
       return ss.toString();
    }
 

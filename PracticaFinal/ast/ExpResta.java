@@ -29,7 +29,7 @@ public class ExpResta extends EBin {
    public String generateCode(int depth) {
       StringBuilder ss = new StringBuilder();
       ss.append(super.generateCode(depth));
-      ss.append("i32.sub\n");
+      ss.append("\ti32.sub\n");
       return ss.toString();
    }
 

@@ -19,7 +19,7 @@ public class ExpNull extends Exp {
    }
 
    public String generateCode(int depth) {
-      return "i32.const 0\n";
+      return "\ti32.const 0\n";
    }
 
 }

@@ -42,10 +42,10 @@ public class ExpPunto extends Exp {
 		StringBuilder ss = new StringBuilder();
 		try {
 			ss.append(id.codeD(depth));
-			ss.append("i32.const ");
+			ss.append("\ti32.const ");
 			ss.append(id.getDec(campo).getDelta());
 			ss.append("\n");
-			ss.append("i32.add\n");
+			ss.append("\ti32.add\n");
 		} catch (TypeException e) {
 			e.printStackTrace();
 		}
@@ -55,7 +55,7 @@ public class ExpPunto extends Exp {
 	public String generateCode(int depth) {
 		StringBuilder ss = new StringBuilder();
 		ss.append(codeD(depth));
-		ss.append("i32.load\n");
+		ss.append("\ti32.load\n");
 		return ss.toString();
 	}
 

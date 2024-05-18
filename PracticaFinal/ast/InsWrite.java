@@ -29,7 +29,7 @@ public class InsWrite extends Ins {
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder("");
 		sb.append(e.generateCode(depth));
-		sb.append("call $print\n");
+		sb.append("\tcall $print\n");
 		return sb.toString();
 	}
 

@@ -66,26 +66,26 @@ public class ExpFun extends Exp {
         try{
             for (int i = params.size() - 1; i >= 0; i--) {
                 for (int j = 0; j < params.get(i).getTipo().getSize(); j = j + 4) {
-                    ss.append("i32.const ");
+                    ss.append("\ti32.const ");
                     ss.append(id.getTipo().getDec(i).getDelta());
                     ss.append("\n");
-                    ss.append("get_global $SP\n");
-                    ss.append("i32.add\n");
+                    ss.append("\tget_global $SP\n");
+                    ss.append("\ti32.add\n");
                     if (id.getTipo().getDec(i).getTipo().getKindType() != KindType.REF) {
                         if (params.get(i).getDesignador()) {
                             ss.append(params.get(i).codeD(depth));
-                            ss.append("i32.load offset=");
+                            ss.append("\ti32.load offset=");
                             ss.append(j);
                             ss.append("\n");
                         } else {
                             ss.append(params.get(i).generateCode(depth));
                         }
-                        ss.append("i32.store offset=");
+                        ss.append("\ti32.store offset=");
                         ss.append(j);
                         ss.append("\n");
                     } else {
                         ss.append(params.get(i).codeD(depth));
-                        ss.append("i32.store\n");
+                        ss.append("\ti32.store\n");
                     }
                 }
             }
@@ -93,27 +93,27 @@ public class ExpFun extends Exp {
             System.out.println("Error en ExpFun: " + e);
         }
 
-        ss.append("get_global $SP\n"); // Reserva de espacio en la pila para la llamada
-        ss.append("i32.const ");
+        ss.append("\tget_global $SP\n"); // Reserva de espacio en la pila para la llamada
+        ss.append("\ti32.const ");
         ss.append(id.getTipo().getSize());
         ss.append("\n");
-        ss.append("i32.const 12\n");
-        ss.append("i32.add\n");
-        ss.append("call $reserveStack\n");
-        ss.append("i32.store\n");
+        ss.append("\ti32.const 12\n");
+        ss.append("\ti32.add\n");
+        ss.append("\tcall $reserveStack\n");
+        ss.append("\ti32.store\n");
 
-        ss.append("get_global $MP\n"); // Guardamos el SP
-        ss.append("get_global $MP\n");
-        ss.append("i32.load\n");
-        ss.append("i32.store offset=4\n");
-        ss.append("get_global $MP\n");
-        ss.append("get_global $SP\n");
-        ss.append("i32.store offset=8\n");
+        ss.append("\tget_global $MP\n"); // Guardamos el SP
+        ss.append("\tget_global $MP\n");
+        ss.append("\ti32.load\n");
+        ss.append("\ti32.store offset=4\n");
+        ss.append("\tget_global $MP\n");
+        ss.append("\tget_global $SP\n");
+        ss.append("\ti32.store offset=8\n");
 
-        ss.append("call $"); // Llamada a la funcion
+        ss.append("\tcall $"); // Llamada a la funcion
         ss.append(id.getTipo().getDec().getId());
         ss.append("\n");
-        ss.append("call $freeStack\n");
+        ss.append("\tcall $freeStack\n");
         return ss.toString();
     }
 }

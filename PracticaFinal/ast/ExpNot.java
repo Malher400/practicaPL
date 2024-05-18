@@ -25,7 +25,7 @@ public class ExpNot extends EUnit {
     public String generateCode(int depth) {
         StringBuilder ss = new StringBuilder();
         ss.append(super.generateCode(depth));
-        ss.append("i32.eqz\n"); // Comparamos el valor con 0, que es lo mismo que hacer not
+        ss.append("\ti32.eqz\n"); // Comparamos el valor con 0, que es lo mismo que hacer not
         return ss.toString();
     }
 
