@@ -1,14 +1,9 @@
 Expresiones:
 - Fun (gordo)
-- Corchete (revisar)
 - Flecha (struct, probablemente no vaya)
 - Punto (struct, probablemente no vaya)
 
-
 Instrucciones finalizadas
-
-
-Declaraciones
--Todas
+Declaraciones finalizadas
 
 Programa

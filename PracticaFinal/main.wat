@@ -63,6 +63,13 @@
 	i32.const 0
 	i32.load 
 )
+(func $escribe
+	i32.const 0
+	i32.load 
+	i32.const 3
+	i32.add
+	call $print
+)
 (func $main
 	i32.const 0
 	i32.const 1

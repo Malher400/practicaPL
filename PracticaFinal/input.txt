@@ -7,6 +7,10 @@ fun lenInt suma(lenInt x, lenInt # y) {
 	return z;
 }
 
+void escribe(lenInt x)  {
+	write (x + 3);
+}
+
 main {
 	var lenInt x := 1;
 	var lenInt y;

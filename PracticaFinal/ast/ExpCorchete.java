@@ -31,10 +31,7 @@ public class ExpCorchete extends EBin {
         StringBuilder ss = new StringBuilder();
         ss.append(opnd1.codeD(depth));
         ss.append("\ti32.const " + tipo.getSize() + "\n");
-        if (depth > 2)
-            ss.append(opnd2.generateCode(depth - 2));
-        else
-            ss.append(opnd2.generateCode(depth));
+        ss.append(opnd2.generateCode(depth));
         ss.append("\ti32.mul\n");
         ss.append("\ti32.add\n");
         return ss.toString();
