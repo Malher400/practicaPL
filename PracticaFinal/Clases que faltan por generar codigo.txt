@@ -7,3 +7,6 @@ Instrucciones finalizadas
 Declaraciones finalizadas
 
 Programa
+
+
+Cambiar en el pdf que los arrays se inician por defecto con todas sus componentes a 0.
