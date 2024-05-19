@@ -8,11 +8,13 @@ public class TypeFun extends Type {
     protected ArrayList<Dec> listaArgs;
     protected HashMap<String, Dec> mapArgs;
     protected Type tipo;
+    protected String id;
 
-    public TypeFun(Type tipo, ArrayList<Dec> listaArgs) {
+    public TypeFun(Type tipo, ArrayList<Dec> listaArgs, String id) {
         this.tipoType = KindType.FUN;
         this.tipo = tipo;
         this.listaArgs = listaArgs;
+        this.id = id;
         this.mapArgs = new HashMap<String, Dec>();
         for (Dec d : listaArgs)
             mapArgs.put(d.getId(), d);
@@ -20,7 +22,8 @@ public class TypeFun extends Type {
 
     public String toString() {
         StringBuilder str = new StringBuilder("|TypeFun|");
-        if (listaArgs.size() == 0) str.append("emptySet");
+        if (listaArgs.size() == 0)
+            str.append("emptySet");
         for (Dec dec : listaArgs) {
             str.append(dec.getTipo().toString());
             str.append(" x ");
@@ -36,6 +39,10 @@ public class TypeFun extends Type {
         if (tipo.getKindType() == KindType.REF)
             return tipo.getTipo();
         return tipo;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public Dec getDec(int i) throws TypeException {

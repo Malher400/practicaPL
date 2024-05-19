@@ -46,7 +46,7 @@ Programa ::= Declaraciones_Ini_Vac:decs Main:m
    {: RESULT = new Program(m.getFila(), m.getColumna(), decs, m); :};
 
 Main ::= MAIN LLABRE Bloque:b LLCIERRA  // Gestionamos el main como una funcion void sin argumentos
-   {: RESULT = new DecMain(b.getFila(), b.getColumna(), "main", new TypeFunVoid(new ArrayList<Dec> ()), new ArrayList<Dec> (), b); :};
+   {: RESULT = new DecMain(b.getFila(), b.getColumna(), "main", new TypeFunVoid(new ArrayList<Dec> (), "main"), new ArrayList<Dec> (), b); :};
 Main ::= MAIN error LLCIERRA:l
    {: System.out.println("FILA " + l.fila + ", COLUMNA " + l.columna + ": Declaracion de main incorrecta."); :};
 
@@ -146,13 +146,13 @@ Dec_Var_Ini ::= VAR CONST T0:t0 IDEN:iden ASIGNACION Expr:e PUNTOYCOMA
 
 // Declaracion de funciones tipo void
 Dec_Void ::= VOID IDEN:iden PABRE Lista_Argumentos_Vac:list_args PCIERRA LLABRE Bloque:b LLCIERRA
-   {: RESULT = new DecFunVoid(iden.fila, iden.columna, iden.lexema, new TypeFunVoid(list_args), list_args, b); :};
+   {: RESULT = new DecFunVoid(iden.fila, iden.columna, iden.lexema, new TypeFunVoid(list_args, iden.lexema), list_args, b); :};
 Dec_Void ::= VOID error LLCIERRA:l
    {: System.out.println("FILA " + l.fila + ", COLUMNA " + l.columna + ": Declaracion de funcion incorrecta."); :};
 
 // Declaracion de funciones 
 Dec_Fun ::= FUN T0:t0 IDEN:iden PABRE Lista_Argumentos_Vac:list_args PCIERRA LLABRE Bloque:b RETURN Expr:e PUNTOYCOMA LLCIERRA
-   {: RESULT = new DecFun(t0.getFila(), t0.getColumna(), iden.lexema, new TypeFun(t0, list_args), t0, list_args, b, e); :};
+   {: RESULT = new DecFun(t0.getFila(), t0.getColumna(), iden.lexema, new TypeFun(t0, list_args, iden.lexema), t0, list_args, b, e); :};
 Dec_Fun ::= FUN error LLCIERRA:l 
    {: System.out.println("FILA " + l.fila + ", COLUMNA " + l.columna + ": Declaracion de funcion incorrecta."); :};
 

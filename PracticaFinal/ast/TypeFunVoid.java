@@ -5,13 +5,14 @@ import errors.TypeException;
 
 public class TypeFunVoid extends TypeFun {
 
-    public TypeFunVoid(ArrayList<Dec> listaArgs) { // Mejor considerar las void directamente tipo FUN
-        super(new TypeNull(), listaArgs);
+    public TypeFunVoid(ArrayList<Dec> listaArgs, String id) { // Mejor considerar las void directamente tipo FUN
+        super(new TypeNull(), listaArgs, id);
     }
 
     public String toString() {
         StringBuilder str = new StringBuilder("|TypeFunVoid|");
-        if (listaArgs.size() == 0) str.append("emptySet");
+        if (listaArgs.size() == 0)
+            str.append("emptySet");
         for (Dec dec : listaArgs) {
             str.append(dec.getTipo().toString());
             str.append(" x ");

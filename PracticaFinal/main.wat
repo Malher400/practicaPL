@@ -56,89 +56,45 @@
 	i32.const 0
 	i32.load 
 	i32.const 0
-	i32.load
 	i32.load 
 	i32.add
 	i32.store
 	i32.const 0
 	i32.load 
-)
-(func $escribe
-	i32.const 0
-	i32.load 
-	i32.const 3
-	i32.add
-	call $print
 )
 (func $main
 	i32.const 0
-	i32.const 1
-	i32.store
+
 	i32.const 0
+	get_global $SP
+	i32.add
 	i32.const 1
-	i32.store
+	i32.store offset=0
 	i32.const 0
-	i32.const 1
+	get_global $SP
+	i32.add
+	i32.const 0
+	i32.load offset=0
+	i32.store offset=0
+	get_global $SP
+	i32.const 0
+	i32.const 12
+	i32.add
+	call $reserveStack
+	i32.store
+	get_global $MP
+	get_global $MP
+	i32.load
+	i32.store offset=4
+	get_global $MP
+	get_global $SP
+	i32.store offset=8
+	call $suma
+	call $freeStack
 	i32.store
 	i32.const 0
 	i32.load 
 	call $print
-	block
-	i32.const 0
-	i32.const 0
-	i32.store
-	loop
-	i32.const 0
-	i32.load 
-	i32.const 3
-	i32.lt_s
-	i32.eqz
-	br_if 1
-	i32.const 0
-	i32.const 4
-	i32.const 0
-	i32.load 
-	i32.mul
-	i32.add
-	i32.const 0
-	i32.load 
-	i32.store
-	i32.const 0
-	i32.const 0
-	i32.load 
-	i32.const 1
-	i32.add
-	i32.store
-	br 0
-	end
-	end
-	i32.const 0
-	i32.load 
-	i32.const 6
-	i32.gt_s
-	if
-	else
-	end
-	block
-	loop
-	i32.const 0
-	i32.load 
-	i32.const 3
-	i32.lt_s
-	i32.eqz
-	br_if 1
-	i32.const 0
-	i32.const 0
-	i32.load 
-	i32.const 1
-	i32.add
-	i32.store
-	i32.const 0
-	i32.load 
-	call $print
-	br 0
-	end
-	end
 )
 (func $_main_
 	global.get $SP
@@ -154,7 +110,7 @@
 	global.get $SP
 	i32.store offset=8
 	i32.const 0
-	i32.const 3
+	i32.const 2
 	i32.store
 	global.get $SP
 	i32.const 0

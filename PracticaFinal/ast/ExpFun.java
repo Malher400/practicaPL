@@ -63,7 +63,7 @@ public class ExpFun extends Exp {
 
     public String generateCode(int depth) {
         StringBuilder ss = new StringBuilder("\n");
-        try{
+        try {
             for (int i = params.size() - 1; i >= 0; i--) {
                 for (int j = 0; j < params.get(i).getTipo().getSize(); j = j + 4) {
                     ss.append("\ti32.const ");
@@ -89,7 +89,7 @@ public class ExpFun extends Exp {
                     }
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error en ExpFun: " + e);
         }
 
@@ -111,7 +111,7 @@ public class ExpFun extends Exp {
         ss.append("\ti32.store offset=8\n");
 
         ss.append("\tcall $"); // Llamada a la funcion
-        ss.append(id.getTipo().getDec().getId());
+        ss.append(id.getTipo().getId());
         ss.append("\n");
         ss.append("\tcall $freeStack\n");
         return ss.toString();
