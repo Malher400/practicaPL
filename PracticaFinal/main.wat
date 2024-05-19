@@ -52,25 +52,35 @@
 	end
 )
 (func $suma (result i32)
-	i32.const 0
-	i32.const 0
+	i32.const 36
+	i32.const 28
 	i32.load 
-	i32.const 0
+	i32.const 32
+	i32.load
 	i32.load 
 	i32.add
 	i32.store
+	i32.const 36
+	i32.load 
+)
+(func $escribe
 	i32.const 0
 	i32.load 
+	i32.const 3
+	i32.add
+	call $print
 )
 (func $main
 	i32.const 0
+	i32.load 
+	call $print
 
-	i32.const 0
+	i32.const 32
 	global.get $SP
 	i32.add
-	i32.const 1
-	i32.store offset=0
-	i32.const 0
+	i32.const 4
+	i32.store
+	i32.const 28
 	global.get $SP
 	i32.add
 	i32.const 0
@@ -91,7 +101,13 @@
 	i32.store offset=8
 	call $suma
 	call $freeStack
-	i32.store
+	call $print
+	i32.const 0
+	i32.load 
+	call $print
+	i32.const 4
+	i32.load 
+	call $print
 	i32.const 0
 	i32.load 
 	call $print
@@ -110,7 +126,10 @@
 	global.get $SP
 	i32.store offset=8
 	i32.const 0
-	i32.const 2
+	i32.const 3
+	i32.store
+	i32.const 4
+	i32.const 4
 	i32.store
 	global.get $SP
 	i32.const 0

@@ -1,11 +1,23 @@
-var lenInt C := 2;
 
-fun lenInt suma(lenInt x, lenInt y) {
+var lenInt c := 3;
+var lenInt p := 4;
+var guevArray lenInt[5] v;
+
+fun lenInt suma(lenInt x, lenInt # y) {
 	var lenInt z := x + y;
 	return z;
 }
 
+void escribe(lenInt x)  {
+	write (x + 3);
+}
+
 main {
-	var lenInt a := suma(C, 1);
-	write (C);
+
+	write(c);
+
+	write(suma(c,p));
+	write(c);
+	write(p);
+	write(c);
 }

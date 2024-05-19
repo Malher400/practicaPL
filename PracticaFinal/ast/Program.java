@@ -58,6 +58,9 @@ public class Program implements ASTNode {
 	}
 
 	public int setDelta(int d) {
+		int i = d;
+		for (Dec dec : decs) i = dec.setDelta(i);
+    	main.setDelta(i);
 		return d;
 	}
 
@@ -177,13 +180,11 @@ public class Program implements ASTNode {
 		ss.append("\tcall $");
 		ss.append(main.getId());
 		ss.append("\n");
-		// ss.append("\tif "); // Si $SP > $NP salta una excepcion
-		// ss.append("i32.const 3\n");
-		// ss.append("\t\tcall $exception\n");
-		// ss.append("\tend\n");
+
 		ss.append("call $freeStack\n");
 		ss.append(")\n");
 		ss.append("(start $_main_)\n)\n");
+
 
 		return ss.toString();
 	}

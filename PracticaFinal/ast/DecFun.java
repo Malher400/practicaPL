@@ -90,7 +90,9 @@ public class DecFun extends Dec {
     	return ss.toString();
     }
 
-	public String generateCode(int depth){ return ""; }
+	public String generateCode(int depth) {
+		return "";
+    }
 
 	public int getSize() {return MaxSize;}  
 

@@ -59,4 +59,9 @@ public class DecFunVoid extends Dec {
     	return ss.toString();
     }
 
+    public String generateCode(int depth) {
+        return "";
+    }
+
+
 }
