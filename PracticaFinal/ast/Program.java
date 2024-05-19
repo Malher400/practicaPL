@@ -132,8 +132,8 @@ public class Program implements ASTNode {
 
 		ss.append(codeFun(depth + 1));
 
-		ss.append("(func $_main_\n");
 		// Creación de marco de $_main_
+		ss.append("(func $_main_\n");
 		ss.append("\tglobal.get $SP\n");
 		ss.append("\ti32.const ");
 		ss.append(maxSize);
