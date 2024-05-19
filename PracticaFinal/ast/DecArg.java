@@ -10,7 +10,7 @@ public class DecArg extends DecVar {
 		if (tipo.getKindType() == KindType.REF)
 			return "  |DecArg| " + tipo.toString() + " #" + id.toString();
 		else
-			return "  DecArg | " + tipo.toString() + ' ' + id.toString();
+			return "  |DecArg| " + tipo.toString() + ' ' + id.toString();
 	}
 
 	
