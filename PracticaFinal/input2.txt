@@ -7,7 +7,7 @@ fun lenInt suma(lenInt x, lenInt # y) {
 	return z;
 }
 
-fun void escribe(lenInt x)  {
+void escribe(lenInt x)  {
 	write (x + 3);
 }
 

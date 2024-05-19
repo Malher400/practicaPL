@@ -1,0 +1,11 @@
+var lenInt C := 2;
+
+fun lenInt suma(lenInt x, lenInt y) {
+	var lenInt z := x + y;
+	return z;
+}
+
+main {
+	var lenInt a := suma(C, 1);
+	write (C);
+}
