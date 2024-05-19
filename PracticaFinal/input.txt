@@ -7,5 +7,5 @@ fun lenInt suma(lenInt x, lenInt y) {
 
 main {
 	var lenInt a := suma(C, 1);
-	write (a);
+	write (C);
 }

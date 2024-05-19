@@ -68,7 +68,7 @@ public class ExpFun extends Exp {
                     ss.append("\ti32.const ");
                     ss.append(id.getTipo().getDec(i).getDelta());
                     ss.append("\n");
-                    ss.append("\tget_global $SP\n");
+                    ss.append("\tglobal.get $SP\n");
                     ss.append("\ti32.add\n");
                     if (id.getTipo().getDec(i).getTipo().getKindType() != KindType.REF) {
                         if (params.get(i).getDesignador()) {
@@ -92,7 +92,7 @@ public class ExpFun extends Exp {
             System.out.println("Error en ExpFun: " + e);
         }
 
-        ss.append("\tget_global $SP\n"); // Reserva de espacio en la pila para la llamada
+        ss.append("\tglobal.get $SP\n"); // Reserva de espacio en la pila para la llamada
         ss.append("\ti32.const ");
         ss.append(id.getTipo().getSize());
         ss.append("\n");
@@ -101,12 +101,12 @@ public class ExpFun extends Exp {
         ss.append("\tcall $reserveStack\n");
         ss.append("\ti32.store\n");
 
-        ss.append("\tget_global $MP\n"); // Guardamos el SP
-        ss.append("\tget_global $MP\n");
+        ss.append("\tglobal.get $MP\n"); // Guardamos el SP
+        ss.append("\tglobal.get $MP\n");
         ss.append("\ti32.load\n");
         ss.append("\ti32.store offset=4\n");
-        ss.append("\tget_global $MP\n");
-        ss.append("\tget_global $SP\n");
+        ss.append("\tglobal.get $MP\n");
+        ss.append("\tglobal.get $SP\n");
         ss.append("\ti32.store offset=8\n");
 
         ss.append("\tcall $"); // Llamada a la funcion

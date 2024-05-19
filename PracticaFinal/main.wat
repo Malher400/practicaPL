@@ -66,28 +66,28 @@
 	i32.const 0
 
 	i32.const 0
-	get_global $SP
+	global.get $SP
 	i32.add
 	i32.const 1
 	i32.store offset=0
 	i32.const 0
-	get_global $SP
+	global.get $SP
 	i32.add
 	i32.const 0
 	i32.load offset=0
 	i32.store offset=0
-	get_global $SP
+	global.get $SP
 	i32.const 0
 	i32.const 12
 	i32.add
 	call $reserveStack
 	i32.store
-	get_global $MP
-	get_global $MP
+	global.get $MP
+	global.get $MP
 	i32.load
 	i32.store offset=4
-	get_global $MP
-	get_global $SP
+	global.get $MP
+	global.get $SP
 	i32.store offset=8
 	call $suma
 	call $freeStack
