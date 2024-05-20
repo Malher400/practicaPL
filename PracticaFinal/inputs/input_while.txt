@@ -4,9 +4,11 @@ main {
 
 	var lenInt x := 5;
 
+	var lenInt i := 0;
 	USSWhile (x > 2){
-		write(x);
+		write(x + i);
 		x := x - 1;
+		i := i + 2;
 	}
 
 }

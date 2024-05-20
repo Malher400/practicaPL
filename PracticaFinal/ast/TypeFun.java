@@ -41,6 +41,12 @@ public class TypeFun extends Type {
         return tipo;
     }
 
+    public int getNumParams() {
+        if (listaArgs == null)
+            return 0;
+        return listaArgs.size();
+    }
+
     public String getId() {
         return id;
     }

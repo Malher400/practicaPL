@@ -11,7 +11,7 @@ Ejecutar desde PracticaFinal:
 javac -cp "cup.jar" */*.java
 
 Probar el codigo sobre el fichero input.txt:
-java -cp ".:cup.jar" constructorast.Main input.txt
+java -cp ".:cup.jar" constructorast.Main ./inputs/input_funciones.txt
 
 Transformar wat a wasm: (Si no hay permiso ejecutar: chmod +x ./wat2wasm)
 ./wat2wasm main.wat

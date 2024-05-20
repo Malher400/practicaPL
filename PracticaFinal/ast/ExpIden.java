@@ -38,8 +38,6 @@ public class ExpIden extends Exp {
    public String codeD(int depth) {
       StringBuilder ss = new StringBuilder("\ti32.const " + dec.getDelta() + '\n');
 
-      System.out.println(id + " " + dec.getDepth() + " " + depth);
-
 
       if (dec.getDepth() == 1){
          ss.append("\tglobal.get $MP\n");
@@ -48,17 +46,6 @@ public class ExpIden extends Exp {
       if (dec.getTipo().getKindType() == KindType.REF) {
          ss.append("\ti32.load\n");
       }
-
-      /*
-		if(dec.getDepth() != 0 && dec.getDepth() >= depth){
-			ss.append("local.get $marco\n");
-			ss.append("\ti32.add\n");
-		}
-		else if(dec.getDepth() == 1 && depth == 2){
-			ss.append("global.get $MP\n");
-			ss.append("\ti32.add\n");
-		}
-      */
 
       return ss.toString();
    }

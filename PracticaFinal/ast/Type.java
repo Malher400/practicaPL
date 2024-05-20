@@ -83,4 +83,8 @@ public class Type implements ASTNode {
     }
     public void setDepth(int d) {   }
 
+    public int getNumParams() {
+        return 0;
+    }
+
 }

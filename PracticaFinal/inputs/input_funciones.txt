@@ -1,0 +1,21 @@
+
+
+
+fun lenInt suma(lenInt x, lenInt y) {
+	var lenInt z := x + y;
+	return z;
+}
+
+void escribe(lenInt x)  {
+	write(x + 2);
+}
+
+
+main {
+
+	var lenInt a := 5;
+
+	call escribe(suma(2,a));
+
+
+}

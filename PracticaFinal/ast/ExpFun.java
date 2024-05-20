@@ -41,6 +41,9 @@ public class ExpFun extends Exp {
         id.type();
         if (id.getTipo().getKindType() != KindType.FUN)
             throw new TypeException(fila, columna, "La expresion " + id.toString() + " no es de tipo función");
+        if (params.size() != id.getTipo().getNumParams()){
+            throw new TypeException(fila, columna, "El numero de parametros no coincide con la funcion");
+        }
         for (int i = 0; i < params.size(); ++i) {
             params.get(i).type();
             if (id.getTipo().getDec(i).getTipo().getKindType() == KindType.REF) {
