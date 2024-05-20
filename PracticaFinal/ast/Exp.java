@@ -58,6 +58,8 @@ public abstract class Exp implements ASTNode {
         return d;
     }
 
+    public void setDepth(int d){}
+
     public String codeD(int depth) {
         return "";
     }

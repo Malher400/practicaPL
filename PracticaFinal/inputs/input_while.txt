@@ -1,0 +1,12 @@
+
+
+main {
+
+	var lenInt x := 5;
+
+	USSWhile (x > 2){
+		write(x);
+		x := x - 1;
+	}
+
+}

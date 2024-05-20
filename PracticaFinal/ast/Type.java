@@ -81,5 +81,6 @@ public class Type implements ASTNode {
     public int setDelta(int d) {
         return d;
     }
+    public void setDepth(int d) {   }
 
 }

@@ -45,6 +45,10 @@ public class InsIf extends Ins {
 		return bloque.setDelta(d);
 	}
 
+	public void setDepth(int d){
+		bloque.setDepth(d);
+	}
+
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(e.generateCode(depth));

@@ -69,16 +69,22 @@ public class DecFun extends Dec {
 	}
 
 	public int setDelta(int d){
-		int n = 0;
+		int n = 12;
 		for (Dec dec: args) {
-			n = dec.setDelta(d);
-			d = n;
+			n = dec.setDelta(n);
 		}
-		n = bloque.setDelta(d);
-		d = n;
+		n = bloque.setDelta(n);
 		MaxSize = n;
 		return d;
 	}
+
+	public void setDepth(int d){
+        super.setDepth(d);
+        for (Dec dec : args) {
+            dec.setDepth(d+1);
+        }
+        bloque.setDepth(d+1);
+    }
 
 	public String codeFun(int depth) {
     	StringBuilder ss = new StringBuilder("(func $");

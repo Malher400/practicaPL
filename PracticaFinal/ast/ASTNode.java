@@ -9,6 +9,8 @@ public interface ASTNode {
 
     public int setDelta(int d);
 
+    public void setDepth(int d);
+
     public boolean bind(Pila pila);
 
     public NodeKind nodeKind();

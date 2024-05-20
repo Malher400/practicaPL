@@ -26,19 +26,6 @@ public class DecStruct extends Dec {
         return str.toString();
     }
 
-    public boolean bind(Pila pila) { // Provisional
-        pila.insertaId(id, this);
-        pila.abreBloque();
-        boolean b = true;
-        for (Dec d : listaDs) {
-            pila.insertaId(d.getId(), d);
-            b = b && d.bind(pila);
-        }
-        pila.cierraBloque();
-
-        return b;
-    }
-
     public void type() throws TypeException {
         tipo.type();
     }
@@ -53,6 +40,7 @@ public class DecStruct extends Dec {
     }
     
     public void setDepth(int d){
+        super.setDepth(d);
         for (Dec dec : listaDs){
             dec.setDepth(d);
         }

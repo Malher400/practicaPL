@@ -61,6 +61,11 @@ public class InsIf_Else extends Ins {
 		return d;
 	}
 
+	public void setDepth(int d){
+		bloqueIf.setDepth(d);
+		bloqueElse.setDepth(d);
+	}
+
 	public String generateCode(int depth) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(e.generateCode(depth));

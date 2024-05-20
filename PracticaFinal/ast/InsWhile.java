@@ -45,6 +45,11 @@ public class InsWhile extends Ins {
 		return bloque.setDelta(d);
 	}
 
+	public void setDepth(int d){
+		bloque.setDepth(d);
+	
+	}
+
 	public String generateCode(int depth) {
 		StringBuilder ss = new StringBuilder();
 		ss.append("\tblock\n");

@@ -77,6 +77,13 @@ public class Bloque extends Ins {
 		return d;
 	}
 
+	public void setDepth(int d){
+		for (Dec dec : decs)
+			dec.setDepth(d);
+		for (Ins in : ins)
+			in.setDepth(d);
+	}
+
 	public String generateCode(int depth) {
 		StringBuilder ss = new StringBuilder("");
 		for (Dec dec : decs)

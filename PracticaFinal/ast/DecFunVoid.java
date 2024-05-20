@@ -31,6 +31,23 @@ public class DecFunVoid extends Dec {
         return str.toString();
     }
 
+    public int setDelta(int d){
+		int n = 12;
+		for (Dec dec: args) {
+			n = dec.setDelta(n);
+		}
+		n = bloque.setDelta(n);
+		return d;
+	}
+
+    public void setDepth(int d){
+        super.setDepth(d);
+        for (Dec dec : args) {
+            dec.setDepth(d+1);
+        }
+        bloque.setDepth(d+1);
+    }
+
     public boolean bind(Pila pila) {
         pila.insertaId(id, this);
         boolean b = true;

@@ -57,6 +57,11 @@ public class InsFor extends Ins {
 		return i;
 	}
 
+	public void setDepth(int d){
+		dec.setDepth(d);
+		bloque.setDepth(d);
+	}
+
 	public String generateCode(int depth) {
 		StringBuilder ss = new StringBuilder();
 		ss.append("\tblock\n");

@@ -51,66 +51,37 @@
 	call $exception
 	end
 )
-(func $suma (result i32)
-	i32.const 36
-	i32.const 28
-	i32.load 
-	i32.const 32
-	i32.load
-	i32.load 
-	i32.add
-	i32.store
-	i32.const 36
-	i32.load 
-)
-(func $escribe
-	i32.const 0
-	i32.load 
-	i32.const 3
-	i32.add
-	call $print
-)
 (func $main
-	i32.const 0
-	i32.load 
-	call $print
-
-	i32.const 32
-	global.get $SP
-	i32.add
-	i32.const 4
-	i32.store
-	i32.const 28
-	global.get $SP
-	i32.add
-	i32.const 0
-	i32.load offset=0
-	i32.store offset=0
-	global.get $SP
-	i32.const 0
 	i32.const 12
+	global.get $MP
 	i32.add
-	call $reserveStack
+	i32.const 5
 	i32.store
+	block
+	loop
+	i32.const 12
 	global.get $MP
+	i32.add
+	i32.load 
+	i32.const 2
+	i32.gt_s
+	i32.eqz
+	br_if 1
+	i32.const 3
+	call $print
+	i32.const 12
 	global.get $MP
-	i32.load
-	i32.store offset=4
+	i32.add
+	i32.const 12
 	global.get $MP
-	global.get $SP
-	i32.store offset=8
-	call $suma
-	call $freeStack
-	call $print
-	i32.const 0
+	i32.add
 	i32.load 
-	call $print
-	i32.const 4
-	i32.load 
-	call $print
-	i32.const 0
-	i32.load 
-	call $print
+	i32.const 1
+	i32.sub
+	i32.store
+	br 0
+	end
+	end
 )
 (func $_main_
 	global.get $SP
@@ -125,12 +96,6 @@
 	global.get $MP
 	global.get $SP
 	i32.store offset=8
-	i32.const 0
-	i32.const 3
-	i32.store
-	i32.const 4
-	i32.const 4
-	i32.store
 	global.get $SP
 	i32.const 0
 	i32.const 12

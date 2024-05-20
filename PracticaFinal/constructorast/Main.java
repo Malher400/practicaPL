@@ -33,6 +33,7 @@ public class Main {
 					System.out.println(programa);
 					System.out.println("\n\nGeneracion de codigo\n\n");
 					programa.setDelta(0);
+					programa.setDepth(0);
 					Files.write(Paths.get("main.wat"), (programa.generateCode(0)).getBytes());
 				} catch (TypeException e) {
 					e.printErrors();

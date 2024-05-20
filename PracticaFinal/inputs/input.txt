@@ -1,0 +1,17 @@
+
+
+
+fun lenInt suma(lenInt x, lenInt # y) {
+	var lenInt z := x + y;
+	return z;
+}
+
+
+main {
+
+	var lenInt a := 5;
+
+	write(suma(2 + 4));
+
+
+}

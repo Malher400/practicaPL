@@ -64,6 +64,11 @@ public class Program implements ASTNode {
 		return d;
 	}
 
+	public void setDepth(int d){
+		for (Dec dec : decs) dec.setDepth(d);
+		main.setDepth(d);
+	}
+
 	public String codeFun(int depth) {
 		StringBuilder ss = new StringBuilder("");
 		for (Dec dec : decs)

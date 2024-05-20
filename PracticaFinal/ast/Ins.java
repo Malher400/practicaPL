@@ -35,4 +35,6 @@ public abstract class Ins implements ASTNode {
 	public int setDelta(int d) {
 		return d;
 	}
+
+	public void setDepth(int d){}
 }
