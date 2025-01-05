@@ -2,7 +2,9 @@
 
 main {
 
+	write(7);
 	var lenInt x := red lenInt;
 	write(x);
+	write(0);
 
 }

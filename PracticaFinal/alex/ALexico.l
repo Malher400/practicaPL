@@ -67,6 +67,8 @@ claveCall = call
 claveNew = new                  
 claveDelete = delete  
 
+claveSwitch = caSoviets
+
 identificador = {letra}({letra}|{digito}|\_)*
 
 operadorMas = \+        
@@ -136,6 +138,8 @@ coma = \,
 {claveCall}                 {return ops.unidadCall();} 
 {claveNew}                  {return ops.unidadNew();} 
 {claveDelete}               {return ops.unidadDelete();} 
+
+{claveSwitch}               {return ops.unidadCaSoviets();}
 
 {identificador}             {return ops.unidadIden();}
 

@@ -27,7 +27,7 @@ terminal  TokenValue VAR, BOOL, ENTPOS, GUEVARRAY, POINTER, STALINTRUCT, MAIN, L
                       WRITE, CALL, NEW, DELETE, CONST, IDEN, MAS, MENOS, ASTERISCO, DIV, RESTO, IGUAL,
                       MENORIGUAL, MAYORIGUAL, MENOR, MAYOR, AND, OR, NEG, REF, CABRE, CCIERRA, PUNTO,
                       FLECHA, PABRE, PCIERRA, LLABRE, LLCIERRA, PUNTOYCOMA, ASIGNACION, RETURN, COMA,
-                      DISTINTO, TYPE, VOID;
+                      DISTINTO, TYPE, VOID, SWITCH, CASE, DEFAULT, POSICION, DOSPUNTOS;
 
 non terminal Program Programa;
 non terminal ArrayList<Dec> Lista_Declaraciones_Vac, Lista_Declaraciones, Declaraciones_Ini_Vac, 
@@ -35,12 +35,13 @@ non terminal ArrayList<Dec> Lista_Declaraciones_Vac, Lista_Declaraciones, Declar
 non terminal ArrayList<Ins> Lista_Instrucciones, Lista_Instrucciones_Vac;
 non terminal ArrayList<Exp> Lista_Param_Vac, Lista_Param;
 non terminal DecMain Main;
-non terminal Ins Bloque, Instruccion, InsAsig, InsIf, InsIfElse, InsWhile, InsFor, InsWrite, InsDelete, InsCall;
+non terminal Ins Bloque, Instruccion, InsAsig, InsIf, InsIfElse, InsWhile, InsFor, InsWrite, InsDelete, InsCall, InsSwitch;
 non terminal Exp Expr, E0, E1, E2, E3, E4, E5, E6, E7, E8;
 non terminal Type T0, T1, T2;
 non terminal Dec Declaracion, Inicial, Dec_Var, Dec_Var_Vacia, Dec_Var_Ini, Dec_Fun,
                  Dec_Void, Dec_Tipo, Dec_Struct, Argumento;
 
+non terminal HashMap<String,Ins> ListaCasos, ListaCasos1;
 
 Programa ::= Declaraciones_Ini_Vac:decs Main:m 
    {: RESULT = new Program(m.getFila(), m.getColumna(), decs, m); :};
@@ -187,6 +188,8 @@ Instruccion ::= InsDelete:i
    {: RESULT = i; :}; 
 Instruccion ::= InsCall:i
    {: RESULT = i; :}; 
+Instruccion ::= InsSwitch:i
+   {: RESULT = i; :};
 
 InsAsig ::= Expr:e1 ASIGNACION Expr:e2 PUNTOYCOMA
    {: RESULT = new InsAsig(e1.getFila(),e1.getColumna(),e1,e2,false); :};
@@ -213,6 +216,11 @@ InsCall ::= CALL E7:e7 PABRE Lista_Param_Vac:list_params PCIERRA PUNTOYCOMA
 InsCall ::= CALL error PUNTOYCOMA:p
    {: System.out.println("FILA " + p.fila + ", COLUMNA " + p.columna + ": Llamada a funcion incorrecta."); :};
 
+InsSwitch ::= SWITCH PABRE Expr:e PCIERRA LLABRE ListaCasos:casos LLCIERRA
+   {: RESULT = new InsSwitch(e.getFila(), e.getColumna(), e, casos); :};
+InsSwitch ::= SWITCH error LLCIERRA:l
+   {: System.out.println("FILA " + f.fila + ", COLUMNA " + f.columna + ": Instruccion caSoviets incorrecta."); :};
+
 // Parametros al llamar una funcion
 Lista_Param_Vac ::= Lista_Param:list_params
    {: RESULT = list_params; :};
@@ -222,6 +230,26 @@ Lista_Param::= Lista_Param:list_params COMA Expr:expr
    {: list_params.add(expr); RESULT = list_params; :};
 Lista_Param ::= Expr:expr
    {: ArrayList<Exp> list_params = new ArrayList<Exp>(); list_params.add(expr);  RESULT = list_params; :};
+
+// Casos del switch
+ListaCasos ::= DEFAULT Bloque:b
+   {: HashMap<String,Ins> c = new HashMap<String,Ins>(); 
+      c.put("default",new Bloque(b)); 
+      RESULT = c; :};
+ListaCasos ::= ListaCasos1:l DEFAULT Bloque:bloque
+   {: l.put("default",new Bloque(b)); 
+      RESULT = l; :};
+ListaCasos ::= ListaCasos1:l
+   {: RESULT = l; :};
+ListaCasos1 ::= CASE POSICION:num DOSPUNTOS Bloque:bloque
+   {: HashMap<String,Ins> c = new HashMap<String,Ins>(); 
+      c.put(num.lexema,new Bloque(bloque)); 
+      RESULT = c; :};
+ListaCasos1 ::= ListaCasos1:l CASE POSICION:num DOSPUNTOS Bloque:bloque
+   {: l.put(num.lexema,new Bloque(bloque)); 
+      RESULT = l; :};
+ListaCasos1 ::= error CASE:c POSICION:num DOSPUNTOS Bloque:bloque
+   {: System.out.println("FILA " + c.fila + ", COLUMNA " + c.columna + ": Caso incorrecto."); :};
 
 
 // Expresiones 

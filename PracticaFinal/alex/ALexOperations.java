@@ -58,6 +58,7 @@ public class ALexOperations {
   public UnidadLexica unidadForLetariat() { // 16
    return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.FORLETARIAT); 
   } 
+  
   public UnidadLexica unidadRed() { // 17
    return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.RED); 
   } 
@@ -165,5 +166,11 @@ public class ALexOperations {
   }
   public UnidadLexica unidadVoid() { // 52
    return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.VOID);
+  }
+  public UnidadLexica unidadCaSoviets() { // 13
+    return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.CASOVIETS); 
+  }
+  public UnidadLexica unidadDosPuntos() {
+  return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.DOSPUNTOS);
   }
 }

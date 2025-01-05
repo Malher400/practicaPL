@@ -7,7 +7,7 @@ fun lenInt suma(lenInt x, lenInt y) {
 }
 
 void escribe(lenInt x)  {
-	write(x + 2);
+	write(x);
 }
 
 
@@ -15,7 +15,6 @@ main {
 
 	var lenInt a := 5;
 
-	call escribe(suma(2,a));
-
+	call escribe(20);
 
 }

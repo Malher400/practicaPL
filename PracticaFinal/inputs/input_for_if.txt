@@ -4,7 +4,7 @@ var const lenInt c := 3;
 
 main {
 
-	forLetariat(var lenInt i := 0; i < 5; i := i+1;){
+	forLetariat(var lenInt i := 0; i < 8; i := i+1;){
 		v[i] := i;
 		trotskIf(v[i] % 2 == 0){
 			write(v[i]);
