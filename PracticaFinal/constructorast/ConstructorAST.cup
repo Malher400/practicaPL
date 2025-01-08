@@ -27,7 +27,7 @@ terminal  TokenValue VAR, BOOL, ENTPOS, GUEVARRAY, POINTER, STALINTRUCT, MAIN, L
                       WRITE, CALL, NEW, DELETE, CONST, IDEN, MAS, MENOS, ASTERISCO, DIV, RESTO, IGUAL,
                       MENORIGUAL, MAYORIGUAL, MENOR, MAYOR, AND, OR, NEG, REF, CABRE, CCIERRA, PUNTO,
                       FLECHA, PABRE, PCIERRA, LLABRE, LLCIERRA, PUNTOYCOMA, ASIGNACION, RETURN, COMA,
-                      DISTINTO, TYPE, VOID, SWITCH, CASE, DEFAULT, POSICION, DOSPUNTOS;
+                      DISTINTO, TYPE, VOID, CASOVIETS, CASE, DEFAULT, POSICION, DOSPUNTOS;
 
 non terminal Program Programa;
 non terminal ArrayList<Dec> Lista_Declaraciones_Vac, Lista_Declaraciones, Declaraciones_Ini_Vac, 
@@ -216,9 +216,9 @@ InsCall ::= CALL E7:e7 PABRE Lista_Param_Vac:list_params PCIERRA PUNTOYCOMA
 InsCall ::= CALL error PUNTOYCOMA:p
    {: System.out.println("FILA " + p.fila + ", COLUMNA " + p.columna + ": Llamada a funcion incorrecta."); :};
 
-InsSwitch ::= SWITCH PABRE Expr:e PCIERRA LLABRE ListaCasos:casos LLCIERRA
+InsSwitch ::= CASOVIETS PABRE Expr:e PCIERRA LLABRE ListaCasos:casos LLCIERRA
    {: RESULT = new InsSwitch(e.getFila(), e.getColumna(), e, casos); :};
-InsSwitch ::= SWITCH error LLCIERRA:l
+InsSwitch ::= CASOVIETS error LLCIERRA:l
    {: System.out.println("FILA " + f.fila + ", COLUMNA " + f.columna + ": Instruccion caSoviets incorrecta."); :};
 
 // Parametros al llamar una funcion

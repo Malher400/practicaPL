@@ -125,6 +125,7 @@ public class InsSwitch extends Ins {
     	return sb.toString();
     }
 	
+    /*
 	public String generateCodeFun(int depth) {
 		StringBuilder sb = new StringBuilder();
 		for(String str: casos.keySet()) {
@@ -132,12 +133,7 @@ public class InsSwitch extends Ins {
         }
 		return sb.toString();
     }
-	
-	public void setName(HashMap<String,Integer> tablaNombres) {
-    	for(String str: casos.keySet()) {
-    		casos.get(str).setName(tablaNombres);
-        }
-	}
+        */
 	
     public void setDepth(int prof) {
     	for(String str: casos.keySet()) {
@@ -145,20 +141,12 @@ public class InsSwitch extends Ins {
         }
     }
 	
-	public int calculateDelta(int pos) {		
+	public int setDelta(int pos) {		
 		for(String str : casos.keySet()) {
-			casos.get(str).calculateDelta(pos);
+			casos.get(str).setDelta(pos);
 		} 
 		return pos;
 	}
-	
-    public void setMaxSize(Pair<Integer, Integer> currentMax) {
-    	for (String str : casos.keySet()) casos.get(str).setMaxSize(currentMax);
-    }
     
-    public void setNumIfs(int num) {
-    	for(String str : casos.keySet()) {
-			casos.get(str).setNumIfs(0);
-		}
-    }
+
 }

@@ -100,6 +100,7 @@ llaveCierra = \}
 puntoYComa = \;
 asignacion = \:=
 coma = \,
+dosPuntos = \:
 
 
 
@@ -140,6 +141,7 @@ coma = \,
 {claveDelete}               {return ops.unidadDelete();} 
 
 {claveSwitch}               {return ops.unidadCaSoviets();}
+{dosPuntos}                 {return ops.unidadDosPuntos();}
 
 {identificador}             {return ops.unidadIden();}
 

@@ -103,15 +103,15 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\1\1\6"+
     "\1\7\1\10\1\11\1\12\1\13\1\14\1\15\2\16"+
-    "\1\1\1\17\1\20\1\1\1\21\2\22\1\23\1\24"+
-    "\16\22\1\25\1\1\1\26\1\27\1\30\1\31\1\2"+
-    "\1\32\1\33\1\34\1\35\26\22\1\36\11\22\1\37"+
-    "\3\22\1\40\2\22\1\41\5\22\1\42\5\22\1\43"+
-    "\6\22\1\44\1\45\4\22\1\46\1\47\1\50\4\22"+
-    "\1\51\11\22\1\52\3\22\1\53\3\22\1\54\1\22"+
-    "\1\55\10\22\1\56\2\22\1\57\6\22\1\60\1\22"+
-    "\1\61\2\22\1\62\1\22\1\63\4\22\1\64\1\65"+
-    "\1\22\1\66";
+    "\1\17\1\20\1\21\1\1\1\22\2\23\1\24\1\25"+
+    "\16\23\1\26\1\1\1\27\1\30\1\31\1\32\1\2"+
+    "\1\33\1\34\1\35\1\36\26\23\1\37\11\23\1\40"+
+    "\3\23\1\41\2\23\1\42\5\23\1\43\5\23\1\44"+
+    "\6\23\1\45\1\46\4\23\1\47\1\50\1\51\4\23"+
+    "\1\52\11\23\1\53\3\23\1\54\3\23\1\55\1\23"+
+    "\1\56\10\23\1\57\2\23\1\60\6\23\1\61\1\23"+
+    "\1\62\2\23\1\63\1\23\1\64\4\23\1\65\1\66"+
+    "\1\23\1\67";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[177];
@@ -866,272 +866,277 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
             { ops.error();
             }
             // fall through
-          case 55: break;
+          case 56: break;
           case 2:
             { 
             }
             // fall through
-          case 56: break;
+          case 57: break;
           case 3:
             { return ops.unidadNegacion();
             }
             // fall through
-          case 57: break;
+          case 58: break;
           case 4:
             { return ops.unidadReferencia();
             }
             // fall through
-          case 58: break;
+          case 59: break;
           case 5:
             { return ops.unidadResto();
             }
             // fall through
-          case 59: break;
+          case 60: break;
           case 6:
             { return ops.unidadParentesisAbre();
             }
             // fall through
-          case 60: break;
+          case 61: break;
           case 7:
             { return ops.unidadParentesisCierra();
             }
             // fall through
-          case 61: break;
+          case 62: break;
           case 8:
             { return ops.unidadAsterisco();
             }
             // fall through
-          case 62: break;
+          case 63: break;
           case 9:
             { return ops.unidadMas();
             }
             // fall through
-          case 63: break;
+          case 64: break;
           case 10:
             { return ops.unidadComa();
             }
             // fall through
-          case 64: break;
+          case 65: break;
           case 11:
             { return ops.unidadMenos();
             }
             // fall through
-          case 65: break;
+          case 66: break;
           case 12:
             { return ops.unidadPunto();
             }
             // fall through
-          case 66: break;
+          case 67: break;
           case 13:
             { return ops.unidadDivision();
             }
             // fall through
-          case 67: break;
+          case 68: break;
           case 14:
             { return ops.unidadEntPositivo();
             }
             // fall through
-          case 68: break;
-          case 15:
-            { return ops.unidadPuntoYComa();
-            }
-            // fall through
           case 69: break;
-          case 16:
-            { return ops.unidadMenor();
+          case 15:
+            { return ops.unidadDosPuntos();
             }
             // fall through
           case 70: break;
-          case 17:
-            { return ops.unidadMayor();
+          case 16:
+            { return ops.unidadPuntoYComa();
             }
             // fall through
           case 71: break;
-          case 18:
-            { return ops.unidadIden();
+          case 17:
+            { return ops.unidadMenor();
             }
             // fall through
           case 72: break;
-          case 19:
-            { return ops.unidadCorcheteAbre();
+          case 18:
+            { return ops.unidadMayor();
             }
             // fall through
           case 73: break;
-          case 20:
-            { return ops.unidadCorcheteCierra();
+          case 19:
+            { return ops.unidadIden();
             }
             // fall through
           case 74: break;
-          case 21:
-            { return ops.unidadLlaveAbre();
+          case 20:
+            { return ops.unidadCorcheteAbre();
             }
             // fall through
           case 75: break;
-          case 22:
-            { return ops.unidadLlaveCierra();
+          case 21:
+            { return ops.unidadCorcheteCierra();
             }
             // fall through
           case 76: break;
-          case 23:
-            { return ops.unidadDistinto();
+          case 22:
+            { return ops.unidadLlaveAbre();
             }
             // fall through
           case 77: break;
-          case 24:
-            { return ops.unidadAnd();
+          case 23:
+            { return ops.unidadLlaveCierra();
             }
             // fall through
           case 78: break;
-          case 25:
-            { return ops.unidadFlecha();
+          case 24:
+            { return ops.unidadDistinto();
             }
             // fall through
           case 79: break;
-          case 26:
-            { return ops.unidadAsignacion();
+          case 25:
+            { return ops.unidadAnd();
             }
             // fall through
           case 80: break;
-          case 27:
-            { return ops.unidadMenorIgual();
+          case 26:
+            { return ops.unidadFlecha();
             }
             // fall through
           case 81: break;
-          case 28:
-            { return ops.unidadIgual();
+          case 27:
+            { return ops.unidadAsignacion();
             }
             // fall through
           case 82: break;
-          case 29:
-            { return ops.unidadMayorIgual();
+          case 28:
+            { return ops.unidadMenorIgual();
             }
             // fall through
           case 83: break;
-          case 30:
-            { return ops.unidadOr();
+          case 29:
+            { return ops.unidadIgual();
             }
             // fall through
           case 84: break;
-          case 31:
-            { return ops.unidadFun();
+          case 30:
+            { return ops.unidadMayorIgual();
             }
             // fall through
           case 85: break;
-          case 32:
-            { return ops.unidadNew();
+          case 31:
+            { return ops.unidadOr();
             }
             // fall through
           case 86: break;
-          case 33:
-            { return ops.unidadRed();
+          case 32:
+            { return ops.unidadFun();
             }
             // fall through
           case 87: break;
-          case 34:
-            { return ops.unidadVar();
+          case 33:
+            { return ops.unidadNew();
             }
             // fall through
           case 88: break;
-          case 35:
-            { return ops.unidadCall();
+          case 34:
+            { return ops.unidadRed();
             }
             // fall through
           case 89: break;
-          case 36:
-            { return ops.unidadMain();
+          case 35:
+            { return ops.unidadVar();
             }
             // fall through
           case 90: break;
-          case 37:
-            { return ops.unidadNull();
+          case 36:
+            { return ops.unidadCall();
             }
             // fall through
           case 91: break;
-          case 38:
-            { return ops.unidadBool();
+          case 37:
+            { return ops.unidadMain();
             }
             // fall through
           case 92: break;
-          case 39:
-            { return ops.unidadType();
+          case 38:
+            { return ops.unidadNull();
             }
             // fall through
           case 93: break;
-          case 40:
-            { return ops.unidadVoid();
+          case 39:
+            { return ops.unidadBool();
             }
             // fall through
           case 94: break;
-          case 41:
-            { return ops.unidadConst();
+          case 40:
+            { return ops.unidadType();
             }
             // fall through
           case 95: break;
-          case 42:
-            { return ops.unidadWrite();
+          case 41:
+            { return ops.unidadVoid();
             }
             // fall through
           case 96: break;
-          case 43:
-            { return ops.unidadDelete();
+          case 42:
+            { return ops.unidadConst();
             }
             // fall through
           case 97: break;
-          case 44:
-            { return ops.unidadLenInt();
+          case 43:
+            { return ops.unidadWrite();
             }
             // fall through
           case 98: break;
-          case 45:
-            { return ops.unidadReturn();
+          case 44:
+            { return ops.unidadDelete();
             }
             // fall through
           case 99: break;
-          case 46:
-            { return ops.unidadPointer();
+          case 45:
+            { return ops.unidadLenInt();
             }
             // fall through
           case 100: break;
-          case 47:
-            { return ops.unidadUSSWhile();
+          case 46:
+            { return ops.unidadReturn();
             }
             // fall through
           case 101: break;
-          case 48:
-            { return ops.unidadTrotskIf();
+          case 47:
+            { return ops.unidadPointer();
             }
             // fall through
           case 102: break;
-          case 49:
-            { return ops.unidadCaSoviets();
+          case 48:
+            { return ops.unidadUSSWhile();
             }
             // fall through
           case 103: break;
-          case 50:
-            { return ops.unidadGuevArray();
+          case 49:
+            { return ops.unidadTrotskIf();
             }
             // fall through
           case 104: break;
-          case 51:
-            { return ops.unidadBoolShevik();
+          case 50:
+            { return ops.unidadCaSoviets();
             }
             // fall through
           case 105: break;
-          case 52:
-            { return ops.unidadForLetariat();
+          case 51:
+            { return ops.unidadGuevArray();
             }
             // fall through
           case 106: break;
-          case 53:
-            { return ops.unidadStalinTruct();
+          case 52:
+            { return ops.unidadBoolShevik();
             }
             // fall through
           case 107: break;
-          case 54:
-            { return ops.unidadFidElseCastro();
+          case 53:
+            { return ops.unidadForLetariat();
             }
             // fall through
           case 108: break;
+          case 54:
+            { return ops.unidadStalinTruct();
+            }
+            // fall through
+          case 109: break;
+          case 55:
+            { return ops.unidadFidElseCastro();
+            }
+            // fall through
+          case 110: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

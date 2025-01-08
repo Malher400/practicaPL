@@ -1,0 +1,16 @@
+
+
+main {
+
+	var lenInt a := 5;
+
+    caSoviets (a) {
+        caso 5 :
+            write(5);
+        caso 4:
+            write(4);
+    }
+
+	call escribe(20);
+
+}
